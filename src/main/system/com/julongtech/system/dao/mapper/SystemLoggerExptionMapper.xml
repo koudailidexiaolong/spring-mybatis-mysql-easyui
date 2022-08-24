@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.julongtech.system.dao.SystemLoggerExptionDao" >
-  <resultMap id="BaseResultMap" type="com.julongtech.system.dao.entity.SystemLoggerExptionInfo" >
+  <resultMap id="BaseResultMap" type="com.julongtech.system.service.dto.SystemLoggerExptionDTO" >
     <id column="logger_exption_id" property="loggerExptionId" jdbcType="VARCHAR" />
     <result column="logger_exption_type" property="loggerExptionType" jdbcType="VARCHAR" />
     <result column="logger_exption_time" property="loggerExptionTime" jdbcType="TIMESTAMP" />
@@ -11,10 +11,11 @@
     <result column="logger_exption_ip" property="loggerExptionIp" jdbcType="VARCHAR" />
     <result column="logger_exption_module" property="loggerExptionModule" jdbcType="VARCHAR" />
     <result column="logger_exption_method" property="loggerExptionMethod" jdbcType="VARCHAR" />
-    <result column="logger_exption_desc" property="loggerExptionDesc" jdbcType="VARCHAR" />
-    <result column="LOGGER_OPERATING_SYSTEM" property="loggerOperatingSystem" jdbcType="VARCHAR" />
-    <result column="LOGGER_BROWSER_TYPE" property="loggerBrowserType" jdbcType="VARCHAR" />
-    <result column="LOGGER_BROWSER_VERSION" property="loggerBrowserVersion" jdbcType="VARCHAR" />
+    <result column="logger_exption_description" property="loggerExptionDescription" jdbcType="VARCHAR" />
+    <result column="logger_response_time" property="loggerResponseTime" jdbcType="VARCHAR" />
+    <result column="logger_operating_system" property="loggerOperatingSystem" jdbcType="VARCHAR" />
+    <result column="logger_browser_type" property="loggerBrowserType" jdbcType="VARCHAR" />
+    <result column="logger_browser_version" property="loggerBrowserVersion" jdbcType="VARCHAR" />
     <result column="logger_exption_reserve_a" property="loggerExptionReserveA" jdbcType="VARCHAR" />
     <result column="logger_exption_reserve_b" property="loggerExptionReserveB" jdbcType="VARCHAR" />
     <result column="logger_exption_reserve_c" property="loggerExptionReserveC" jdbcType="VARCHAR" />
@@ -24,7 +25,7 @@
   </resultMap>
   <sql id="Base_Column_List" >
     logger_exption_id, logger_exption_type, logger_exption_time, org_id, user_id, user_name, 
-    logger_exption_ip, logger_exption_module, logger_exption_method, logger_exption_desc, logger_operating_system,logger_browser_type,logger_browser_version,
+    logger_exption_ip, logger_exption_module, logger_exption_method, logger_exption_description, logger_response_time,logger_operating_system,logger_browser_type,logger_browser_version,
     logger_exption_reserve_a, logger_exption_reserve_b, logger_exption_reserve_c
   </sql>
   <sql id="Blob_Column_List" >
@@ -43,24 +44,30 @@
     where LOGGER_EXPTION_ID = #{loggerExptionId,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.julongtech.system.dao.entity.SystemLoggerExptionInfo" >
-    insert into SYSTEM_LOGGER_EXPTION (LOGGER_EXPTION_ID, LOGGER_EXPTION_TYPE, 
-      LOGGER_EXPTION_TIME, ORG_ID, USER_ID, 
-      USER_NAME, LOGGER_EXPTION_IP, LOGGER_EXPTION_MODULE, 
-      LOGGER_EXPTION_METHOD, LOGGER_EXPTION_DESC, 
-      LOGGER_OPERATING_SYSTEM,LOGGER_BROWSER_TYPE,LOGGER_BROWSER_VERSION,
-      LOGGER_EXPTION_RESERVE_A, LOGGER_EXPTION_RESERVE_B, 
-      LOGGER_EXPTION_RESERVE_C, LOGGER_EXPTION_CONTEXT
+    <selectKey order="BEFORE" keyProperty="loggerExptionId" resultType="java.lang.String">
+  		select fun_seq('L')
+  	</selectKey>
+    insert into SYSTEM_LOGGER_EXPTION (logger_exption_id, logger_exption_type, 
+      logger_exption_time, org_id, user_id, 
+      user_name, logger_exption_ip, logger_exption_module, 
+      logger_exption_method, logger_exption_description, logger_response_time,
+      logger_operating_system,logger_browser_type,logger_browser_version,
+      logger_exption_reserve_a, logger_exption_reserve_b, 
+      logger_exption_reserve_c, logger_exption_context
       )
     values (#{loggerExptionId,jdbcType=VARCHAR}, #{loggerExptionType,jdbcType=VARCHAR}, 
       #{loggerExptionTime,jdbcType=TIMESTAMP}, #{orgId,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, 
       #{userName,jdbcType=VARCHAR}, #{loggerExptionIp,jdbcType=VARCHAR}, #{loggerExptionModule,jdbcType=VARCHAR}, 
-      #{loggerExptionMethod,jdbcType=VARCHAR}, #{loggerExptionDesc,jdbcType=VARCHAR}, 
+      #{loggerExptionMethod,jdbcType=VARCHAR}, #{loggerExptionDescription,jdbcType=VARCHAR}, #{loggerResponseTime,jdbcType=VARCHAR}, 
       #{loggerOperatingSystem,jdbcType=VARCHAR},#{loggerBrowserType,jdbcType=VARCHAR}, #{loggerBrowserVersion,jdbcType=VARCHAR},
       #{loggerExptionReserveA,jdbcType=VARCHAR}, #{loggerExptionReserveB,jdbcType=VARCHAR}, 
       #{loggerExptionReserveC,jdbcType=VARCHAR}, #{loggerExptionContext,jdbcType=CLOB}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.julongtech.system.dao.entity.SystemLoggerExptionInfo" >
+  	<selectKey order="BEFORE" keyProperty="loggerExptionId" resultType="java.lang.String">
+  		select fun_seq('L')
+  	</selectKey>
     insert into SYSTEM_LOGGER_EXPTION
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="loggerExptionId != null and loggerExptionId != '' " >
@@ -90,8 +97,11 @@
       <if test="loggerExptionMethod != null and loggerExptionMethod != '' " >
         LOGGER_EXPTION_METHOD,
       </if>
-      <if test="loggerExptionDesc != null and loggerExptionDesc != '' " >
-        LOGGER_EXPTION_DESC,
+      <if test="loggerExptionDescription != null and loggerExptionDescription != '' " >
+        logger_exption_description,
+      </if>
+      <if test="loggerResponseTime != null and loggerResponseTime != '' " >
+        logger_response_time,
       </if>
       <if test="loggerOperatingSystem != null and loggerOperatingSystem != '' " >
         LOGGER_OPERATING_SYSTEM,
@@ -143,8 +153,11 @@
       <if test="loggerExptionMethod != null and loggerExptionMethod != '' " >
         #{loggerExptionMethod,jdbcType=VARCHAR},
       </if>
-      <if test="loggerExptionDesc != null and loggerExptionDesc != '' " >
-        #{loggerExptionDesc,jdbcType=VARCHAR},
+      <if test="loggerExptionDescription != null and loggerExptionDescription != '' " >
+        #{loggerExptionDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="loggerResponseTime != null and loggerResponseTime != '' " >
+        #{loggerResponseTime,jdbcType=VARCHAR},
       </if>
       <if test="loggerOperatingSystem != null and loggerOperatingSystem != '' " >
         #{loggerOperatingSystem,jdbcType=VARCHAR},
@@ -196,8 +209,11 @@
       <if test="loggerExptionMethod != null and loggerExptionMethod != ''" >
         LOGGER_EXPTION_METHOD = #{loggerExptionMethod,jdbcType=VARCHAR},
       </if>
-      <if test="loggerExptionDesc != null and loggerExptionDesc != ''" >
-        LOGGER_EXPTION_DESC = #{loggerExptionDesc,jdbcType=VARCHAR},
+      <if test="loggerExptionDescription != null and loggerExptionDescription != ''" >
+        logger_exption_description = #{loggerExptionDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="loggerResponseTime != null and loggerResponseTime != ''" >
+        logger_response_time = #{loggerResponseTime,jdbcType=VARCHAR},
       </if>
       <if test="loggerResponseTime != null and loggerResponseTime != ''" >
         LOGGER_RESPONSE_TIME = #{loggerResponseTime,jdbcType=VARCHAR},
@@ -236,7 +252,8 @@
       LOGGER_EXPTION_IP = #{loggerExptionIp,jdbcType=VARCHAR},
       LOGGER_EXPTION_MODULE = #{loggerExptionModule,jdbcType=VARCHAR},
       LOGGER_EXPTION_METHOD = #{loggerExptionMethod,jdbcType=VARCHAR},
-      LOGGER_EXPTION_DESC = #{loggerExptionDesc,jdbcType=VARCHAR},
+      logger_exption_description = #{loggerExptionDescription,jdbcType=VARCHAR},
+      logger_response_time = #{loggerResponseTime,jdbcType=VARCHAR},
       LOGGER_OPERATING_SYSTEM = #{loggerOperatingSystem,jdbcType=VARCHAR},
       LOGGER_BROWSER_TYPE = #{loggerBrowserType,jdbcType=VARCHAR},
       LOGGER_BROWSER_VERSION = #{loggerBrowserVersion,jdbcType=VARCHAR},
@@ -256,7 +273,8 @@
       LOGGER_EXPTION_IP = #{loggerExptionIp,jdbcType=VARCHAR},
       LOGGER_EXPTION_MODULE = #{loggerExptionModule,jdbcType=VARCHAR},
       LOGGER_EXPTION_METHOD = #{loggerExptionMethod,jdbcType=VARCHAR},
-      LOGGER_EXPTION_DESC = #{loggerExptionDesc,jdbcType=VARCHAR},
+      logger_exption_description = #{loggerExptionDescription,jdbcType=VARCHAR},
+      logger_response_time = #{loggerResponseTime,jdbcType=VARCHAR},
       LOGGER_OPERATING_SYSTEM = #{loggerOperatingSystem,jdbcType=VARCHAR},
       LOGGER_BROWSER_TYPE = #{loggerBrowserType,jdbcType=VARCHAR},
       LOGGER_BROWSER_VERSION = #{loggerBrowserVersion,jdbcType=VARCHAR},

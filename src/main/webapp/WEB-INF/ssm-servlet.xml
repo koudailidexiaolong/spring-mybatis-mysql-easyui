@@ -14,9 +14,9 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 	<context:annotation-config />
 	<!-- 使声明式事务生效 拦截在 注解 serivce 关键字 -->
-	<context:component-scan base-package="com.julongtech,com.common">
+	<context:component-scan base-package="com.julongtech">
 	</context:component-scan>
-	<context:component-scan base-package="com.common,com.julongtech">
+	<context:component-scan base-package="com.julongtech">
 	  	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>   
 	</context:component-scan>
 	<!-- 检查是否为静态资源
@@ -30,8 +30,7 @@
 	        <!-- 拦截全部地址 -->  
 	        <mvc:mapping path="/**"/>    
 	        <!-- 登录拦截类 -->  
-	        <bean id="loginInterceptor" class="com.julongtech.system.interceptor.LoginInterceptor">  
-	        </bean>  
+	        <bean id="loginInterceptor" class="com.julongtech.system.interceptor.LoginInterceptor"> </bean>  
 	     </mvc:interceptor>     
 	</mvc:interceptors>  
 	<!-- 视图模式 -->
@@ -74,7 +73,7 @@
 	<bean id="converterUtil" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">    
         <property name="converters">    
             <list>    
-                <bean class="com.common.converter.TimestampConverter" />    
+                <bean class="com.julongtech.converter.TimestampConverter" />    
             </list>    
         </property>    
     </bean>

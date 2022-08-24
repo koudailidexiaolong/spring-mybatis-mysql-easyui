@@ -63,15 +63,15 @@ public class SystemDictionaryVO  implements Serializable{
 
     /**
      * 数据字典编号
-     * @return  the value of SYSTEM_DICTIONARY.DICTIONARY_ID
+     * @return dictionaryId
      */
     public Integer getDictionaryId() {
-        return dictionaryId;
+        return this.dictionaryId;
     }
 
     /**
      * 数据字典编号
-     * @param dictionaryId the value for SYSTEM_DICTIONARY.DICTIONARY_ID
+     * @param dictionaryId
      */
     public void setDictionaryId(Integer dictionaryId) {
         this.dictionaryId = dictionaryId;
@@ -79,142 +79,145 @@ public class SystemDictionaryVO  implements Serializable{
 
     /**
      * 节点类型
-     * @return  the value of SYSTEM_DICTIONARY.DICTIONARY_TYPE
+     * @return dictionaryType
      */
     public String getDictionaryType() {
-        return dictionaryType;
+        return this.dictionaryType;
     }
 
     /**
      * 节点类型
-     * @param dictionaryType the value for SYSTEM_DICTIONARY.DICTIONARY_TYPE
+     * @param dictionaryType
      */
     public void setDictionaryType(String dictionaryType) {
-        this.dictionaryType = dictionaryType == null ? null : dictionaryType.trim();
+        this.dictionaryType = dictionaryType;
     }
 
     /**
      * 节点编码
-     * @return  the value of SYSTEM_DICTIONARY.DICTIONARY_CODE
+     * @return dictionaryCode
      */
     public String getDictionaryCode() {
-        return dictionaryCode;
+        return this.dictionaryCode;
     }
 
     /**
      * 节点编码
-     * @param dictionaryCode the value for SYSTEM_DICTIONARY.DICTIONARY_CODE
+     * @param dictionaryCode
      */
     public void setDictionaryCode(String dictionaryCode) {
-        this.dictionaryCode = dictionaryCode == null ? null : dictionaryCode.trim();
+        this.dictionaryCode = dictionaryCode;
     }
 
     /**
      * 节点名称
-     * @return  the value of SYSTEM_DICTIONARY.DICTIONARY_NAME
+     * @return dictionaryName
      */
     public String getDictionaryName() {
-        return dictionaryName;
+        return this.dictionaryName;
     }
 
     /**
      * 节点名称
-     * @param dictionaryName the value for SYSTEM_DICTIONARY.DICTIONARY_NAME
+     * @param dictionaryName
      */
     public void setDictionaryName(String dictionaryName) {
-        this.dictionaryName = dictionaryName == null ? null : dictionaryName.trim();
+        this.dictionaryName = dictionaryName;
     }
 
     /**
      * 节点描述
-     * @return  the value of SYSTEM_DICTIONARY.DICTIONARY_DESC
+     * @return dictionaryDesc
      */
     public String getDictionaryDesc() {
-        return dictionaryDesc;
+        return this.dictionaryDesc;
     }
 
     /**
      * 节点描述
-     * @param dictionaryDesc the value for SYSTEM_DICTIONARY.DICTIONARY_DESC
+     * @param dictionaryDesc
      */
     public void setDictionaryDesc(String dictionaryDesc) {
-        this.dictionaryDesc = dictionaryDesc == null ? null : dictionaryDesc.trim();
+        this.dictionaryDesc = dictionaryDesc;
     }
 
     /**
      * 父级节点
-     * @return  the value of SYSTEM_DICTIONARY.DICTIONARY_PARENT_CODE
+     * @return dictionaryParentCode
      */
     public String getDictionaryParentCode() {
-        return dictionaryParentCode;
+        return this.dictionaryParentCode;
     }
 
     /**
      * 父级节点
-     * @param dictionaryParentCode the value for SYSTEM_DICTIONARY.DICTIONARY_PARENT_CODE
+     * @param dictionaryParentCode
      */
     public void setDictionaryParentCode(String dictionaryParentCode) {
-        this.dictionaryParentCode = dictionaryParentCode == null ? null : dictionaryParentCode.trim();
+        this.dictionaryParentCode = dictionaryParentCode;
     }
 
     /**
      * 创建时间
-     * @return  the value of SYSTEM_DICTIONARY.DICTIONARY_CREATE_TIME
+     * @return dictionaryCreateTime
      */
     public Timestamp getDictionaryCreateTime() {
-        return dictionaryCreateTime;
+        return this.dictionaryCreateTime;
     }
 
     /**
      * 创建时间
-     * @param dictionaryCreateTime the value for SYSTEM_DICTIONARY.DICTIONARY_CREATE_TIME
+     * @param dictionaryCreateTime
      */
     public void setDictionaryCreateTime(Timestamp dictionaryCreateTime) {
         this.dictionaryCreateTime = dictionaryCreateTime;
     }
 
-
     /**
      * 字典状态：0-正常1-禁用
-     * @return  the value of SYSTEM_DICTIONARY.DICTIONARY_STATUS
+     * @return dictionaryStatus
      */
     public String getDictionaryStatus() {
-        return dictionaryStatus;
+        return this.dictionaryStatus;
     }
 
     /**
      * 字典状态：0-正常1-禁用
-     * @param dictionaryStatus the value for SYSTEM_DICTIONARY.DICTIONARY_STATUS
+     * @param dictionaryStatus
      */
     public void setDictionaryStatus(String dictionaryStatus) {
-        this.dictionaryStatus = dictionaryStatus == null ? null : dictionaryStatus.trim();
+        this.dictionaryStatus = dictionaryStatus;
     }
 
     /**
      * 顺序 默认从1开始
-     * @return  the value of SYSTEM_DICTIONARY.DICTIONARY_ORDER
+     * @return dictionaryOrder
      */
     public BigDecimal getDictionaryOrder() {
-        return dictionaryOrder;
+        return this.dictionaryOrder;
     }
 
     /**
      * 顺序 默认从1开始
-     * @param dictionaryOrder the value for SYSTEM_DICTIONARY.DICTIONARY_ORDER
+     * @param dictionaryOrder
      */
     public void setDictionaryOrder(BigDecimal dictionaryOrder) {
         this.dictionaryOrder = dictionaryOrder;
     }
 
-	@Override
-	public String toString() {
-		return "SystemDictionaryVO [dictionaryId=" + dictionaryId
-				+ ", dictionaryType=" + dictionaryType + ", dictionaryCode="
-				+ dictionaryCode + ", dictionaryName=" + dictionaryName
-				+ ", dictionaryDesc=" + dictionaryDesc
-				+ ", dictionaryParentCode=" + dictionaryParentCode
-				+ ", dictionaryCreateTime=" + dictionaryCreateTime
-				+ ", dictionaryStatus=" + dictionaryStatus
-				+ ", dictionaryOrder=" + dictionaryOrder + "]";
-	}
+    @java.lang.Override
+    public java.lang.String toString() {
+        final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemDictionaryVO{");
+        sb.append("dictionaryId=").append(dictionaryId);
+        sb.append(", dictionaryType='").append(dictionaryType).append('\'');
+        sb.append(", dictionaryCode='").append(dictionaryCode).append('\'');
+        sb.append(", dictionaryName='").append(dictionaryName).append('\'');
+        sb.append(", dictionaryDesc='").append(dictionaryDesc).append('\'');
+        sb.append(", dictionaryParentCode='").append(dictionaryParentCode).append('\'');
+        sb.append(", dictionaryCreateTime=").append(dictionaryCreateTime);
+        sb.append(", dictionaryStatus='").append(dictionaryStatus).append('\'');
+        sb.append(", dictionaryOrder=").append(dictionaryOrder);
+        sb.append('}');
+        return sb.toString();
+    }
 }

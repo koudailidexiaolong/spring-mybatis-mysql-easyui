@@ -14,11 +14,12 @@
     <result column="org_type" property="orgType" jdbcType="VARCHAR" />
     <result column="org_area" property="orgArea" jdbcType="VARCHAR" />
     <result column="org_area_code" property="orgAreaCode" jdbcType="VARCHAR" />
+    <result column="org_create_date" property="orgCreateDate" jdbcType="TIMESTAMP" />
     <result column="org_status" property="orgStatus" jdbcType="VARCHAR" />
     <result column="org_create_time" property="orgCreateTime" jdbcType="TIMESTAMP" />
     <result column="org_create_user_id" property="orgCreateUserId" jdbcType="VARCHAR" />
     <result column="org_update_time" property="orgUpdateTime" jdbcType="TIMESTAMP" />
-    <result column="org_update_user_ld" property="orgUpdateUserLd" jdbcType="VARCHAR" />
+    <result column="org_update_user_id" property="orgUpdateUserLd" jdbcType="VARCHAR" />
     <result column="org_desc" property="orgDesc" jdbcType="VARCHAR" />
     <result column="org_reserve_a" property="orgReserveA" jdbcType="VARCHAR" />
     <result column="org_reserve_b" property="orgReserveB" jdbcType="VARCHAR" />
@@ -26,8 +27,8 @@
   </resultMap>
   <sql id="Base_Column_List" >
     org_id, org_phone, org_full_name, org_name, org_parent_id, org_parent_name, 
-    org_address, org_level, org_leaf, org_type, org_area, org_area_code,
-    org_status, org_create_time, org_create_user_id, org_update_time, org_update_user_ld, 
+    org_address, org_level, org_leaf, org_type, org_area, org_area_code,org_create_date,
+    org_status, org_create_time, org_create_user_id, org_update_time, org_update_user_id, 
     org_desc, org_reserve_a, org_reserve_b, org_reserve_c
   </sql>
 
@@ -81,18 +82,18 @@
     where org_id = #{orgId,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.julongtech.system.dao.entity.SystemOrgInfo" >
-    insert into SYSTEM_ORG (ORG_LEAF,org_id,ORG_PHONE, 
-      ORG_FULL_NAME, ORG_NAME, ORG_PARENT_ID, 
-      ORG_PARENT_NAME, ORG_ADDRESS, org_level, 
-      org_type, ORG_AREA, ORG_AREA_CODE, 
-      ORG_STATUS, 
-      ORG_CREATE_TIME, ORG_CREATE_USER_ID, ORG_UPDATE_TIME, 
-      ORG_UPDATE_USER_LD, ORG_DESC, ORG_RESERVE_A, 
-      ORG_RESERVE_B, ORG_RESERVE_C)
-    values (#{orgLeaf,jdbcType=VARCHAR},#{orgId,jdbcType=VARCHAR}, #{orgPhone,jdbcType=VARCHAR}, 
+    insert into SYSTEM_ORG (org_id,org_leaf,org_phone, 
+      org_full_name, org_name, org_parent_id, 
+      org_parent_name, org_address, org_level, 
+      org_type, org_area, org_area_code, org_create_date,
+      org_status, 
+      org_create_time, org_create_user_id, org_update_time, 
+      org_update_user_ld, org_desc, org_reserve_a, 
+      org_reserve_b, org_reserve_c)
+    values (#{orgId,jdbcType=VARCHAR},#{orgLeaf,jdbcType=VARCHAR}, #{orgPhone,jdbcType=VARCHAR}, 
       #{orgFullName,jdbcType=VARCHAR}, #{orgName,jdbcType=VARCHAR}, #{orgParentId,jdbcType=VARCHAR}, 
       #{orgParentName,jdbcType=VARCHAR}, #{orgAddress,jdbcType=VARCHAR}, #{orgLevel,jdbcType=VARCHAR}, 
-      #{orgType,jdbcType=VARCHAR}, #{orgArea,jdbcType=VARCHAR}, #{orgAreaCode,jdbcType=VARCHAR}, 
+      #{orgType,jdbcType=VARCHAR}, #{orgArea,jdbcType=VARCHAR}, #{orgAreaCode,jdbcType=VARCHAR}, #{orgCreateDate,jdbcType=DATE}, 
       #{orgStatus,jdbcType=VARCHAR}, 
       #{orgCreateTime,jdbcType=TIMESTAMP}, #{orgCreateUserId,jdbcType=VARCHAR}, #{orgUpdateTime,jdbcType=DATE}, 
       #{orgUpdateUserLd,jdbcType=VARCHAR}, #{orgDesc,jdbcType=VARCHAR}, #{orgReserveA,jdbcType=VARCHAR}, 
@@ -101,11 +102,11 @@
   <insert id="insertSelective" parameterType="com.julongtech.system.dao.entity.SystemOrgInfo" >
     insert into SYSTEM_ORG
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="orgLeaf != null and orgLeaf != '' " >
-        ORG_LEAF,
-      </if>
       <if test="orgId != null and orgId != '' " >
         org_id,
+      </if>
+      <if test="orgLeaf != null and orgLeaf != '' " >
+        ORG_LEAF,
       </if>
       <if test="orgPhone != null and orgPhone != '' " >
         ORG_PHONE,
@@ -137,6 +138,9 @@
       <if test="orgAreaCode != null and orgAreaCode != '' " >
         ORG_AREA_CODE,
       </if>
+      <if test="orgCreateDate != null and orgCreateDate != '' " >
+        org_create_date,
+      </if>
       <if test="orgStatus != null and orgStatus != '' " >
         ORG_STATUS,
       </if>
@@ -166,11 +170,11 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="orgLeaf != null and orgLeaf != '' " >
-        #{orgLeaf,jdbcType=VARCHAR},
-      </if>
       <if test="orgId != null and orgId != '' " >
         #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgLeaf != null and orgLeaf != '' " >
+        #{orgLeaf,jdbcType=VARCHAR},
       </if>
       <if test="orgPhone != null and orgPhone != '' " >
         #{orgPhone,jdbcType=VARCHAR},
@@ -202,6 +206,9 @@
       <if test="orgAreaCode != null and orgAreaCode != '' " >
         #{orgAreaCode,jdbcType=VARCHAR},
       </if>
+      <if test="orgCreateDate != null and orgCreateDate != '' " >
+        #{orgCreateDate,jdbcType=TIMESTAMP},
+      </if>
       <if test="orgStatus != null and orgStatus != '' " >
         #{orgStatus,jdbcType=VARCHAR},
       </if>
@@ -214,8 +221,8 @@
       <if test="orgUpdateTime != null and orgUpdateTime != '' " >
         #{orgUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="orgUpdateUserLd != null and orgUpdateUserLd != '' " >
-        #{orgUpdateUserLd,jdbcType=VARCHAR},
+      <if test="orgUpdateUserId != null and orgUpdateUserId != '' " >
+        #{orgUpdateUserId,jdbcType=VARCHAR},
       </if>
       <if test="orgDesc != null and orgDesc != '' " >
         #{orgDesc,jdbcType=VARCHAR},
@@ -267,6 +274,9 @@
       <if test="orgAreaCode != null and orgAreaCode != ''" >
         ORG_AREA_CODE = #{orgAreaCode,jdbcType=VARCHAR},
       </if>
+      <if test="orgCreateDate != null and orgCreateDate != ''" >
+        ORG_CREATE_DATE = #{orgCreateDate,jdbcType=TIMESTAMP},
+      </if>
       <if test="orgStatus != null and orgStatus != ''" >
         ORG_STATUS = #{orgStatus,jdbcType=VARCHAR},
       </if>
@@ -306,11 +316,12 @@
       ORG_PARENT_ID = #{orgParentId,jdbcType=VARCHAR},
       ORG_PARENT_NAME = #{orgParentName,jdbcType=VARCHAR},
       ORG_ADDRESS = #{orgAddress,jdbcType=VARCHAR},
-      org_level = #{orgLevel,jdbcType=VARCHAR},
+      ORG_LEVEL = #{orgLevel,jdbcType=VARCHAR},
       ORG_LEAF = #{orgLeaf,jdbcType=VARCHAR},
       org_type = #{orgType,jdbcType=VARCHAR},
       ORG_AREA = #{orgArea,jdbcType=VARCHAR},
       ORG_AREA_CODE = #{orgAreaCode,jdbcType=VARCHAR},
+      ORG_CREATE_DATE = #{orgCreateDate,jdbcType=TIMESTAMP},
       ORG_STATUS = #{orgStatus,jdbcType=VARCHAR},
       ORG_CREATE_TIME = #{orgCreateTime,jdbcType=TIMESTAMP},
       ORG_CREATE_USER_ID = #{orgCreateUserId,jdbcType=VARCHAR},

@@ -1,4 +1,4 @@
-package com.common.filter;
+package com.julongtech.filter;
 
 import java.util.Map;
 import java.util.regex.Pattern;

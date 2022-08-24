@@ -75,6 +75,11 @@ public class SystemOrgInfo implements Serializable{
      * 组织机构行政区划编码
      */
     private String orgAreaCode;
+    
+    /**
+     * 机构建立时间
+     */
+    private Timestamp orgCreateDate;
 
     /** 
      * 组织机构状态：0：正常1：禁用
@@ -99,7 +104,7 @@ public class SystemOrgInfo implements Serializable{
     /** 
      * 组织机构修改人
      */
-    private String orgUpdateUserLd;
+    private String orgUpdateUserId;
 
     /** 
      * 机构备注
@@ -292,10 +297,25 @@ public class SystemOrgInfo implements Serializable{
 
     /**
      * 组织机构行政区划编码
-     * @param orgAreaCode the value for SYSTEM_ORG.ORG_AREA_CODE
+     * @param orgAreaCode the value for SYSTEM_ORG.ORG_CREATE_DATE
      */
     public void setOrgAreaCode(String orgAreaCode) {
         this.orgAreaCode = orgAreaCode == null ? null : orgAreaCode.trim();
+    }
+    /**
+     * 组织机构成立时间
+     * @return  the value of SYSTEM_ORG.ORG_AREA_CODE
+     */
+    public Timestamp getOrgCreateDate() {
+    	return orgCreateDate;
+    }
+    
+    /**
+     * 组织机构成立时间
+     * @param orgCreateDate the value for SYSTEM_ORG.ORG_CREATE_DATE
+     */
+    public void setOrgCreateDate(Timestamp orgCreateDate) {
+    	this.orgCreateDate = orgCreateDate;
     }
 
     /**
@@ -364,18 +384,18 @@ public class SystemOrgInfo implements Serializable{
 
     /**
      * 组织机构修改人
-     * @return  the value of SYSTEM_ORG.ORG_UPDATE_USER_LD
+     * @return  the value of SYSTEM_ORG.ORG_UPDATE_USER_ID
      */
-    public String getOrgUpdateUserLd() {
-        return orgUpdateUserLd;
+    public String getOrgUpdateUserId() {
+        return orgUpdateUserId;
     }
 
     /**
      * 组织机构修改人
-     * @param orgUpdateUserLd the value for SYSTEM_ORG.ORG_UPDATE_USER_LD
+     * @param orgUpdateUserId the value for SYSTEM_ORG.ORG_UPDATE_USER_ID
      */
-    public void setOrgUpdateUserLd(String orgUpdateUserLd) {
-        this.orgUpdateUserLd = orgUpdateUserLd == null ? null : orgUpdateUserLd.trim();
+    public void setOrgUpdateUserId(String orgUpdateUserId) {
+        this.orgUpdateUserId = orgUpdateUserId == null ? null : orgUpdateUserId.trim();
     }
 
     /**
@@ -458,19 +478,15 @@ public class SystemOrgInfo implements Serializable{
 
 	@Override
 	public String toString() {
-		return "SystemOrgInfo [orgId=" + orgId + ", orgPhone=" + orgPhone
-				+ ", orgFullName=" + orgFullName + ", orgName=" + orgName
-				+ ", orgParentId=" + orgParentId + ", orgParentName="
-				+ orgParentName + ", orgAddress=" + orgAddress + ", orgLevel="
-				+ orgLevel + ", orgLeaf=" + orgLeaf + ", orgType=" + orgType
-				+ ", orgArea=" + orgArea + ", orgAreaCode=" + orgAreaCode
-				+ ", orgStatus=" + orgStatus + ", orgCreateTime="
-				+ orgCreateTime + ", orgCreateUserId=" + orgCreateUserId
-				+ ", orgUpdateTime=" + orgUpdateTime + ", orgUpdateUserLd="
-				+ orgUpdateUserLd + ", orgDesc=" + orgDesc + ", orgReserveA="
-				+ orgReserveA + ", orgReserveB=" + orgReserveB
+		return "SystemOrgInfo [orgId=" + orgId + ", orgPhone=" + orgPhone + ", orgFullName=" + orgFullName
+				+ ", orgName=" + orgName + ", orgParentId=" + orgParentId + ", orgParentName=" + orgParentName
+				+ ", orgAddress=" + orgAddress + ", orgLevel=" + orgLevel + ", orgLeaf=" + orgLeaf + ", orgType="
+				+ orgType + ", orgArea=" + orgArea + ", orgAreaCode=" + orgAreaCode + ", orgCreateDate=" + orgCreateDate
+				+ ", orgStatus=" + orgStatus + ", orgCreateTime=" + orgCreateTime + ", orgCreateUserId="
+				+ orgCreateUserId + ", orgUpdateTime=" + orgUpdateTime + ", orgUpdateUserId=" + orgUpdateUserId
+				+ ", orgDesc=" + orgDesc + ", orgReserveA=" + orgReserveA + ", orgReserveB=" + orgReserveB
 				+ ", orgReserveC=" + orgReserveC + "]";
 	}
 
-    
+	
 }

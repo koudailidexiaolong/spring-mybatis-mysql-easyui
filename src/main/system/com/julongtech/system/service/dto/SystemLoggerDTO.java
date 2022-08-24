@@ -35,6 +35,7 @@ public class SystemLoggerDTO implements Serializable{
 	/** 
 	 * 日志创建时间
 	 */
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
 	private Timestamp loggerCreateTime;
 
 	/** 
@@ -92,66 +93,66 @@ public class SystemLoggerDTO implements Serializable{
 	 */
 	private String loggerDescription;
 
+
 	/**
 	 * 日志编号:类型+年+月+日+时+分+秒+毫秒+6位序列
-	 * @return  the value of SYSTEM_LOGGER.LOGGER_ID
+	 * @return loggerId
 	 */
 	public String getLoggerId() {
-		return loggerId;
+		return this.loggerId;
 	}
 
 	/**
 	 * 日志编号:类型+年+月+日+时+分+秒+毫秒+6位序列
-	 * @param loggerId the value for SYSTEM_LOGGER.LOGGER_ID
+	 * @param loggerId
 	 */
 	public void setLoggerId(String loggerId) {
-		this.loggerId = loggerId == null ? null : loggerId.trim();
+		this.loggerId = loggerId;
 	}
 
 	/**
 	 * 日志类型
-	 * @return  the value of SYSTEM_LOGGER.LOGGER_TYPE
+	 * @return loggerType
 	 */
 	public String getLoggerType() {
-		return loggerType;
+		return this.loggerType;
 	}
 
 	/**
 	 * 日志类型
-	 * @param loggerType the value for SYSTEM_LOGGER.LOGGER_TYPE
+	 * @param loggerType
 	 */
 	public void setLoggerType(String loggerType) {
-		this.loggerType = loggerType == null ? null : loggerType.trim();
+		this.loggerType = loggerType;
 	}
 
 	/**
 	 * 日志类型名称
-	 * @return  the value of SYSTEM_LOGGER.LOGGER_TYPE_NAME
+	 * @return loggerTypeName
 	 */
 	public String getLoggerTypeName() {
-		return loggerTypeName;
+		return this.loggerTypeName;
 	}
 
 	/**
 	 * 日志类型名称
-	 * @param loggerTypeName the value for SYSTEM_LOGGER.LOGGER_TYPE_NAME
+	 * @param loggerTypeName
 	 */
 	public void setLoggerTypeName(String loggerTypeName) {
-		this.loggerTypeName = loggerTypeName == null ? null : loggerTypeName.trim();
+		this.loggerTypeName = loggerTypeName;
 	}
 
 	/**
 	 * 日志创建时间
-	 * @return  the value of SYSTEM_LOGGER.LOGGER_CREATE_TIME
+	 * @return loggerCreateTime
 	 */
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	public Timestamp getLoggerCreateTime() {
-		return loggerCreateTime;
+		return this.loggerCreateTime;
 	}
 
 	/**
 	 * 日志创建时间
-	 * @param loggerCreateTime the value for SYSTEM_LOGGER.LOGGER_CREATE_TIME
+	 * @param loggerCreateTime
 	 */
 	public void setLoggerCreateTime(Timestamp loggerCreateTime) {
 		this.loggerCreateTime = loggerCreateTime;
@@ -159,187 +160,199 @@ public class SystemLoggerDTO implements Serializable{
 
 	/**
 	 * 组织机构
-	 * @return  the value of SYSTEM_LOGGER.ORG_ID
+	 * @return orgId
 	 */
 	public String getOrgId() {
-		return orgId;
+		return this.orgId;
 	}
 
 	/**
 	 * 组织机构
-	 * @param orgId the value for SYSTEM_LOGGER.ORG_ID
+	 * @param orgId
 	 */
 	public void setOrgId(String orgId) {
-		this.orgId = orgId == null ? null : orgId.trim();
+		this.orgId = orgId;
 	}
 
 	/**
 	 * 用户编号
-	 * @return  the value of SYSTEM_LOGGER.USER_ID
+	 * @return userId
 	 */
 	public String getUserId() {
-		return userId;
+		return this.userId;
 	}
 
 	/**
 	 * 用户编号
-	 * @param userId the value for SYSTEM_LOGGER.USER_ID
+	 * @param userId
 	 */
 	public void setUserId(String userId) {
-		this.userId = userId == null ? null : userId.trim();
+		this.userId = userId;
 	}
 
 	/**
 	 * 用户姓名
-	 * @return  the value of SYSTEM_LOGGER.USER_NAME
+	 * @return userName
 	 */
 	public String getUserName() {
-		return userName;
+		return this.userName;
 	}
 
 	/**
 	 * 用户姓名
-	 * @param userName the value for SYSTEM_LOGGER.USER_NAME
+	 * @param userName
 	 */
 	public void setUserName(String userName) {
-		this.userName = userName == null ? null : userName.trim();
+		this.userName = userName;
 	}
 
 	/**
 	 * 日志IP
-	 * @return  the value of SYSTEM_LOGGER.LOGGER_IP
+	 * @return loggerIp
 	 */
 	public String getLoggerIp() {
-		return loggerIp;
+		return this.loggerIp;
 	}
 
 	/**
 	 * 日志IP
-	 * @param loggerIp the value for SYSTEM_LOGGER.LOGGER_IP
+	 * @param loggerIp
 	 */
 	public void setLoggerIp(String loggerIp) {
-		this.loggerIp = loggerIp == null ? null : loggerIp.trim();
+		this.loggerIp = loggerIp;
 	}
 
 	/**
 	 * 操作的业务模块
-	 * @return  the value of SYSTEM_LOGGER.LOGGER_MODULE
+	 * @return loggerModule
 	 */
 	public String getLoggerModule() {
-		return loggerModule;
+		return this.loggerModule;
 	}
 
 	/**
 	 * 操作的业务模块
-	 * @param loggerModule the value for SYSTEM_LOGGER.LOGGER_MODULE
+	 * @param loggerModule
 	 */
 	public void setLoggerModule(String loggerModule) {
-		this.loggerModule = loggerModule == null ? null : loggerModule.trim();
+		this.loggerModule = loggerModule;
 	}
 
 	/**
 	 * 操作的业务模块的方法
-	 * @return  the value of SYSTEM_LOGGER.LOGGER_MODULE_METHOD
+	 * @return loggerModuleMethod
 	 */
 	public String getLoggerModuleMethod() {
-		return loggerModuleMethod;
+		return this.loggerModuleMethod;
 	}
 
 	/**
 	 * 操作的业务模块的方法
-	 * @param loggerModuleMethod the value for SYSTEM_LOGGER.LOGGER_MODULE_METHOD
+	 * @param loggerModuleMethod
 	 */
 	public void setLoggerModuleMethod(String loggerModuleMethod) {
-		this.loggerModuleMethod = loggerModuleMethod == null ? null : loggerModuleMethod.trim();
+		this.loggerModuleMethod = loggerModuleMethod;
 	}
 
 	/**
 	 * 访问响应时间 毫秒
-	 * @return  the value of SYSTEM_LOGGER.LOGGER_RESPONSE_TIME
+	 * @return loggerResponseTime
 	 */
 	public String getLoggerResponseTime() {
-		return loggerResponseTime;
+		return this.loggerResponseTime;
 	}
 
 	/**
 	 * 访问响应时间 毫秒
-	 * @param loggerResponseTime the value for SYSTEM_LOGGER.LOGGER_RESPONSE_TIME
+	 * @param loggerResponseTime
 	 */
 	public void setLoggerResponseTime(String loggerResponseTime) {
-		this.loggerResponseTime = loggerResponseTime == null ? null : loggerResponseTime.trim();
+		this.loggerResponseTime = loggerResponseTime;
 	}
 
 	/**
-	 * 系统版本
-	 * @return  the value of SYSTEM_LOGGER.LOGGER_OPERATING_SYSTEM
+	 * 使用的操作系统
+	 * @return loggerOperatingSystem
 	 */
 	public String getLoggerOperatingSystem() {
-		return loggerOperatingSystem;
+		return this.loggerOperatingSystem;
 	}
+
 	/**
-	 * 系统版本
-	 * @param loggerOperatingSystem the value for SYSTEM_LOGGER.LOGGER_OPERATING_SYSTEM
+	 * 使用的操作系统
+	 * @param loggerOperatingSystem
 	 */
 	public void setLoggerOperatingSystem(String loggerOperatingSystem) {
-		this.loggerOperatingSystem = loggerOperatingSystem == null ? null : loggerOperatingSystem.trim();
+		this.loggerOperatingSystem = loggerOperatingSystem;
 	}
 
 	/**
 	 * 浏览器类型
-	 * @return  the value of SYSTEM_LOGGER.LOGGER_BROWSER_TYPE
+	 * @return loggerBrowserType
 	 */
 	public String getLoggerBrowserType() {
-		return loggerBrowserType;
+		return this.loggerBrowserType;
 	}
+
 	/**
 	 * 浏览器类型
-	 * @param loggerBrowserType the value for SYSTEM_LOGGER.LOGGER_BROWSER_TYPE
+	 * @param loggerBrowserType
 	 */
 	public void setLoggerBrowserType(String loggerBrowserType) {
-		this.loggerBrowserType = loggerBrowserType == null ? null : loggerBrowserType.trim();
+		this.loggerBrowserType = loggerBrowserType;
 	}
 
 	/**
 	 * 浏览器版本
-	 * @return  the value of SYSTEM_LOGGER.LOGGER_BROWSER_VERSION
+	 * @return loggerBrowserVersion
 	 */
 	public String getLoggerBrowserVersion() {
-		return loggerBrowserVersion;
+		return this.loggerBrowserVersion;
 	}
+
 	/**
 	 * 浏览器版本
-	 * @param loggerBrowserVersion the value for SYSTEM_LOGGER.LOGGER_BROWSER_VERSION
+	 * @param loggerBrowserVersion
 	 */
 	public void setLoggerBrowserVersion(String loggerBrowserVersion) {
-		this.loggerBrowserVersion = loggerBrowserVersion == null ? null : loggerBrowserVersion.trim();
+		this.loggerBrowserVersion = loggerBrowserVersion;
 	}
 
 	/**
 	 * 日志描述
-	 * @return  the value of SYSTEM_LOGGER.LOGGER_DESCRIPTION
+	 * @return loggerDescription
 	 */
 	public String getLoggerDescription() {
-		return loggerDescription;
+		return this.loggerDescription;
 	}
+
 	/**
 	 * 日志描述
-	 * @param loggerDescription the value for SYSTEM_LOGGER.LOGGER_DESCRIPTION
+	 * @param loggerDescription
 	 */
 	public void setLoggerDescription(String loggerDescription) {
-		this.loggerDescription = loggerDescription == null ? null : loggerDescription.trim();
+		this.loggerDescription = loggerDescription;
 	}
 
-	@Override
-	public String toString() {
-		return "SystemLoggerDTO [loggerId=" + loggerId + ", loggerType=" + loggerType + ", loggerTypeName="
-				+ loggerTypeName + ", loggerCreateTime=" + loggerCreateTime + ", orgId=" + orgId + ", userId=" + userId
-				+ ", userName=" + userName + ", loggerIp=" + loggerIp + ", loggerModule=" + loggerModule
-				+ ", loggerModuleMethod=" + loggerModuleMethod + ", loggerResponseTime=" + loggerResponseTime
-				+ ", loggerOperatingSystem=" + loggerOperatingSystem + ", loggerBrowserType=" + loggerBrowserType
-				+ ", loggerBrowserVersion=" + loggerBrowserVersion + ", loggerDescription=" + loggerDescription + "]";
+	@java.lang.Override
+	public java.lang.String toString() {
+		final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemLoggerDTO{");
+		sb.append("loggerId='").append(loggerId).append('\'');
+		sb.append(", loggerType='").append(loggerType).append('\'');
+		sb.append(", loggerTypeName='").append(loggerTypeName).append('\'');
+		sb.append(", loggerCreateTime=").append(loggerCreateTime);
+		sb.append(", orgId='").append(orgId).append('\'');
+		sb.append(", userId='").append(userId).append('\'');
+		sb.append(", userName='").append(userName).append('\'');
+		sb.append(", loggerIp='").append(loggerIp).append('\'');
+		sb.append(", loggerModule='").append(loggerModule).append('\'');
+		sb.append(", loggerModuleMethod='").append(loggerModuleMethod).append('\'');
+		sb.append(", loggerResponseTime='").append(loggerResponseTime).append('\'');
+		sb.append(", loggerOperatingSystem='").append(loggerOperatingSystem).append('\'');
+		sb.append(", loggerBrowserType='").append(loggerBrowserType).append('\'');
+		sb.append(", loggerBrowserVersion='").append(loggerBrowserVersion).append('\'');
+		sb.append(", loggerDescription='").append(loggerDescription).append('\'');
+		sb.append('}');
+		return sb.toString();
 	}
-	
-	
-
-
 }

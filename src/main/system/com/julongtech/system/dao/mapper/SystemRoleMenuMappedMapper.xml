@@ -20,18 +20,15 @@
     mapped_id, role_id, menu_id, org_id, mapped_menu_array, mapped_desc, mapped_create_time, 
     user_id, mapped_update_time, mapped_status, mapped_reserve_a, mapped_reserve_b, mapped_reserve_c
   </sql>
-  <sql id="Base_Column_List_DTO" >
-    mapped_id, role_id, menu_id, org_id, mapped_menu_array
-  </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
-    <include refid="Base_Column_List_DTO" />
+    <include refid="Base_Column_List" />
     from SYSTEM_ROLE_MENU_MAPPED
     where MAPPED_ID = #{mappedId,jdbcType=INTEGER}
   </select>
   <select id="selectBySelective" resultMap="BaseResultMap" parameterType="com.julongtech.system.service.dto.SystemRoleMenuMappedDTO" >
     select 
-    <include refid="Base_Column_List_DTO" />
+    <include refid="Base_Column_List" />
     from SYSTEM_ROLE_MENU_MAPPED
     <where>
       <if test="mappedId != null and mappedId != ''" >

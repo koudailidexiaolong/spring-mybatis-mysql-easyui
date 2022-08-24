@@ -24,9 +24,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.common.util.PropertyPlaceholderUtils;
-import com.common.util.crypto.DESUtil;
-import com.common.util.crypto.RSAUtil;
 import com.julongtech.system.action.vo.SystemUserVO;
 import com.julongtech.system.aspect.LoggerMethod;
 import com.julongtech.system.aspect.LoggerModule;
@@ -39,6 +36,9 @@ import com.julongtech.system.service.dto.SystemUserDTO;
 import com.julongtech.system.session.UserSession;
 import com.julongtech.system.util.CaptchaUtils;
 import com.julongtech.system.util.DefaultUtil;
+import com.julongtech.util.PropertyPlaceholderUtils;
+import com.julongtech.util.crypto.DESUtil;
+import com.julongtech.util.crypto.RSAUtil;
 
 /**
  * 登录系统处理类

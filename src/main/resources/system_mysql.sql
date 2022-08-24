@@ -5,7 +5,7 @@
 
 drop function if exists fun_seq;
 
-drop table if exists system_menu_button;
+drop table if exists system_button;
 
 drop table if exists system_dictionary;
 
@@ -25,10 +25,12 @@ drop table if exists system_user;
 
 drop table if exists system_user_role_mapped;
 
+drop table if exists system_role_button_mapped;
+
 /*==============================================================*/
-/* Table: system_menu_button                                    */
+/* Table: system_button                                    */
 /*==============================================================*/
-create table system_menu_button
+create table system_button
 (
    button_id            VARCHAR(32) not null comment '按钮编号',
    button_name          VARCHAR(100) comment '按钮名称',
@@ -291,8 +293,6 @@ auto_increment = 1;
 
 alter table system_user_role_mapped comment '用户与角色的关系信息表';
 
-
-drop table if exists system_role_button_mapped;
 
 /*==============================================================*/
 /* Table: system_role_button_mapped                             */

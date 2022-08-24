@@ -1,4 +1,4 @@
-package com.common.converter;
+package com.julongtech.converter;
 
 import java.sql.Timestamp;
 

@@ -1,4 +1,4 @@
-package com.common.util.crypto;
+package com.julongtech.util.crypto;
 
 import java.security.Key;
 

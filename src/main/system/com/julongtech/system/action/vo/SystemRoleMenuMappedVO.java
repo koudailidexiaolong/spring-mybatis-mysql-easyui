@@ -49,17 +49,18 @@ public class SystemRoleMenuMappedVO  implements Serializable{
      */
     private String menuArray;
 
+
     /**
      * 角色菜单关系编号
-     * @return  the value of SYSTEM_ROLE_MENU_MAPPED.MAPPED_ID
+     * @return mappedId
      */
     public Integer getMappedId() {
-        return mappedId;
+        return this.mappedId;
     }
 
     /**
      * 角色菜单关系编号
-     * @param mappedId the value for SYSTEM_ROLE_MENU_MAPPED.MAPPED_ID
+     * @param mappedId
      */
     public void setMappedId(Integer mappedId) {
         this.mappedId = mappedId;
@@ -67,15 +68,15 @@ public class SystemRoleMenuMappedVO  implements Serializable{
 
     /**
      * 角色编号
-     * @return  the value of SYSTEM_ROLE_MENU_MAPPED.ROLE_ID
+     * @return roleId
      */
     public Integer getRoleId() {
-        return roleId;
+        return this.roleId;
     }
 
     /**
      * 角色编号
-     * @param roleId the value for SYSTEM_ROLE_MENU_MAPPED.ROLE_ID
+     * @param roleId
      */
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
@@ -83,84 +84,95 @@ public class SystemRoleMenuMappedVO  implements Serializable{
 
     /**
      * 菜单编号
-     * @return  the value of SYSTEM_ROLE_MENU_MAPPED.MENU_ID
+     * @return menuId
      */
     public String getMenuId() {
-        return menuId;
+        return this.menuId;
     }
 
     /**
      * 菜单编号
-     * @param menuId the value for SYSTEM_ROLE_MENU_MAPPED.MENU_ID
+     * @param menuId
      */
     public void setMenuId(String menuId) {
-        this.menuId = menuId == null ? null : menuId.trim();
+        this.menuId = menuId;
     }
 
     /**
      * 组织机构编码
-     * @return  the value of SYSTEM_ROLE_MENU_MAPPED.ORG_ID
+     * @return orgId
      */
     public String getOrgId() {
-        return orgId;
+        return this.orgId;
     }
 
     /**
      * 组织机构编码
-     * @param orgId the value for SYSTEM_ROLE_MENU_MAPPED.ORG_ID
+     * @param orgId
      */
     public void setOrgId(String orgId) {
-        this.orgId = orgId == null ? null : orgId.trim();
+        this.orgId = orgId;
     }
 
     /**
      * 菜单按钮数组以，区分
-     * @return  the value of SYSTEM_ROLE_MENU_MAPPED.MAPPED_MENU_ARRAY
+     * @return mappedMenuArray
      */
     public String getMappedMenuArray() {
-        return mappedMenuArray;
+        return this.mappedMenuArray;
     }
 
     /**
      * 菜单按钮数组以，区分
-     * @param mappedMenuArray the value for SYSTEM_ROLE_MENU_MAPPED.MAPPED_MENU_ARRAY
+     * @param mappedMenuArray
      */
     public void setMappedMenuArray(String mappedMenuArray) {
-        this.mappedMenuArray = mappedMenuArray == null ? null : mappedMenuArray.trim();
+        this.mappedMenuArray = mappedMenuArray;
     }
-
 
     /**
      * 角色菜单关系状态:0正常1禁用
-     * @return  the value of SYSTEM_ROLE_MENU_MAPPED.MAPPED_STATUS
+     * @return mappedStatus
      */
     public String getMappedStatus() {
-        return mappedStatus;
+        return this.mappedStatus;
     }
 
     /**
      * 角色菜单关系状态:0正常1禁用
-     * @param mappedStatus the value for SYSTEM_ROLE_MENU_MAPPED.MAPPED_STATUS
+     * @param mappedStatus
      */
     public void setMappedStatus(String mappedStatus) {
-        this.mappedStatus = mappedStatus == null ? null : mappedStatus.trim();
+        this.mappedStatus = mappedStatus;
     }
 
-    
-	public String getMenuArray() {
-		return menuArray;
-	}
+    /**
+     * 菜单数组
+     * @return menuArray
+     */
+    public String getMenuArray() {
+        return this.menuArray;
+    }
 
-	public void setMenuArray(String menuArray) {
-		this.menuArray = menuArray == null ? null : menuArray.trim();
-	}
+    /**
+     * 菜单数组
+     * @param menuArray
+     */
+    public void setMenuArray(String menuArray) {
+        this.menuArray = menuArray;
+    }
 
-	@Override
-	public String toString() {
-		return "SystemRoleMenuMappedDTO [mappedId=" + mappedId + ", roleId="
-				+ roleId + ", menuId=" + menuId + ", orgId=" + orgId
-				+ ", mappedMenuArray=" + mappedMenuArray + ", mappedStatus="
-				+ mappedStatus + "]";
-	}
-
+    @java.lang.Override
+    public java.lang.String toString() {
+        final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemRoleMenuMappedVO{");
+        sb.append("mappedId=").append(mappedId);
+        sb.append(", roleId=").append(roleId);
+        sb.append(", menuId='").append(menuId).append('\'');
+        sb.append(", orgId='").append(orgId).append('\'');
+        sb.append(", mappedMenuArray='").append(mappedMenuArray).append('\'');
+        sb.append(", mappedStatus='").append(mappedStatus).append('\'');
+        sb.append(", menuArray='").append(menuArray).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

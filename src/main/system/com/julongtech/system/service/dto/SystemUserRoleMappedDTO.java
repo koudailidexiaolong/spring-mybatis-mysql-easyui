@@ -1,6 +1,9 @@
 package com.julongtech.system.service.dto;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
  * 用户角色关系映射信息类
@@ -40,17 +43,44 @@ public class SystemUserRoleMappedDTO  implements Serializable{
      */
     private String mappedStatus;
 
+    /** 
+     * 用户角色关系创建时间
+     */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
+    private Timestamp mappedCreateTime;
+
+    /** 
+     * 用户角色关系创建人
+     */
+    private String mappedCreateUserId;
+
+    /** 
+     * 备用字段1
+     */
+    private String mappedReserveA;
+
+    /** 
+     * 备用字段2
+     */
+    private String mappedReserveB;
+
+    /** 
+     * 备用字段3
+     */
+    private String mappedReserveC;
+
+
     /**
      * 用户角色关系编号
-     * @return  the value of SYSTEM_USER_ROLE_MAPPED.MAPPED_ID
+     * @return mappedId
      */
     public Integer getMappedId() {
-        return mappedId;
+        return this.mappedId;
     }
 
     /**
      * 用户角色关系编号
-     * @param mappedId the value for SYSTEM_USER_ROLE_MAPPED.MAPPED_ID
+     * @param mappedId
      */
     public void setMappedId(Integer mappedId) {
         this.mappedId = mappedId;
@@ -58,31 +88,31 @@ public class SystemUserRoleMappedDTO  implements Serializable{
 
     /**
      * 用户编号
-     * @return  the value of SYSTEM_USER_ROLE_MAPPED.USER_ID
+     * @return userId
      */
     public String getUserId() {
-        return userId;
+        return this.userId;
     }
 
     /**
      * 用户编号
-     * @param userId the value for SYSTEM_USER_ROLE_MAPPED.USER_ID
+     * @param userId
      */
     public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+        this.userId = userId;
     }
 
     /**
      * 角色编号
-     * @return  the value of SYSTEM_USER_ROLE_MAPPED.ROLE_ID
+     * @return roleId
      */
     public Integer getRoleId() {
-        return roleId;
+        return this.roleId;
     }
 
     /**
      * 角色编号
-     * @param roleId the value for SYSTEM_USER_ROLE_MAPPED.ROLE_ID
+     * @param roleId
      */
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
@@ -90,42 +120,130 @@ public class SystemUserRoleMappedDTO  implements Serializable{
 
     /**
      * 组织机构编码
-     * @return  the value of SYSTEM_USER_ROLE_MAPPED.ORG_ID
+     * @return orgId
      */
     public String getOrgId() {
-        return orgId;
+        return this.orgId;
     }
 
     /**
      * 组织机构编码
-     * @param orgId the value for SYSTEM_USER_ROLE_MAPPED.ORG_ID
+     * @param orgId
      */
     public void setOrgId(String orgId) {
-        this.orgId = orgId == null ? null : orgId.trim();
+        this.orgId = orgId;
     }
 
     /**
      * 用户角色关系状态：0正常1：停用禁用
-     * @return  the value of SYSTEM_USER_ROLE_MAPPED.MAPPED_STATUS
+     * @return mappedStatus
      */
     public String getMappedStatus() {
-        return mappedStatus;
+        return this.mappedStatus;
     }
 
     /**
      * 用户角色关系状态：0正常1：停用禁用
-     * @param mappedStatus the value for SYSTEM_USER_ROLE_MAPPED.MAPPED_STATUS
+     * @param mappedStatus
      */
     public void setMappedStatus(String mappedStatus) {
-        this.mappedStatus = mappedStatus == null ? null : mappedStatus.trim();
+        this.mappedStatus = mappedStatus;
     }
 
-	@Override
-	public String toString() {
-		return "SystemUserRoleMappedDTO [mappedId=" + mappedId + ", userId="
-				+ userId + ", roleId=" + roleId + ", orgId=" + orgId
-				+ ", mappedStatus=" + mappedStatus + "]";
-	}
+    /**
+     * 用户角色关系创建时间
+     * @return mappedCreateTime
+     */
+    public Timestamp getMappedCreateTime() {
+        return this.mappedCreateTime;
+    }
 
-  
+    /**
+     * 用户角色关系创建时间
+     * @param mappedCreateTime
+     */
+    public void setMappedCreateTime(Timestamp mappedCreateTime) {
+        this.mappedCreateTime = mappedCreateTime;
+    }
+
+    /**
+     * 用户角色关系创建人
+     * @return mappedCreateUserId
+     */
+    public String getMappedCreateUserId() {
+        return this.mappedCreateUserId;
+    }
+
+    /**
+     * 用户角色关系创建人
+     * @param mappedCreateUserId
+     */
+    public void setMappedCreateUserId(String mappedCreateUserId) {
+        this.mappedCreateUserId = mappedCreateUserId;
+    }
+
+    /**
+     * 备用字段1
+     * @return mappedReserveA
+     */
+    public String getMappedReserveA() {
+        return this.mappedReserveA;
+    }
+
+    /**
+     * 备用字段1
+     * @param mappedReserveA
+     */
+    public void setMappedReserveA(String mappedReserveA) {
+        this.mappedReserveA = mappedReserveA;
+    }
+
+    /**
+     * 备用字段2
+     * @return mappedReserveB
+     */
+    public String getMappedReserveB() {
+        return this.mappedReserveB;
+    }
+
+    /**
+     * 备用字段2
+     * @param mappedReserveB
+     */
+    public void setMappedReserveB(String mappedReserveB) {
+        this.mappedReserveB = mappedReserveB;
+    }
+
+    /**
+     * 备用字段3
+     * @return mappedReserveC
+     */
+    public String getMappedReserveC() {
+        return this.mappedReserveC;
+    }
+
+    /**
+     * 备用字段3
+     * @param mappedReserveC
+     */
+    public void setMappedReserveC(String mappedReserveC) {
+        this.mappedReserveC = mappedReserveC;
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemUserRoleMappedDTO{");
+        sb.append("mappedId=").append(mappedId);
+        sb.append(", userId='").append(userId).append('\'');
+        sb.append(", roleId=").append(roleId);
+        sb.append(", orgId='").append(orgId).append('\'');
+        sb.append(", mappedStatus='").append(mappedStatus).append('\'');
+        sb.append(", mappedCreateTime=").append(mappedCreateTime);
+        sb.append(", mappedCreateUserId='").append(mappedCreateUserId).append('\'');
+        sb.append(", mappedReserveA='").append(mappedReserveA).append('\'');
+        sb.append(", mappedReserveB='").append(mappedReserveB).append('\'');
+        sb.append(", mappedReserveC='").append(mappedReserveC).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

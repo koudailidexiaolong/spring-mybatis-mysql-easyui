@@ -1,4 +1,4 @@
-package com.common.util;
+package com.julongtech.util;
 
 import java.sql.Timestamp;
 import java.text.ParseException;

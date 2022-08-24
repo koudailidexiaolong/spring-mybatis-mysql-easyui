@@ -28,15 +28,15 @@ function loadSelectData(type,select,index){
 				 obj.dictionaryCode = "";
 			     data.unshift(obj);
 			     $(select).combobox({
-				        data:data,
-				        valueField:"dictionaryCode",
-				        textField:"dictionaryName",
-				        panelHeight:200,
-				        onLoadSuccess:function(){
-				        	//默认选中
-						    $(this).combobox("select",index);
-				        }
-				    });
+			        data:data,
+			        valueField:"dictionaryCode",
+			        textField:"dictionaryName",
+			        panelHeight:200,
+			        onLoadSuccess:function(){
+			        	//默认选中
+					    $(this).combobox("select",index);
+			        }
+			     });
 		 });
 }
 

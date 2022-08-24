@@ -3,6 +3,8 @@ package com.julongtech.system.service.dto;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
  * 组织机构表
  * @author julong 
@@ -21,6 +23,10 @@ public class SystemOrgDTO implements Serializable{
 	 * 组织机构编码
 	 */
 	private String orgId;
+	/** 
+	 * 联行行号
+	 */
+	private String orgCode;
 
 	/** 
 	 * 机构网点电话
@@ -56,7 +62,7 @@ public class SystemOrgDTO implements Serializable{
 	 * 组织机构等级
 	 */
 	private String orgLevel;
-	
+
 	/** 
 	 * 是否有子节点
 	 */
@@ -77,51 +83,59 @@ public class SystemOrgDTO implements Serializable{
 	 */
 	private String orgAreaCode;
 
+	/**
+	 * 机构建立时间
+	 */
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
+	private Timestamp orgCreateDate;
+
 	/** 
 	 * 组织机构状态：0：正常1：禁用
 	 */
 	private String orgStatus;
 
-	
-	 /** 
-     * 组织机构创建时间
-     */
-    private Timestamp orgCreateTime;
 
-    /** 
-     * 组织机构创建人
-     */
-    private String orgCreateUserId;
+	/** 
+	 * 组织机构创建时间
+	 */
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
+	private Timestamp orgCreateTime;
 
-    /** 
-     * 组织机构修改时间
-     */
-    private Timestamp orgUpdateTime;
+	/** 
+	 * 组织机构创建人
+	 */
+	private String orgCreateUserId;
 
-    /** 
-     * 组织机构修改人
-     */
-    private String orgUpdateUserLd;
+	/** 
+	 * 组织机构修改时间
+	 */
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
+	private Timestamp orgUpdateTime;
 
-    /** 
-     * 机构备注
-     */
-    private String orgDesc;
+	/** 
+	 * 组织机构修改人
+	 */
+	private String orgUpdateUserId;
 
-    /** 
-     * 备用字段1
-     */
-    private String orgReserveA;
+	/** 
+	 * 机构备注
+	 */
+	private String orgDesc;
 
-    /** 
-     * 备用字段2
-     */
-    private String orgReserveB;
+	/** 
+	 * 备用字段1
+	 */
+	private String orgReserveA;
 
-    /** 
-     * 备用字段3
-     */
-    private String orgReserveC;
+	/** 
+	 * 备用字段2
+	 */
+	private String orgReserveB;
+
+	/** 
+	 * 备用字段3
+	 */
+	private String orgReserveC;
 
 	/**
 	 * treegrid属性
@@ -140,367 +154,431 @@ public class SystemOrgDTO implements Serializable{
 
 	/**
 	 * 组织机构编码
-	 * @return  the value of SYSTEM_ORG.ORG_ID
+	 * @return orgId
 	 */
 	public String getOrgId() {
-		return orgId;
+		return this.orgId;
 	}
 
 	/**
 	 * 组织机构编码
-	 * @param orgId the value for SYSTEM_ORG.ORG_ID
+	 * @param orgId
 	 */
 	public void setOrgId(String orgId) {
-		this.orgId = orgId == null ? null : orgId.trim();
+		this.orgId = orgId;
+	}
+
+	/**
+	 * 联行行号
+	 * @return orgCode
+	 */
+	public String getOrgCode() {
+		return this.orgCode;
+	}
+
+	/**
+	 * 联行行号
+	 * @param orgCode
+	 */
+	public void setOrgCode(String orgCode) {
+		this.orgCode = orgCode;
 	}
 
 	/**
 	 * 机构网点电话
-	 * @return  the value of SYSTEM_ORG.ORG_PHONE
+	 * @return orgPhone
 	 */
 	public String getOrgPhone() {
-		return orgPhone;
+		return this.orgPhone;
 	}
 
 	/**
 	 * 机构网点电话
-	 * @param orgPhone the value for SYSTEM_ORG.ORG_PHONE
+	 * @param orgPhone
 	 */
 	public void setOrgPhone(String orgPhone) {
-		this.orgPhone = orgPhone == null ? null : orgPhone.trim();
+		this.orgPhone = orgPhone;
 	}
 
 	/**
 	 * 组织机构名称全称
-	 * @return  the value of SYSTEM_ORG.ORG_FULL_NAME
+	 * @return orgFullName
 	 */
 	public String getOrgFullName() {
-		return orgFullName;
+		return this.orgFullName;
 	}
 
 	/**
 	 * 组织机构名称全称
-	 * @param orgFullName the value for SYSTEM_ORG.ORG_FULL_NAME
+	 * @param orgFullName
 	 */
 	public void setOrgFullName(String orgFullName) {
-		this.orgFullName = orgFullName == null ? null : orgFullName.trim();
+		this.orgFullName = orgFullName;
 	}
 
 	/**
 	 * 组织机构名称简称
-	 * @return  the value of SYSTEM_ORG.ORG_NAME
+	 * @return orgName
 	 */
 	public String getOrgName() {
-		return orgName;
+		return this.orgName;
 	}
 
 	/**
 	 * 组织机构名称简称
-	 * @param orgName the value for SYSTEM_ORG.ORG_NAME
+	 * @param orgName
 	 */
 	public void setOrgName(String orgName) {
-		this.orgName = orgName == null ? null : orgName.trim();
+		this.orgName = orgName;
 	}
 
 	/**
 	 * 组织机构父级节点编码
-	 * @return  the value of SYSTEM_ORG.ORG_PARENT_ID
+	 * @return orgParentId
 	 */
 	public String getOrgParentId() {
-		return orgParentId;
+		return this.orgParentId;
 	}
 
 	/**
 	 * 组织机构父级节点编码
-	 * @param orgParentId the value for SYSTEM_ORG.ORG_PARENT_ID
+	 * @param orgParentId
 	 */
 	public void setOrgParentId(String orgParentId) {
-		this.orgParentId = orgParentId == null ? null : orgParentId.trim();
+		this.orgParentId = orgParentId;
 	}
 
 	/**
 	 * 组织机构父级节点名称
-	 * @return  the value of SYSTEM_ORG.ORG_PARENT_NAME
+	 * @return orgParentName
 	 */
 	public String getOrgParentName() {
-		return orgParentName;
+		return this.orgParentName;
 	}
 
 	/**
 	 * 组织机构父级节点名称
-	 * @param orgParentName the value for SYSTEM_ORG.ORG_PARENT_NAME
+	 * @param orgParentName
 	 */
 	public void setOrgParentName(String orgParentName) {
-		this.orgParentName = orgParentName == null ? null : orgParentName.trim();
+		this.orgParentName = orgParentName;
 	}
 
 	/**
 	 * 组织机构地址
-	 * @return  the value of SYSTEM_ORG.ORG_ADDRESS
+	 * @return orgAddress
 	 */
 	public String getOrgAddress() {
-		return orgAddress;
+		return this.orgAddress;
 	}
 
 	/**
 	 * 组织机构地址
-	 * @param orgAddress the value for SYSTEM_ORG.ORG_ADDRESS
+	 * @param orgAddress
 	 */
 	public void setOrgAddress(String orgAddress) {
-		this.orgAddress = orgAddress == null ? null : orgAddress.trim();
+		this.orgAddress = orgAddress;
 	}
 
 	/**
 	 * 组织机构等级
-	 * @return  the value of SYSTEM_ORG.ORG_LEVEL
+	 * @return orgLevel
 	 */
 	public String getOrgLevel() {
-		return orgLevel;
+		return this.orgLevel;
 	}
 
 	/**
 	 * 组织机构等级
-	 * @param orgLevel the value for SYSTEM_ORG.ORG_LEVEL
+	 * @param orgLevel
 	 */
 	public void setOrgLevel(String orgLevel) {
-		this.orgLevel = orgLevel == null ? null : orgLevel.trim();
+		this.orgLevel = orgLevel;
 	}
 
 	/**
-	 * 组织机构类型
-	 * @return  the value of SYSTEM_ORG.ORG_TYPE
+	 * 是否有子节点
+	 * @return orgLeaf
 	 */
-	public String getOrgType() {
-		return orgType;
-	}
-
-	/**
-	 * 组织机构类型
-	 * @param orgType the value for SYSTEM_ORG.ORG_TYPE
-	 */
-	public void setOrgType(String orgType) {
-		this.orgType = orgType == null ? null : orgType.trim();
-	}
-
-	/**
-	 * 组织机构行政区划名称
-	 * @return  the value of SYSTEM_ORG.ORG_AREA
-	 */
-	public String getOrgArea() {
-		return orgArea;
-	}
-
-	/**
-	 * 组织机构行政区划名称
-	 * @param orgArea the value for SYSTEM_ORG.ORG_AREA
-	 */
-	public void setOrgArea(String orgArea) {
-		this.orgArea = orgArea == null ? null : orgArea.trim();
-	}
-
-	/**
-	 * 组织机构行政区划编码
-	 * @return  the value of SYSTEM_ORG.ORG_AREA_CODE
-	 */
-	public String getOrgAreaCode() {
-		return orgAreaCode;
-	}
-
-	/**
-	 * 组织机构行政区划编码
-	 * @param orgAreaCode the value for SYSTEM_ORG.ORG_AREA_CODE
-	 */
-	public void setOrgAreaCode(String orgAreaCode) {
-		this.orgAreaCode = orgAreaCode == null ? null : orgAreaCode.trim();
-	}
-
-	/**
-	 * 组织机构状态：0：正常1：禁用
-	 * @return  the value of SYSTEM_ORG.ORG_STATUS
-	 */
-	public String getOrgStatus() {
-		return orgStatus;
-	}
-
-	/**
-	 * 组织机构状态：0：正常1：禁用
-	 * @param orgStatus the value for SYSTEM_ORG.ORG_STATUS
-	 */
-	public void setOrgStatus(String orgStatus) {
-		this.orgStatus = orgStatus == null ? null : orgStatus.trim();
-	}
-
-	   /**
-     * 组织机构创建时间
-     * @return  the value of SYSTEM_ORG.ORG_CREATE_TIME
-     */
-    public Timestamp getOrgCreateTime() {
-        return orgCreateTime;
-    }
-
-    /**
-     * 组织机构创建时间
-     * @param orgCreateTime the value for SYSTEM_ORG.ORG_CREATE_TIME
-     */
-    public void setOrgCreateTime(Timestamp orgCreateTime) {
-        this.orgCreateTime = orgCreateTime;
-    }
-
-    /**
-     * 组织机构创建人
-     * @return  the value of SYSTEM_ORG.ORG_CREATE_USER_ID
-     */
-    public String getOrgCreateUserId() {
-        return orgCreateUserId;
-    }
-
-    /**
-     * 组织机构创建人
-     * @param orgCreateUserId the value for SYSTEM_ORG.ORG_CREATE_USER_ID
-     */
-    public void setOrgCreateUserId(String orgCreateUserId) {
-        this.orgCreateUserId = orgCreateUserId == null ? null : orgCreateUserId.trim();
-    }
-
-    /**
-     * 组织机构修改时间
-     * @return  the value of SYSTEM_ORG.ORG_UPDATE_TIME
-     */
-    public Timestamp getOrgUpdateTime() {
-        return orgUpdateTime;
-    }
-
-    /**
-     * 组织机构修改时间
-     * @param orgUpdateTime the value for SYSTEM_ORG.ORG_UPDATE_TIME
-     */
-    public void setOrgUpdateTime(Timestamp orgUpdateTime) {
-        this.orgUpdateTime = orgUpdateTime;
-    }
-
-    /**
-     * 组织机构修改人
-     * @return  the value of SYSTEM_ORG.ORG_UPDATE_USER_LD
-     */
-    public String getOrgUpdateUserLd() {
-        return orgUpdateUserLd;
-    }
-
-    /**
-     * 组织机构修改人
-     * @param orgUpdateUserLd the value for SYSTEM_ORG.ORG_UPDATE_USER_LD
-     */
-    public void setOrgUpdateUserLd(String orgUpdateUserLd) {
-        this.orgUpdateUserLd = orgUpdateUserLd == null ? null : orgUpdateUserLd.trim();
-    }
-
-    /**
-     * 机构备注
-     * @return  the value of SYSTEM_ORG.ORG_DESC
-     */
-    public String getOrgDesc() {
-        return orgDesc;
-    }
-
-    /**
-     * 机构备注
-     * @param orgDesc the value for SYSTEM_ORG.ORG_DESC
-     */
-    public void setOrgDesc(String orgDesc) {
-        this.orgDesc = orgDesc == null ? null : orgDesc.trim();
-    }
-
-    /**
-     * 备用字段1
-     * @return  the value of SYSTEM_ORG.ORG_RESERVE_A
-     */
-    public String getOrgReserveA() {
-        return orgReserveA;
-    }
-
-    /**
-     * 备用字段1
-     * @param orgReserveA the value for SYSTEM_ORG.ORG_RESERVE_A
-     */
-    public void setOrgReserveA(String orgReserveA) {
-        this.orgReserveA = orgReserveA == null ? null : orgReserveA.trim();
-    }
-
-    /**
-     * 备用字段2
-     * @return  the value of SYSTEM_ORG.ORG_RESERVE_B
-     */
-    public String getOrgReserveB() {
-        return orgReserveB;
-    }
-
-    /**
-     * 备用字段2
-     * @param orgReserveB the value for SYSTEM_ORG.ORG_RESERVE_B
-     */
-    public void setOrgReserveB(String orgReserveB) {
-        this.orgReserveB = orgReserveB == null ? null : orgReserveB.trim();
-    }
-
-    /**
-     * 备用字段3
-     * @return  the value of SYSTEM_ORG.ORG_RESERVE_C
-     */
-    public String getOrgReserveC() {
-        return orgReserveC;
-    }
-
-    /**
-     * 备用字段3
-     * @param orgReserveC the value for SYSTEM_ORG.ORG_RESERVE_C
-     */
-    public void setOrgReserveC(String orgReserveC) {
-        this.orgReserveC = orgReserveC == null ? null : orgReserveC.trim();
-    }
-	
-	
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	public String get_parentId() {
-		return _parentId;
-	}
-
-	public void set_parentId(String _parentId) {
-		this._parentId = _parentId;
-	}
-	 /**
-     * 是否有节点 0：是1：否
-     * @return  the value of SYSTEM_ORG.ORG_LEAF
-     */
 	public String getOrgLeaf() {
-		return orgLeaf;
+		return this.orgLeaf;
 	}
+
 	/**
-     * 是否有节点 0：是1：否
-     * @param orgLeaf the value for SYSTEM_ORG.ORG_LEAF
-     */
+	 * 是否有子节点
+	 * @param orgLeaf
+	 */
 	public void setOrgLeaf(String orgLeaf) {
 		this.orgLeaf = orgLeaf;
 	}
 
-	@Override
-	public String toString() {
-		return "SystemOrgDTO [orgId=" + orgId + ", orgPhone=" + orgPhone + ", orgFullName=" + orgFullName + ", orgName="
-				+ orgName + ", orgParentId=" + orgParentId + ", orgParentName=" + orgParentName + ", orgAddress="
-				+ orgAddress + ", orgLevel=" + orgLevel + ", orgLeaf=" + orgLeaf + ", orgType=" + orgType + ", orgArea="
-				+ orgArea + ", orgAreaCode=" + orgAreaCode + ", orgStatus=" + orgStatus + ", orgDesc=" + orgDesc
-				+ ", orgCreateTime=" + orgCreateTime + ", orgCreateUserId=" + orgCreateUserId + ", orgUpdateTime="
-				+ orgUpdateTime + ", orgUpdateUserLd=" + orgUpdateUserLd + ", orgReserveA=" + orgReserveA
-				+ ", orgReserveB=" + orgReserveB + ", orgReserveC=" + orgReserveC + ", state=" + state + ", _parentId="
-				+ _parentId + "]";
+	/**
+	 * 组织机构类型
+	 * @return orgType
+	 */
+	public String getOrgType() {
+		return this.orgType;
 	}
 
-	
+	/**
+	 * 组织机构类型
+	 * @param orgType
+	 */
+	public void setOrgType(String orgType) {
+		this.orgType = orgType;
+	}
 
+	/**
+	 * 组织机构行政区划名称
+	 * @return orgArea
+	 */
+	public String getOrgArea() {
+		return this.orgArea;
+	}
+
+	/**
+	 * 组织机构行政区划名称
+	 * @param orgArea
+	 */
+	public void setOrgArea(String orgArea) {
+		this.orgArea = orgArea;
+	}
+
+	/**
+	 * 组织机构行政区划编码
+	 * @return orgAreaCode
+	 */
+	public String getOrgAreaCode() {
+		return this.orgAreaCode;
+	}
+
+	/**
+	 * 组织机构行政区划编码
+	 * @param orgAreaCode
+	 */
+	public void setOrgAreaCode(String orgAreaCode) {
+		this.orgAreaCode = orgAreaCode;
+	}
+
+	/**
+	 * 机构建立时间
+	 */
+	public Timestamp getOrgCreateDate() {
+		return this.orgCreateDate;
+	}
+	
+	/**
+	 * 机构建立时间
+	 * @param orgCreateDate
+	 */
+	public void setOrgCreateDate(Timestamp orgCreateDate) {
+		this.orgCreateDate = orgCreateDate;
+	}
+
+	/**
+	 * 组织机构状态：0：正常1：禁用
+	 * @return orgStatus
+	 */
+	public String getOrgStatus() {
+		return this.orgStatus;
+	}
+
+	/**
+	 * 组织机构状态：0：正常1：禁用
+	 * @param orgStatus
+	 */
+	public void setOrgStatus(String orgStatus) {
+		this.orgStatus = orgStatus;
+	}
+
+	/**
+	 * 组织机构创建时间
+	 * @return orgCreateTime
+	 */
+	public Timestamp getOrgCreateTime() {
+		return this.orgCreateTime;
+	}
+
+	/**
+	 * 组织机构创建时间
+	 * @param orgCreateTime
+	 */
+	public void setOrgCreateTime(Timestamp orgCreateTime) {
+		this.orgCreateTime = orgCreateTime;
+	}
+
+	/**
+	 * 组织机构创建人
+	 * @return orgCreateUserId
+	 */
+	public String getOrgCreateUserId() {
+		return this.orgCreateUserId;
+	}
+
+	/**
+	 * 组织机构创建人
+	 * @param orgCreateUserId
+	 */
+	public void setOrgCreateUserId(String orgCreateUserId) {
+		this.orgCreateUserId = orgCreateUserId;
+	}
+
+	/**
+	 * 组织机构修改时间
+	 * @return orgUpdateTime
+	 */
+	public Timestamp getOrgUpdateTime() {
+		return this.orgUpdateTime;
+	}
+
+	/**
+	 * 组织机构修改时间
+	 * @param orgUpdateTime
+	 */
+	public void setOrgUpdateTime(Timestamp orgUpdateTime) {
+		this.orgUpdateTime = orgUpdateTime;
+	}
+
+	/**
+	 * 组织机构修改人
+	 * @return orgUpdateUserId
+	 */
+	public String getOrgUpdateUserId() {
+		return this.orgUpdateUserId;
+	}
+
+	/**
+	 * 组织机构修改人
+	 * @param orgUpdateUserId
+	 */
+	public void setOrgUpdateUserId(String orgUpdateUserId) {
+		this.orgUpdateUserId = orgUpdateUserId;
+	}
+
+	/**
+	 * 机构备注
+	 * @return orgDesc
+	 */
+	public String getOrgDesc() {
+		return this.orgDesc;
+	}
+
+	/**
+	 * 机构备注
+	 * @param orgDesc
+	 */
+	public void setOrgDesc(String orgDesc) {
+		this.orgDesc = orgDesc;
+	}
+
+	/**
+	 * 备用字段1
+	 * @return orgReserveA
+	 */
+	public String getOrgReserveA() {
+		return this.orgReserveA;
+	}
+
+	/**
+	 * 备用字段1
+	 * @param orgReserveA
+	 */
+	public void setOrgReserveA(String orgReserveA) {
+		this.orgReserveA = orgReserveA;
+	}
+
+	/**
+	 * 备用字段2
+	 * @return orgReserveB
+	 */
+	public String getOrgReserveB() {
+		return this.orgReserveB;
+	}
+
+	/**
+	 * 备用字段2
+	 * @param orgReserveB
+	 */
+	public void setOrgReserveB(String orgReserveB) {
+		this.orgReserveB = orgReserveB;
+	}
+
+	/**
+	 * 备用字段3
+	 * @return orgReserveC
+	 */
+	public String getOrgReserveC() {
+		return this.orgReserveC;
+	}
+
+	/**
+	 * 备用字段3
+	 * @param orgReserveC
+	 */
+	public void setOrgReserveC(String orgReserveC) {
+		this.orgReserveC = orgReserveC;
+	}
+
+	/**
+	 * treegrid属性
+	 * @return state
+	 */
+	public String getState() {
+		return this.state;
+	}
+
+	/**
+	 * treegrid属性
+	 * @param state
+	 */
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	/**
+	 * treegrid属性
+	 * @return _parentId
+	 */
+	public String get_parentId() {
+		return this._parentId;
+	}
+
+	/**
+	 * treegrid属性
+	 * @param _parentId
+	 */
+	public void set_parentId(String _parentId) {
+		this._parentId = _parentId;
+	}
+
+	@java.lang.Override
+	public java.lang.String toString() {
+		final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemOrgDTO{");
+		sb.append("orgId='").append(orgId).append('\'');
+		sb.append(", orgCode='").append(orgCode).append('\'');
+		sb.append(", orgPhone='").append(orgPhone).append('\'');
+		sb.append(", orgFullName='").append(orgFullName).append('\'');
+		sb.append(", orgName='").append(orgName).append('\'');
+		sb.append(", orgParentId='").append(orgParentId).append('\'');
+		sb.append(", orgParentName='").append(orgParentName).append('\'');
+		sb.append(", orgAddress='").append(orgAddress).append('\'');
+		sb.append(", orgLevel='").append(orgLevel).append('\'');
+		sb.append(", orgLeaf='").append(orgLeaf).append('\'');
+		sb.append(", orgType='").append(orgType).append('\'');
+		sb.append(", orgArea='").append(orgArea).append('\'');
+		sb.append(", orgAreaCode='").append(orgAreaCode).append('\'');
+		sb.append(", orgStatus='").append(orgStatus).append('\'');
+		sb.append(", orgCreateTime=").append(orgCreateTime);
+		sb.append(", orgCreateUserId='").append(orgCreateUserId).append('\'');
+		sb.append(", orgUpdateTime=").append(orgUpdateTime);
+		sb.append(", orgUpdateUserId='").append(orgUpdateUserId).append('\'');
+		sb.append(", orgDesc='").append(orgDesc).append('\'');
+		sb.append(", orgReserveA='").append(orgReserveA).append('\'');
+		sb.append(", orgReserveB='").append(orgReserveB).append('\'');
+		sb.append(", orgReserveC='").append(orgReserveC).append('\'');
+		sb.append(", state='").append(state).append('\'');
+		sb.append(", _parentId='").append(_parentId).append('\'');
+		sb.append('}');
+		return sb.toString();
+	}
 }

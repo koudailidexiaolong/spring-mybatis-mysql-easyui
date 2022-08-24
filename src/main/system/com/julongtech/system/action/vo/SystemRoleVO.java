@@ -53,15 +53,15 @@ public class SystemRoleVO  implements Serializable{
 
     /**
      * 角色编号
-     * @return  the value of SYSTEM_ROLE.ROLE_ID
+     * @return roleId
      */
     public Integer getRoleId() {
-        return roleId;
+        return this.roleId;
     }
 
     /**
      * 角色编号
-     * @param roleId the value for SYSTEM_ROLE.ROLE_ID
+     * @param roleId
      */
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
@@ -69,107 +69,111 @@ public class SystemRoleVO  implements Serializable{
 
     /**
      * 角色名称
-     * @return  the value of SYSTEM_ROLE.ROLE_NAME
+     * @return roleName
      */
     public String getRoleName() {
-        return roleName;
+        return this.roleName;
     }
 
     /**
      * 角色名称
-     * @param roleName the value for SYSTEM_ROLE.ROLE_NAME
+     * @param roleName
      */
     public void setRoleName(String roleName) {
-        this.roleName = roleName == null ? null : roleName.trim();
+        this.roleName = roleName;
     }
 
     /**
      * 组织机构
-     * @return  the value of SYSTEM_ROLE.ORG_ID
+     * @return orgId
      */
     public String getOrgId() {
-        return orgId;
+        return this.orgId;
     }
 
     /**
      * 组织机构
-     * @param orgId the value for SYSTEM_ROLE.ORG_ID
+     * @param orgId
      */
     public void setOrgId(String orgId) {
-        this.orgId = orgId == null ? null : orgId.trim();
+        this.orgId = orgId;
     }
 
     /**
      * 角色描述
-     * @return  the value of SYSTEM_ROLE.ROLE_DESC
+     * @return roleDesc
      */
     public String getRoleDesc() {
-        return roleDesc;
+        return this.roleDesc;
     }
 
     /**
      * 角色描述
-     * @param roleDesc the value for SYSTEM_ROLE.ROLE_DESC
+     * @param roleDesc
      */
     public void setRoleDesc(String roleDesc) {
-        this.roleDesc = roleDesc == null ? null : roleDesc.trim();
+        this.roleDesc = roleDesc;
     }
 
     /**
      * 角色类型
-     * @return  the value of SYSTEM_ROLE.ROLE_TYPE
+     * @return roleType
      */
     public String getRoleType() {
-        return roleType;
+        return this.roleType;
     }
 
     /**
      * 角色类型
-     * @param roleType the value for SYSTEM_ROLE.ROLE_TYPE
+     * @param roleType
      */
     public void setRoleType(String roleType) {
-        this.roleType = roleType == null ? null : roleType.trim();
+        this.roleType = roleType;
     }
-
 
     /**
      * 角色状态：0：正常1：禁用
-     * @return  the value of SYSTEM_ROLE.ROLE_STATUS
+     * @return roleStatus
      */
     public String getRoleStatus() {
-        return roleStatus;
+        return this.roleStatus;
     }
 
     /**
      * 角色状态：0：正常1：禁用
-     * @param roleStatus the value for SYSTEM_ROLE.ROLE_STATUS
+     * @param roleStatus
      */
     public void setRoleStatus(String roleStatus) {
-        this.roleStatus = roleStatus == null ? null : roleStatus.trim();
+        this.roleStatus = roleStatus;
     }
 
     /**
      * 角色创建时间
-     * @return  the value of SYSTEM_ROLE.ROLE_CREATE_TIME
+     * @return roleCreateTime
      */
     public Timestamp getRoleCreateTime() {
-        return roleCreateTime;
+        return this.roleCreateTime;
     }
 
     /**
      * 角色创建时间
-     * @param roleCreateTime the value for SYSTEM_ROLE.ROLE_CREATE_TIME
+     * @param roleCreateTime
      */
     public void setRoleCreateTime(Timestamp roleCreateTime) {
         this.roleCreateTime = roleCreateTime;
     }
 
-	@Override
-	public String toString() {
-		return "SystemRoleVO [roleId=" + roleId + ", roleName=" + roleName
-				+ ", orgId=" + orgId + ", roleDesc=" + roleDesc + ", roleType="
-				+ roleType + ", roleStatus=" + roleStatus + ", roleCreateTime="
-				+ roleCreateTime + "]";
-	}
-
+    @java.lang.Override
+    public java.lang.String toString() {
+        final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemRoleVO{");
+        sb.append("roleId=").append(roleId);
+        sb.append(", roleName='").append(roleName).append('\'');
+        sb.append(", orgId='").append(orgId).append('\'');
+        sb.append(", roleDesc='").append(roleDesc).append('\'');
+        sb.append(", roleType='").append(roleType).append('\'');
+        sb.append(", roleStatus='").append(roleStatus).append('\'');
+        sb.append(", roleCreateTime=").append(roleCreateTime);
+        sb.append('}');
+        return sb.toString();
+    }
 }

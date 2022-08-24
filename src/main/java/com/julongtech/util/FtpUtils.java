@@ -1,4 +1,4 @@
-package com.common.util;
+package com.julongtech.util;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;

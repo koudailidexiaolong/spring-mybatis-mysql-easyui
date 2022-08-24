@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
+import com.julongtech.system.action.vo.SystemLoggerExptionVO;
 import com.julongtech.system.action.vo.SystemLoggerVO;
+import com.julongtech.system.service.SystemLoggerExptionService;
 import com.julongtech.system.service.SystemLoggerService;
 import com.julongtech.system.session.UserSession;
 /**
@@ -24,6 +26,11 @@ public class SystemLoggerManager {
 	
 	@Autowired
 	private SystemLoggerService systemLoggerServiceImpl;
+	
+	@Autowired
+	private SystemLoggerExptionService systemLoggerExptionServiceImpl;
+	
+	
 	/**
 	 * 新增日志接口
 	 * @param systemLoggerVO
@@ -34,15 +41,42 @@ public class SystemLoggerManager {
 	 */
 	public  int saveSystemLogger(SystemLoggerVO systemLoggerVO,UserSession userSession) {
 		// TODO Auto-generated method stub
-		logger.debug("【系统日志】-新增日志信息输入参数：{}",systemLoggerVO);
+		logger.debug("【系统日志】-新增日志信息输入参数systemLoggerVO：{}",systemLoggerVO);
+		int result = -1;
 		try {
-			return this.systemLoggerServiceImpl.saveSystemLogger(systemLoggerVO,userSession);
+			result = this.systemLoggerServiceImpl.saveSystemLogger(systemLoggerVO,userSession);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("新增日志信息发生异常", e);
+			return result;
 		}
-		return -1;
+		return result;
 	}
+	
+	/**
+	 * 新增异常日志接口
+	 * @param systemLoggerExptionVO
+	 * @param userSession
+	 * @return
+	 * @author julong
+	 * @date 2017-10-18 下午5:28:47
+	 */
+	public  int saveSystemLoggerExption(SystemLoggerExptionVO systemLoggerExptionVO,UserSession userSession) {
+		// TODO Auto-generated method stub
+		logger.debug("【系统日志】-新增日志信息输入参数systemLoggerExptionVO：{}",systemLoggerExptionVO);
+		int result = -1;
+		try {
+			result = this.systemLoggerExptionServiceImpl.saveSystemLoggerExption(systemLoggerExptionVO,userSession);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			logger.error("新增日志信息发生异常", e);
+			return result;
+		}
+		return result;
+	}
+	
+	
+	
 	/**
 	 * 生成序列信息的方法
 	 * @param code 可以是组织机构 也可以是 表名首字母 此参数可传也可以不传

@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.common.util.DateUtils;
 import com.julongtech.system.action.vo.SystemOrgVO;
 import com.julongtech.system.dao.SystemOrgDao;
 import com.julongtech.system.dao.entity.SystemOrgInfo;
@@ -17,6 +16,7 @@ import com.julongtech.system.service.SystemOrgService;
 import com.julongtech.system.service.dto.SystemOrgDTO;
 import com.julongtech.system.session.UserSession;
 import com.julongtech.system.util.DefaultUtil;
+import com.julongtech.util.DateUtils;
 /**
  * 组织机构模块
  * @author julong

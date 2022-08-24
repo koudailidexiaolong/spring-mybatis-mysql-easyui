@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.common.util.DateUtils;
 import com.julongtech.system.action.vo.SystemRoleMenuMappedVO;
 import com.julongtech.system.dao.SystemRoleButtonMappedDao;
 import com.julongtech.system.dao.SystemRoleMenuMappedDao;
@@ -19,6 +18,7 @@ import com.julongtech.system.service.SystemRoleMenuMappedService;
 import com.julongtech.system.service.dto.SystemRoleMenuMappedDTO;
 import com.julongtech.system.session.UserSession;
 import com.julongtech.system.util.DefaultUtil;
+import com.julongtech.util.DateUtils;
 /**
  * 角色菜单关系模块
  * @author julong

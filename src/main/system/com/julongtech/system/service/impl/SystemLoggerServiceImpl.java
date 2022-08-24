@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.common.util.DateUtils;
 import com.julongtech.system.action.vo.SystemLoggerVO;
 import com.julongtech.system.dao.SystemLoggerDao;
 import com.julongtech.system.dao.SystemSequenceDao;
@@ -15,6 +14,7 @@ import com.julongtech.system.dao.entity.SystemLoggerInfo;
 import com.julongtech.system.service.SystemLoggerService;
 import com.julongtech.system.service.dto.SystemLoggerDTO;
 import com.julongtech.system.session.UserSession;
+import com.julongtech.util.DateUtils;
 
 /**
  * 系统日志业务类

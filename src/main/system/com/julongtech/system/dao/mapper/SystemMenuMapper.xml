@@ -12,12 +12,12 @@
     <result column="MENU_URL" property="menuUrl" jdbcType="VARCHAR" />
     <result column="MENU_CREATE_TIME" property="menuCreateTime" jdbcType="TIMESTAMP" />
     <result column="USER_ID" property="userId" jdbcType="VARCHAR" />
-    <result column="MENU_CREATE_USER_NAME" property="menuCreateUserName" jdbcType="VARCHAR" />
     <result column="MENU_ICO" property="menuIco" jdbcType="VARCHAR" />
     <result column="MENU_LEVEL" property="menuLevel" jdbcType="VARCHAR" />
     <result column="MENU_RESERVE_A" property="menuReserveA" jdbcType="VARCHAR" />
     <result column="MENU_RESERVE_B" property="menuReserveB" jdbcType="VARCHAR" />
     <result column="MENU_RESERVE_C" property="menuReserveC" jdbcType="VARCHAR" />
+    <result column="MENU_CREATE_USER_NAME" property="menuCreateUserName" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     menu_id, menu_name, menu_code, menu_father_id, menu_order, menu_status, menu_update_time, 

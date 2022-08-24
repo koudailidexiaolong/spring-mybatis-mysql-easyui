@@ -63,56 +63,77 @@ public class SystemLoggerExptionVO  implements Serializable{
     /** 
      * 日志描述
      */
-    private String loggerExptionDesc;
+    private String loggerExptionDescription;
 
     /** 
      * 日志异常信息
      */
     private String loggerExptionContext;
 
+
+    /** 
+	 * 使用的操作系统
+	 */
+	private String loggerOperatingSystem;
+
+	/** 
+	 * 浏览器类型
+	 */
+	private String loggerBrowserType;
+
+	/** 
+	 * 浏览器版本
+	 */
+	private String loggerBrowserVersion;
+	
+	/** 
+	 * 访问响应时间 毫秒
+	 */
+	private String loggerResponseTime;
+
     /**
      * 日志编号:类型+年+月+日+时+分+秒+毫秒+6位序列
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_ID
+     * @return loggerExptionId
      */
     public String getLoggerExptionId() {
-        return loggerExptionId;
+        return this.loggerExptionId;
     }
 
     /**
      * 日志编号:类型+年+月+日+时+分+秒+毫秒+6位序列
-     * @param loggerExptionId the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_ID
+     * @param loggerExptionId
      */
     public void setLoggerExptionId(String loggerExptionId) {
-        this.loggerExptionId = loggerExptionId == null ? null : loggerExptionId.trim();
+        this.loggerExptionId = loggerExptionId;
     }
 
     /**
      * 日志类型
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_TYPE
+     * @return loggerExptionType
      */
     public String getLoggerExptionType() {
-        return loggerExptionType;
+        return this.loggerExptionType;
     }
 
     /**
      * 日志类型
-     * @param loggerExptionType the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_TYPE
+     * @param loggerExptionType
      */
     public void setLoggerExptionType(String loggerExptionType) {
-        this.loggerExptionType = loggerExptionType == null ? null : loggerExptionType.trim();
+        this.loggerExptionType = loggerExptionType;
     }
 
     /**
      * 日志创建时间
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_TIME
+     * @return loggerExptionTime
      */
     public Timestamp getLoggerExptionTime() {
-        return loggerExptionTime;
+        return this.loggerExptionTime;
     }
 
     /**
      * 日志创建时间
-     * @param loggerExptionTime the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_TIME
+     * @param loggerExptionTime
      */
     public void setLoggerExptionTime(Timestamp loggerExptionTime) {
         this.loggerExptionTime = loggerExptionTime;
@@ -120,144 +141,176 @@ public class SystemLoggerExptionVO  implements Serializable{
 
     /**
      * 组织机构
-     * @return  the value of SYSTEM_LOGGER_EXPTION.ORG_ID
+     * @return orgId
      */
     public String getOrgId() {
-        return orgId;
+        return this.orgId;
     }
 
     /**
      * 组织机构
-     * @param orgId the value for SYSTEM_LOGGER_EXPTION.ORG_ID
+     * @param orgId
      */
     public void setOrgId(String orgId) {
-        this.orgId = orgId == null ? null : orgId.trim();
+        this.orgId = orgId;
     }
 
     /**
      * 用户编号
-     * @return  the value of SYSTEM_LOGGER_EXPTION.USER_ID
+     * @return userId
      */
     public String getUserId() {
-        return userId;
+        return this.userId;
     }
 
     /**
      * 用户编号
-     * @param userId the value for SYSTEM_LOGGER_EXPTION.USER_ID
+     * @param userId
      */
     public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+        this.userId = userId;
     }
 
     /**
      * 用户姓名
-     * @return  the value of SYSTEM_LOGGER_EXPTION.USER_NAME
+     * @return userName
      */
     public String getUserName() {
-        return userName;
+        return this.userName;
     }
 
     /**
      * 用户姓名
-     * @param userName the value for SYSTEM_LOGGER_EXPTION.USER_NAME
+     * @param userName
      */
     public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
+        this.userName = userName;
     }
 
     /**
      * 日志IP
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_IP
+     * @return loggerExptionIp
      */
     public String getLoggerExptionIp() {
-        return loggerExptionIp;
+        return this.loggerExptionIp;
     }
 
     /**
      * 日志IP
-     * @param loggerExptionIp the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_IP
+     * @param loggerExptionIp
      */
     public void setLoggerExptionIp(String loggerExptionIp) {
-        this.loggerExptionIp = loggerExptionIp == null ? null : loggerExptionIp.trim();
+        this.loggerExptionIp = loggerExptionIp;
     }
 
     /**
      * 日志调用模块
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_MODULE
+     * @return loggerExptionModule
      */
     public String getLoggerExptionModule() {
-        return loggerExptionModule;
+        return this.loggerExptionModule;
     }
 
     /**
      * 日志调用模块
-     * @param loggerExptionModule the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_MODULE
+     * @param loggerExptionModule
      */
     public void setLoggerExptionModule(String loggerExptionModule) {
-        this.loggerExptionModule = loggerExptionModule == null ? null : loggerExptionModule.trim();
+        this.loggerExptionModule = loggerExptionModule;
     }
 
     /**
      * 日志调用模块方法
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_METHOD
+     * @return loggerExptionMethod
      */
     public String getLoggerExptionMethod() {
-        return loggerExptionMethod;
+        return this.loggerExptionMethod;
     }
 
     /**
      * 日志调用模块方法
-     * @param loggerExptionMethod the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_METHOD
+     * @param loggerExptionMethod
      */
     public void setLoggerExptionMethod(String loggerExptionMethod) {
-        this.loggerExptionMethod = loggerExptionMethod == null ? null : loggerExptionMethod.trim();
+        this.loggerExptionMethod = loggerExptionMethod;
     }
 
     /**
      * 日志描述
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_DESC
+     * @return loggerExptionDescription
      */
-    public String getLoggerExptionDesc() {
-        return loggerExptionDesc;
+    public String getLoggerExptionDescription() {
+        return this.loggerExptionDescription;
     }
 
     /**
      * 日志描述
-     * @param loggerExptionDesc the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_DESC
+     * @param loggerExptionDescription
      */
-    public void setLoggerExptionDesc(String loggerExptionDesc) {
-        this.loggerExptionDesc = loggerExptionDesc == null ? null : loggerExptionDesc.trim();
+    public void setLoggerExptionDescription(String loggerExptionDescription) {
+        this.loggerExptionDescription = loggerExptionDescription;
     }
 
     /**
      * 日志异常信息
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_CONTEXT
+     * @return loggerExptionContext
      */
     public String getLoggerExptionContext() {
-        return loggerExptionContext;
+        return this.loggerExptionContext;
     }
 
     /**
      * 日志异常信息
-     * @param loggerExptionContext the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_CONTEXT
+     * @param loggerExptionContext
      */
     public void setLoggerExptionContext(String loggerExptionContext) {
-        this.loggerExptionContext = loggerExptionContext == null ? null : loggerExptionContext.trim();
+        this.loggerExptionContext = loggerExptionContext;
     }
+
+	public String getLoggerOperatingSystem() {
+		return loggerOperatingSystem;
+	}
+
+	public void setLoggerOperatingSystem(String loggerOperatingSystem) {
+		this.loggerOperatingSystem = loggerOperatingSystem;
+	}
+
+	public String getLoggerBrowserType() {
+		return loggerBrowserType;
+	}
+
+	public void setLoggerBrowserType(String loggerBrowserType) {
+		this.loggerBrowserType = loggerBrowserType;
+	}
+
+	public String getLoggerBrowserVersion() {
+		return loggerBrowserVersion;
+	}
+
+	public void setLoggerBrowserVersion(String loggerBrowserVersion) {
+		this.loggerBrowserVersion = loggerBrowserVersion;
+	}
+
+	public String getLoggerResponseTime() {
+		return loggerResponseTime;
+	}
+
+	public void setLoggerResponseTime(String loggerResponseTime) {
+		this.loggerResponseTime = loggerResponseTime;
+	}
 
 	@Override
 	public String toString() {
-		return "SystemLoggerExptionDTO [loggerExptionId=" + loggerExptionId
-				+ ", loggerExptionType=" + loggerExptionType
-				+ ", loggerExptionTime=" + loggerExptionTime + ", orgId="
-				+ orgId + ", userId=" + userId + ", userName=" + userName
-				+ ", loggerExptionIp=" + loggerExptionIp
-				+ ", loggerExptionModule=" + loggerExptionModule
-				+ ", loggerExptionMethod=" + loggerExptionMethod
-				+ ", loggerExptionDesc=" + loggerExptionDesc
-				+ ", loggerExptionContext=" + loggerExptionContext + "]";
+		return "SystemLoggerExptionVO [loggerExptionId=" + loggerExptionId + ", loggerExptionType=" + loggerExptionType
+				+ ", loggerExptionTime=" + loggerExptionTime + ", orgId=" + orgId + ", userId=" + userId + ", userName="
+				+ userName + ", loggerExptionIp=" + loggerExptionIp + ", loggerExptionModule=" + loggerExptionModule
+				+ ", loggerExptionMethod=" + loggerExptionMethod + ", loggerExptionDescription="
+				+ loggerExptionDescription + ", loggerExptionContext=" + loggerExptionContext
+				+ ", loggerOperatingSystem=" + loggerOperatingSystem + ", loggerBrowserType=" + loggerBrowserType
+				+ ", loggerBrowserVersion=" + loggerBrowserVersion + ", loggerResponseTime=" + loggerResponseTime + "]";
 	}
 
-    
+	
+
+  
 }

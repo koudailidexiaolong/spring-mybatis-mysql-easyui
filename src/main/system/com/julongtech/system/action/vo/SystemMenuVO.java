@@ -60,81 +60,82 @@ public class SystemMenuVO implements Serializable{
      */
     private String menuLevel;
 
+
     /**
      * 菜单编号
-     * @return  the value of SYSTEM_MENU.MENU_ID
+     * @return menuId
      */
     public String getMenuId() {
-        return menuId;
+        return this.menuId;
     }
 
     /**
      * 菜单编号
-     * @param menuId the value for SYSTEM_MENU.MENU_ID
+     * @param menuId
      */
     public void setMenuId(String menuId) {
-        this.menuId = menuId == null ? null : menuId.trim();
+        this.menuId = menuId;
     }
 
     /**
      * 菜单名称
-     * @return  the value of SYSTEM_MENU.MENU_NAME
+     * @return menuName
      */
     public String getMenuName() {
-        return menuName;
+        return this.menuName;
     }
 
     /**
      * 菜单名称
-     * @param menuName the value for SYSTEM_MENU.MENU_NAME
+     * @param menuName
      */
     public void setMenuName(String menuName) {
-        this.menuName = menuName == null ? null : menuName.trim();
+        this.menuName = menuName;
     }
 
     /**
      * 菜单代码
-     * @return  the value of SYSTEM_MENU.MENU_CODE
+     * @return menuCode
      */
     public String getMenuCode() {
-        return menuCode;
+        return this.menuCode;
     }
 
     /**
      * 菜单代码
-     * @param menuCode the value for SYSTEM_MENU.MENU_CODE
+     * @param menuCode
      */
     public void setMenuCode(String menuCode) {
-        this.menuCode = menuCode == null ? null : menuCode.trim();
+        this.menuCode = menuCode;
     }
 
     /**
      * 菜单父节点
-     * @return  the value of SYSTEM_MENU.MENU_FATHER_ID
+     * @return menuFatherId
      */
     public String getMenuFatherId() {
-        return menuFatherId;
+        return this.menuFatherId;
     }
 
     /**
      * 菜单父节点
-     * @param menuFatherId the value for SYSTEM_MENU.MENU_FATHER_ID
+     * @param menuFatherId
      */
     public void setMenuFatherId(String menuFatherId) {
-        this.menuFatherId = menuFatherId == null ? null : menuFatherId.trim();
+        this.menuFatherId = menuFatherId;
     }
 
     /**
      * 菜单顺序
-     * @return  the value of SYSTEM_MENU.MENU_ORDER
+     * @return menuOrder
      */
     public BigDecimal getMenuOrder() {
-        return menuOrder;
+        return this.menuOrder;
     }
 
     /**
      * 菜单顺序
-     * @param menuOrder the value for SYSTEM_MENU.MENU_ORDER
+     * @param menuOrder
      */
     public void setMenuOrder(BigDecimal menuOrder) {
         this.menuOrder = menuOrder;
@@ -142,88 +143,94 @@ public class SystemMenuVO implements Serializable{
 
     /**
      * 菜单状态：0正常1禁用
-     * @return  the value of SYSTEM_MENU.MENU_STATUS
+     * @return menuStatus
      */
     public String getMenuStatus() {
-        return menuStatus;
+        return this.menuStatus;
     }
 
     /**
      * 菜单状态：0正常1禁用
-     * @param menuStatus the value for SYSTEM_MENU.MENU_STATUS
+     * @param menuStatus
      */
     public void setMenuStatus(String menuStatus) {
-        this.menuStatus = menuStatus == null ? null : menuStatus.trim();
+        this.menuStatus = menuStatus;
     }
-
 
     /**
      * 菜单地址URL
-     * @return  the value of SYSTEM_MENU.MENU_URL
+     * @return menuUrl
      */
     public String getMenuUrl() {
-        return menuUrl;
+        return this.menuUrl;
     }
 
     /**
      * 菜单地址URL
-     * @param menuUrl the value for SYSTEM_MENU.MENU_URL
+     * @param menuUrl
      */
     public void setMenuUrl(String menuUrl) {
-        this.menuUrl = menuUrl == null ? null : menuUrl.trim();
+        this.menuUrl = menuUrl;
     }
 
     /**
      * 菜单图标
-     * @return  the value of SYSTEM_MENU.MENU_ICO
+     * @return menuIco
      */
     public String getMenuIco() {
-        return menuIco;
+        return this.menuIco;
     }
 
     /**
      * 菜单图标
-     * @param menuIco the value for SYSTEM_MENU.MENU_ICO
+     * @param menuIco
      */
     public void setMenuIco(String menuIco) {
-        this.menuIco = menuIco == null ? null : menuIco.trim();
+        this.menuIco = menuIco;
     }
 
     /**
      * 是否有子节点
-     * @return  the value of SYSTEM_MENU.MENU_LEVEL
+     * @return menuLevel
      */
     public String getMenuLevel() {
-        return menuLevel;
+        return this.menuLevel;
     }
 
     /**
      * 是否有子节点
-     * @param menuLevel the value for SYSTEM_MENU.MENU_LEVEL
+     * @param menuLevel
      */
     public void setMenuLevel(String menuLevel) {
-        this.menuLevel = menuLevel == null ? null : menuLevel.trim();
+        this.menuLevel = menuLevel;
     }
-    
-    
-	public SystemMenuVO() {
-		super();
-	}
-
-	public SystemMenuVO(String menuId, String menuFatherId) {
-		super();
-		this.menuId = menuId;
-		this.menuFatherId = menuFatherId;
-	}
-
-	@Override
-	public String toString() {
-		return "SystemMenuDTO [menuId=" + menuId + ", menuName=" + menuName
-				+ ", menuCode=" + menuCode + ", menuFatherId=" + menuFatherId
-				+ ", menuOrder=" + menuOrder + ", menuStatus=" + menuStatus
-				+ ", menuUrl=" + menuUrl + ", menuIco=" + menuIco
-				+ ", menuLevel=" + menuLevel + "]";
-	}
 
     
+    
+   	public SystemMenuVO() {
+   		super();
+   	}
+
+   	public SystemMenuVO(String menuId, String menuFatherId) {
+   		super();
+   		this.menuId = menuId;
+   		this.menuFatherId = menuFatherId;
+   	}
+
+    
+    @java.lang.Override
+    public java.lang.String toString() {
+        final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemMenuVO{");
+        sb.append("menuId='").append(menuId).append('\'');
+        sb.append(", menuName='").append(menuName).append('\'');
+        sb.append(", menuCode='").append(menuCode).append('\'');
+        sb.append(", menuFatherId='").append(menuFatherId).append('\'');
+        sb.append(", menuOrder=").append(menuOrder);
+        sb.append(", menuStatus='").append(menuStatus).append('\'');
+        sb.append(", menuUrl='").append(menuUrl).append('\'');
+        sb.append(", menuIco='").append(menuIco).append('\'');
+        sb.append(", menuLevel='").append(menuLevel).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

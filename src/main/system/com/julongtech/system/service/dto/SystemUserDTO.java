@@ -11,503 +11,548 @@ import com.fasterxml.jackson.annotation.JsonFormat;
  * @date Mon Oct 16 15:08:21 CST 2017
  */
 public class SystemUserDTO  implements Serializable{
-    /**
+	/**
 	 * @author julong
 	 * @date 2017-10-16 下午3:54:54
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/** 
-     * 用户登录名
-     */
-    private String userId;
+	 * 用户登录名
+	 */
+	private String userId;
 
-    /** 
-     * 组织机构编码
-     */
-    private String orgId;
+	/** 
+	 * 组织机构编码
+	 */
+	private String orgId;
 
-    /** 
-     * 用户登录密码
-     */
-    private String userPassword;
+	/** 
+	 * 用户登录密码
+	 */
+	private String userPassword;
 
-    /** 
-     * 用户姓名
-     */
-    private String userName;
+	/** 
+	 * 用户姓名
+	 */
+	private String userName;
 
-    /** 
-     * 用户年龄：1-999
-     */
-    private String userAge;
+	/** 
+	 * 用户年龄：1-999
+	 */
+	private String userAge;
 
-    /** 
-     * 用户性别：0：男 1：女2：未知
-     */
-    private String userSex;
+	/** 
+	 * 用户性别：0：男 1：女2：未知
+	 */
+	private String userSex;
 
-    /** 
-     * 用户身份证号码
-     */
-    private String userIdentity;
+	/** 
+	 * 用户身份证号码
+	 */
+	private String userIdentity;
 
-    /** 
-     * 用户地址
-     */
-    private String userAddress;
+	/** 
+	 * 用户地址
+	 */
+	private String userAddress;
 
-    /** 
-     * 用户电话
-     */
-    private String userPhone;
+	/** 
+	 * 用户电话
+	 */
+	private String userPhone;
 
-    /** 
-     * 用户邮箱
-     */
-    private String userMail;
+	/** 
+	 * 用户邮箱
+	 */
+	private String userMail;
 
-    /** 
-     * 用户描述
-     */
-    private String userDesc;
+	/** 
+	 * 用户描述
+	 */
+	private String userDesc;
 
-    /** 
-     * 用户图像url
-     */
-    private String userImage;
-   
-    /** 
-     * 用户密码修改时间
-     */
-    private Timestamp userUpdatePasswordTime;
+	/** 
+	 * 用户图像url
+	 */
+	private String userImage;
 
-    /** 
-     * 用户状态：0：正常1：停用
-     */
-    private String userStatus;
+	/** 
+	 * 用户密码修改时间
+	 */
+	private Timestamp userUpdatePasswordTime;
 
-    /** 
-     * 用户皮肤
-     */
-    private String userSkin;
+	/** 
+	 * 用户状态：0：正常1：停用
+	 */
+	private String userStatus;
 
-    /** 
-     * 用户等级
-     */
-    private String userLevel;
+	/** 
+	 * 用户皮肤
+	 */
+	private String userSkin;
 
-    /** 
-     * 用户创建时间
-     */
-    private Timestamp userCreateTime;
+	/** 
+	 * 用户等级
+	 */
+	private String userLevel;
 
-    /** 
-     * 用户创建人
-     */
-    private String userCreateUserId;
-    /** 
-     * 用户创建人
-     */
-    private String userCreateUserName;
-    /** 
-     * 用户修改时间
-     */
-    private Timestamp userUpdateTime;
+	/** 
+	 * 用户创建时间
+	 */
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
+	private Timestamp userCreateTime;
 
-    /** 
-     * 用户修改人
-     */
-    private String userUpdateUserId;
-    /** 
-     * 用户修改人
-     */
-    private String userUpdateUserName;
+	/** 
+	 * 用户创建人
+	 */
+	private String userCreateUserId;
+	/** 
+	 * 用户创建人
+	 */
+	private String userCreateUserName;
+	/** 
+	 * 用户修改时间
+	 */
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
+	private Timestamp userUpdateTime;
 
-    /**
-     * 开始日期
-     * @author julong
-     * @date 2017-12-14 下午2:40:49
-     */
-    private Timestamp beginDate;
-    
-    /**
-     * 结束日期
-     * @author julong
-     * @date 2017-12-14 下午2:40:57
-     */
-    private Timestamp endDate;
+	/** 
+	 * 用户修改人
+	 */
+	private String userUpdateUserId;
+	/** 
+	 * 用户修改人
+	 */
+	private String userUpdateUserName;
 
 	/**
-     * 用户登录名
-     * @return  the value of SYSTEM_USER.USER_ID
-     */
-    public String getUserId() {
-        return userId;
-    }
+	 * 开始日期
+	 * @author julong
+	 * @date 2017-12-14 下午2:40:49
+	 */
+	private Timestamp beginDate;
 
-    /**
-     * 用户登录名
-     * @param userId the value for SYSTEM_USER.USER_ID
-     */
-    public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
-    }
+	/**
+	 * 结束日期
+	 * @author julong
+	 * @date 2017-12-14 下午2:40:57
+	 */
+	private Timestamp endDate;
 
-    /**
-     * 组织机构编码
-     * @return  the value of SYSTEM_USER.ORG_ID
-     */
-    public String getOrgId() {
-        return orgId;
-    }
 
-    /**
-     * 组织机构编码
-     * @param orgId the value for SYSTEM_USER.ORG_ID
-     */
-    public void setOrgId(String orgId) {
-        this.orgId = orgId == null ? null : orgId.trim();
-    }
-
-    /**
-     * 用户登录密码
-     * @return  the value of SYSTEM_USER.USER_PASSWORD
-     */
-    public String getUserPassword() {
-        return userPassword;
-    }
-
-    /**
-     * 用户登录密码
-     * @param userPassword the value for SYSTEM_USER.USER_PASSWORD
-     */
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword == null ? null : userPassword.trim();
-    }
-
-    /**
-     * 用户姓名
-     * @return  the value of SYSTEM_USER.USER_NAME
-     */
-    public String getUserName() {
-        return userName;
-    }
-
-    /**
-     * 用户姓名
-     * @param userName the value for SYSTEM_USER.USER_NAME
-     */
-    public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
-    }
-
-    /**
-     * 用户年龄：1-999
-     * @return  the value of SYSTEM_USER.USER_AGE
-     */
-    public String getUserAge() {
-        return userAge;
-    }
-
-    /**
-     * 用户年龄：1-999
-     * @param userAge the value for SYSTEM_USER.USER_AGE
-     */
-    public void setUserAge(String userAge) {
-        this.userAge = userAge == null ? null : userAge.trim();
-    }
-
-    /**
-     * 用户性别：0：男 1：女2：未知
-     * @return  the value of SYSTEM_USER.USER_SEX
-     */
-    public String getUserSex() {
-        return userSex;
-    }
-
-    /**
-     * 用户性别：0：男 1：女2：未知
-     * @param userSex the value for SYSTEM_USER.USER_SEX
-     */
-    public void setUserSex(String userSex) {
-        this.userSex = userSex == null ? null : userSex.trim();
-    }
-
-    /**
-     * 用户身份证号码
-     * @return  the value of SYSTEM_USER.USER_IDENTITY
-     */
-    public String getUserIdentity() {
-        return userIdentity;
-    }
-
-    /**
-     * 用户身份证号码
-     * @param userIdentity the value for SYSTEM_USER.USER_IDENTITY
-     */
-    public void setUserIdentity(String userIdentity) {
-        this.userIdentity = userIdentity == null ? null : userIdentity.trim();
-    }
-
-    /**
-     * 用户地址
-     * @return  the value of SYSTEM_USER.USER_ADDRESS
-     */
-    public String getUserAddress() {
-        return userAddress;
-    }
-
-    /**
-     * 用户地址
-     * @param userAddress the value for SYSTEM_USER.USER_ADDRESS
-     */
-    public void setUserAddress(String userAddress) {
-        this.userAddress = userAddress == null ? null : userAddress.trim();
-    }
-
-    /**
-     * 用户电话
-     * @return  the value of SYSTEM_USER.USER_PHONE
-     */
-    public String getUserPhone() {
-        return userPhone;
-    }
-
-    /**
-     * 用户电话
-     * @param userPhone the value for SYSTEM_USER.USER_PHONE
-     */
-    public void setUserPhone(String userPhone) {
-        this.userPhone = userPhone == null ? null : userPhone.trim();
-    }
-
-    /**
-     * 用户邮箱
-     * @return  the value of SYSTEM_USER.USER_MAIL
-     */
-    public String getUserMail() {
-        return userMail;
-    }
-
-    /**
-     * 用户邮箱
-     * @param userMail the value for SYSTEM_USER.USER_MAIL
-     */
-    public void setUserMail(String userMail) {
-        this.userMail = userMail == null ? null : userMail.trim();
-    }
-
-    /**
-     * 用户描述
-     * @return  the value of SYSTEM_USER.USER_DESC
-     */
-    public String getUserDesc() {
-        return userDesc;
-    }
-
-    /**
-     * 用户描述
-     * @param userDesc the value for SYSTEM_USER.USER_DESC
-     */
-    public void setUserDesc(String userDesc) {
-        this.userDesc = userDesc == null ? null : userDesc.trim();
-    }
-
-    /**
-     * 用户图像url
-     * @return  the value of SYSTEM_USER.USER_IMAGE
-     */
-    public String getUserImage() {
-        return userImage;
-    }
-
-    /**
-     * 用户图像url
-     * @param userImage the value for SYSTEM_USER.USER_IMAGE
-     */
-    public void setUserImage(String userImage) {
-        this.userImage = userImage == null ? null : userImage.trim();
-    }
-
-    /**
-     * 用户密码修改时间
-     * @return  the value of SYSTEM_USER.USER_UPDATE_PASSWORD_TIME
-     */
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
-    public Timestamp getUserUpdatePasswordTime() {
-        return userUpdatePasswordTime;
-    }
-
-    /**
-     * 用户密码修改时间
-     * @param userUpdatePasswordTime the value for SYSTEM_USER.USER_UPDATE_PASSWORD_TIME
-     */
-    public void setUserUpdatePasswordTime(Timestamp userUpdatePasswordTime) {
-        this.userUpdatePasswordTime = userUpdatePasswordTime;
-    }
-
-    /**
-     * 用户状态：0：正常1：停用
-     * @return  the value of SYSTEM_USER.USER_STATUS
-     */
-    public String getUserStatus() {
-        return userStatus;
-    }
-
-    /**
-     * 用户状态：0：正常1：停用
-     * @param userStatus the value for SYSTEM_USER.USER_STATUS
-     */
-    public void setUserStatus(String userStatus) {
-        this.userStatus = userStatus == null ? null : userStatus.trim();
-    }
-
-    /**
-     * 用户皮肤
-     * @return  the value of SYSTEM_USER.USER_SKIN
-     */
-    public String getUserSkin() {
-        return userSkin;
-    }
-
-    /**
-     * 用户皮肤
-     * @param userSkin the value for SYSTEM_USER.USER_SKIN
-     */
-    public void setUserSkin(String userSkin) {
-        this.userSkin = userSkin == null ? null : userSkin.trim();
-    }
-
-    /**
-     * 用户等级
-     * @return  the value of SYSTEM_USER.USER_LEVEL
-     */
-    public String getUserLevel() {
-        return userLevel;
-    }
-
-    /**
-     * 用户等级
-     * @param userLevel the value for SYSTEM_USER.USER_LEVEL
-     */
-    public void setUserLevel(String userLevel) {
-        this.userLevel = userLevel == null ? null : userLevel.trim();
-    }
-    /**
-     * 用户创建时间
-     * @return  the value of SYSTEM_USER.USER_CREATE_TIME
-     */
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
-    public Timestamp getUserCreateTime() {
-        return userCreateTime;
-    }
-
-    /**
-     * 用户创建时间
-     * @param userCreateTime the value for SYSTEM_USER.USER_CREATE_TIME
-     */
-    public void setUserCreateTime(Timestamp userCreateTime) {
-        this.userCreateTime = userCreateTime;
-    }
-    /**
-     * 用户创建人
-     * @return  the value of SYSTEM_USER.USER_CREATE_LOGIN_ID
-     */
-    public String getUserCreateUserId() {
-        return userCreateUserId;
-    }
-
-    /**
-     * 用户创建人
-     * @param userCreateUserId the value for SYSTEM_USER.USER_CREATE_LOGIN_ID
-     */
-    public void setUserCreateUserId(String userCreateUserId) {
-        this.userCreateUserId = userCreateUserId == null ? null : userCreateUserId.trim();
-    }
-    
-    /**
-     * 用户修改时间
-     * @return  the value of SYSTEM_USER.USER_UPDATE_TIME
-     */
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
-    public Timestamp getUserUpdateTime() {
-        return userUpdateTime;
-    }
-
-    /**
-     * 用户修改时间
-     * @param userUpdateTime the value for SYSTEM_USER.USER_UPDATE_TIME
-     */
-    public void setUserUpdateTime(Timestamp userUpdateTime) {
-        this.userUpdateTime = userUpdateTime;
-    }
-
-    /**
-     * 用户修改人
-     * @return  the value of SYSTEM_USER.USER_UPDATE_LOGIN_ID
-     */
-    public String getUserUpdateUserId() {
-        return userUpdateUserId;
-    }
-
-    /**
-     * 用户修改人
-     * @param userUpdateUserId the value for SYSTEM_USER.USER_UPDATE_LOGIN_ID
-     */
-    public void setUserUpdateUserId(String userUpdateUserId) {
-        this.userUpdateUserId = userUpdateUserId == null ? null : userUpdateUserId.trim();
-    }
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
-	public Timestamp getBeginDate() {
-		return beginDate;
+	/**
+	 * 用户登录名
+	 * @return userId
+	 */
+	public String getUserId() {
+		return this.userId;
 	}
 
-	public void setBeginDate(Timestamp beginDate) {
-		this.beginDate = beginDate;
-	}
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
-	public Timestamp getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(Timestamp endDate) {
-		this.endDate = endDate;
+	/**
+	 * 用户登录名
+	 * @param userId
+	 */
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
+	/**
+	 * 组织机构编码
+	 * @return orgId
+	 */
+	public String getOrgId() {
+		return this.orgId;
+	}
+
+	/**
+	 * 组织机构编码
+	 * @param orgId
+	 */
+	public void setOrgId(String orgId) {
+		this.orgId = orgId;
+	}
+
+	/**
+	 * 用户登录密码
+	 * @return userPassword
+	 */
+	public String getUserPassword() {
+		return this.userPassword;
+	}
+
+	/**
+	 * 用户登录密码
+	 * @param userPassword
+	 */
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
+
+	/**
+	 * 用户姓名
+	 * @return userName
+	 */
+	public String getUserName() {
+		return this.userName;
+	}
+
+	/**
+	 * 用户姓名
+	 * @param userName
+	 */
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	/**
+	 * 用户年龄：1-999
+	 * @return userAge
+	 */
+	public String getUserAge() {
+		return this.userAge;
+	}
+
+	/**
+	 * 用户年龄：1-999
+	 * @param userAge
+	 */
+	public void setUserAge(String userAge) {
+		this.userAge = userAge;
+	}
+
+	/**
+	 * 用户性别：0：男 1：女2：未知
+	 * @return userSex
+	 */
+	public String getUserSex() {
+		return this.userSex;
+	}
+
+	/**
+	 * 用户性别：0：男 1：女2：未知
+	 * @param userSex
+	 */
+	public void setUserSex(String userSex) {
+		this.userSex = userSex;
+	}
+
+	/**
+	 * 用户身份证号码
+	 * @return userIdentity
+	 */
+	public String getUserIdentity() {
+		return this.userIdentity;
+	}
+
+	/**
+	 * 用户身份证号码
+	 * @param userIdentity
+	 */
+	public void setUserIdentity(String userIdentity) {
+		this.userIdentity = userIdentity;
+	}
+
+	/**
+	 * 用户地址
+	 * @return userAddress
+	 */
+	public String getUserAddress() {
+		return this.userAddress;
+	}
+
+	/**
+	 * 用户地址
+	 * @param userAddress
+	 */
+	public void setUserAddress(String userAddress) {
+		this.userAddress = userAddress;
+	}
+
+	/**
+	 * 用户电话
+	 * @return userPhone
+	 */
+	public String getUserPhone() {
+		return this.userPhone;
+	}
+
+	/**
+	 * 用户电话
+	 * @param userPhone
+	 */
+	public void setUserPhone(String userPhone) {
+		this.userPhone = userPhone;
+	}
+
+	/**
+	 * 用户邮箱
+	 * @return userMail
+	 */
+	public String getUserMail() {
+		return this.userMail;
+	}
+
+	/**
+	 * 用户邮箱
+	 * @param userMail
+	 */
+	public void setUserMail(String userMail) {
+		this.userMail = userMail;
+	}
+
+	/**
+	 * 用户描述
+	 * @return userDesc
+	 */
+	public String getUserDesc() {
+		return this.userDesc;
+	}
+
+	/**
+	 * 用户描述
+	 * @param userDesc
+	 */
+	public void setUserDesc(String userDesc) {
+		this.userDesc = userDesc;
+	}
+
+	/**
+	 * 用户图像url
+	 * @return userImage
+	 */
+	public String getUserImage() {
+		return this.userImage;
+	}
+
+	/**
+	 * 用户图像url
+	 * @param userImage
+	 */
+	public void setUserImage(String userImage) {
+		this.userImage = userImage;
+	}
+
+	/**
+	 * 用户密码修改时间
+	 * @return userUpdatePasswordTime
+	 */
+	public Timestamp getUserUpdatePasswordTime() {
+		return this.userUpdatePasswordTime;
+	}
+
+	/**
+	 * 用户密码修改时间
+	 * @param userUpdatePasswordTime
+	 */
+	public void setUserUpdatePasswordTime(Timestamp userUpdatePasswordTime) {
+		this.userUpdatePasswordTime = userUpdatePasswordTime;
+	}
+
+	/**
+	 * 用户状态：0：正常1：停用
+	 * @return userStatus
+	 */
+	public String getUserStatus() {
+		return this.userStatus;
+	}
+
+	/**
+	 * 用户状态：0：正常1：停用
+	 * @param userStatus
+	 */
+	public void setUserStatus(String userStatus) {
+		this.userStatus = userStatus;
+	}
+
+	/**
+	 * 用户皮肤
+	 * @return userSkin
+	 */
+	public String getUserSkin() {
+		return this.userSkin;
+	}
+
+	/**
+	 * 用户皮肤
+	 * @param userSkin
+	 */
+	public void setUserSkin(String userSkin) {
+		this.userSkin = userSkin;
+	}
+
+	/**
+	 * 用户等级
+	 * @return userLevel
+	 */
+	public String getUserLevel() {
+		return this.userLevel;
+	}
+
+	/**
+	 * 用户等级
+	 * @param userLevel
+	 */
+	public void setUserLevel(String userLevel) {
+		this.userLevel = userLevel;
+	}
+
+	/**
+	 * 用户创建时间
+	 * @return userCreateTime
+	 */
+	public Timestamp getUserCreateTime() {
+		return this.userCreateTime;
+	}
+
+	/**
+	 * 用户创建时间
+	 * @param userCreateTime
+	 */
+	public void setUserCreateTime(Timestamp userCreateTime) {
+		this.userCreateTime = userCreateTime;
+	}
+
+	/**
+	 * 用户创建人
+	 * @return userCreateUserId
+	 */
+	public String getUserCreateUserId() {
+		return this.userCreateUserId;
+	}
+
+	/**
+	 * 用户创建人
+	 * @param userCreateUserId
+	 */
+	public void setUserCreateUserId(String userCreateUserId) {
+		this.userCreateUserId = userCreateUserId;
+	}
+
+	/**
+	 * 用户创建人
+	 * @return userCreateUserName
+	 */
 	public String getUserCreateUserName() {
-		return userCreateUserName;
+		return this.userCreateUserName;
 	}
 
+	/**
+	 * 用户创建人
+	 * @param userCreateUserName
+	 */
 	public void setUserCreateUserName(String userCreateUserName) {
 		this.userCreateUserName = userCreateUserName;
 	}
 
-	public String getUserUpdateUserName() {
-		return userUpdateUserName;
+	/**
+	 * 用户修改时间
+	 * @return userUpdateTime
+	 */
+	public Timestamp getUserUpdateTime() {
+		return this.userUpdateTime;
 	}
 
+	/**
+	 * 用户修改时间
+	 * @param userUpdateTime
+	 */
+	public void setUserUpdateTime(Timestamp userUpdateTime) {
+		this.userUpdateTime = userUpdateTime;
+	}
+
+	/**
+	 * 用户修改人
+	 * @return userUpdateUserId
+	 */
+	public String getUserUpdateUserId() {
+		return this.userUpdateUserId;
+	}
+
+	/**
+	 * 用户修改人
+	 * @param userUpdateUserId
+	 */
+	public void setUserUpdateUserId(String userUpdateUserId) {
+		this.userUpdateUserId = userUpdateUserId;
+	}
+
+	/**
+	 * 用户修改人
+	 * @return userUpdateUserName
+	 */
+	public String getUserUpdateUserName() {
+		return this.userUpdateUserName;
+	}
+
+	/**
+	 * 用户修改人
+	 * @param userUpdateUserName
+	 */
 	public void setUserUpdateUserName(String userUpdateUserName) {
 		this.userUpdateUserName = userUpdateUserName;
 	}
 
-	@Override
-	public String toString() {
-		return "SystemUserDTO [userId=" + userId + ", orgId=" + orgId
-				+ ", userPassword=" + userPassword + ", userName=" + userName
-				+ ", userAge=" + userAge + ", userSex=" + userSex
-				+ ", userIdentity=" + userIdentity + ", userAddress="
-				+ userAddress + ", userPhone=" + userPhone + ", userMail="
-				+ userMail + ", userDesc=" + userDesc + ", userImage="
-				+ userImage + ", userUpdatePasswordTime="
-				+ userUpdatePasswordTime + ", userStatus=" + userStatus
-				+ ", userSkin=" + userSkin + ", userLevel=" + userLevel
-				+ ", userCreateTime=" + userCreateTime + ", userCreateUserId="
-				+ userCreateUserId + ", userCreateUserName="
-				+ userCreateUserName + ", userUpdateTime=" + userUpdateTime
-				+ ", userUpdateUserId=" + userUpdateUserId
-				+ ", userUpdateUserName=" + userUpdateUserName + ", beginDate="
-				+ beginDate + ", endDate=" + endDate + "]";
+	/**
+	 * 开始日期
+	 * @return beginDate
+	 */
+	public Timestamp getBeginDate() {
+		return this.beginDate;
 	}
 
+	/**
+	 * 开始日期
+	 * @param beginDate
+	 */
+	public void setBeginDate(Timestamp beginDate) {
+		this.beginDate = beginDate;
+	}
+
+	/**
+	 * 结束日期
+	 * @return endDate
+	 */
+	public Timestamp getEndDate() {
+		return this.endDate;
+	}
+
+	/**
+	 * 结束日期
+	 * @param endDate
+	 */
+	public void setEndDate(Timestamp endDate) {
+		this.endDate = endDate;
+	}
+
+	@java.lang.Override
+	public java.lang.String toString() {
+		final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemUserDTO{");
+		sb.append("userId='").append(userId).append('\'');
+		sb.append(", orgId='").append(orgId).append('\'');
+		sb.append(", userPassword='").append(userPassword).append('\'');
+		sb.append(", userName='").append(userName).append('\'');
+		sb.append(", userAge='").append(userAge).append('\'');
+		sb.append(", userSex='").append(userSex).append('\'');
+		sb.append(", userIdentity='").append(userIdentity).append('\'');
+		sb.append(", userAddress='").append(userAddress).append('\'');
+		sb.append(", userPhone='").append(userPhone).append('\'');
+		sb.append(", userMail='").append(userMail).append('\'');
+		sb.append(", userDesc='").append(userDesc).append('\'');
+		sb.append(", userImage='").append(userImage).append('\'');
+		sb.append(", userUpdatePasswordTime=").append(userUpdatePasswordTime);
+		sb.append(", userStatus='").append(userStatus).append('\'');
+		sb.append(", userSkin='").append(userSkin).append('\'');
+		sb.append(", userLevel='").append(userLevel).append('\'');
+		sb.append(", userCreateTime=").append(userCreateTime);
+		sb.append(", userCreateUserId='").append(userCreateUserId).append('\'');
+		sb.append(", userCreateUserName='").append(userCreateUserName).append('\'');
+		sb.append(", userUpdateTime=").append(userUpdateTime);
+		sb.append(", userUpdateUserId='").append(userUpdateUserId).append('\'');
+		sb.append(", userUpdateUserName='").append(userUpdateUserName).append('\'');
+		sb.append(", beginDate=").append(beginDate);
+		sb.append(", endDate=").append(endDate);
+		sb.append('}');
+		return sb.toString();
+	}
 }

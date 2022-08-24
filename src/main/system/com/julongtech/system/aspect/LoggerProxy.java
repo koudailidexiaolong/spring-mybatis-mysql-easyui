@@ -24,13 +24,29 @@ public @interface LoggerProxy {
      */
     public LoggerMethod[] method() default {};  
     
-    /**
+    
+ 	/**
+     * 方法描述
+     * @return
+     * @author julong
+     * @date 2018-5-15 下午2:18:56
+     */
+    public String methodDesc() default "";
+	/**
      * 执行的模块名称
      * @return
      * @author julong
      * @date 2018-5-15 下午1:22:08
      */
     public LoggerModule[] module() default {};  
+
+    /**
+     * 模块描述
+     * @return
+     * @author julong
+     * @date 2018-5-15 下午2:19:06
+     */
+    public String moduleDesc() default "";
     
     /**
      * 日志类型
@@ -39,14 +55,23 @@ public @interface LoggerProxy {
      * @date 2018-5-15 上午11:28:52
      */
     public LoggerType[] type() default {};  
+	
+	/**
+     * 方法描述
+     * @return
+     * @author julong
+     * @date 2018-5-15 下午2:18:56
+     */
+    public String typeDesc() default "";
     
     /**
-     * 信息描述
-     * @return
+	 * 信息描述
+	 * @return
      * @author julong
      * @date 2018-5-15 上午11:28:52
      * @desc
      */
     public String description() default "";
+     
     
 }

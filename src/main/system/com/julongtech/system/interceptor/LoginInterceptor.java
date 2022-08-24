@@ -10,8 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.common.util.PropertyPlaceholderUtils;
 import com.julongtech.system.session.UserSession;
+import com.julongtech.util.PropertyPlaceholderUtils;
 
 
 /**

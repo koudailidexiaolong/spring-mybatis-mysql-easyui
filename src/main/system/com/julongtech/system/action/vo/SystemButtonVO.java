@@ -68,172 +68,178 @@ public class SystemButtonVO implements Serializable{
 
     /**
      * 按钮编号
-     * @return  the value of SYSTEM_BUTTON.BUTTON_ID
+     * @return buttonId
      */
     public String getButtonId() {
-        return buttonId;
+        return this.buttonId;
     }
 
     /**
      * 按钮编号
-     * @param buttonId the value for SYSTEM_BUTTON.BUTTON_ID
+     * @param buttonId
      */
     public void setButtonId(String buttonId) {
-        this.buttonId = buttonId == null ? null : buttonId.trim();
+        this.buttonId = buttonId;
     }
 
     /**
      * 按钮名称
-     * @return  the value of SYSTEM_BUTTON.BUTTON_NAME
+     * @return buttonName
      */
     public String getButtonName() {
-        return buttonName;
+        return this.buttonName;
     }
 
     /**
      * 按钮名称
-     * @param buttonName the value for SYSTEM_BUTTON.BUTTON_NAME
+     * @param buttonName
      */
     public void setButtonName(String buttonName) {
-        this.buttonName = buttonName == null ? null : buttonName.trim();
+        this.buttonName = buttonName;
     }
 
     /**
      * 按钮代码
-     * @return  the value of SYSTEM_BUTTON.BUTTON_CODE
+     * @return buttonCode
      */
     public String getButtonCode() {
-        return buttonCode;
+        return this.buttonCode;
     }
 
     /**
      * 按钮代码
-     * @param buttonCode the value for SYSTEM_BUTTON.BUTTON_CODE
+     * @param buttonCode
      */
     public void setButtonCode(String buttonCode) {
-        this.buttonCode = buttonCode == null ? null : buttonCode.trim();
+        this.buttonCode = buttonCode;
     }
 
     /**
      * 按钮地址URL
-     * @return  the value of SYSTEM_BUTTON.BUTTON_URL
+     * @return buttonUrl
      */
     public String getButtonUrl() {
-        return buttonUrl;
+        return this.buttonUrl;
     }
 
     /**
      * 按钮地址URL
-     * @param buttonUrl the value for SYSTEM_BUTTON.BUTTON_URL
+     * @param buttonUrl
      */
     public void setButtonUrl(String buttonUrl) {
-        this.buttonUrl = buttonUrl == null ? null : buttonUrl.trim();
+        this.buttonUrl = buttonUrl;
     }
 
     /**
      * 按钮状态
-     * @return  the value of SYSTEM_BUTTON.BUTTON_STATUS
+     * @return buttonStatus
      */
     public String getButtonStatus() {
-        return buttonStatus;
+        return this.buttonStatus;
     }
 
     /**
      * 按钮状态
-     * @param buttonStatus the value for SYSTEM_BUTTON.BUTTON_STATUS
+     * @param buttonStatus
      */
     public void setButtonStatus(String buttonStatus) {
-        this.buttonStatus = buttonStatus == null ? null : buttonStatus.trim();
+        this.buttonStatus = buttonStatus;
     }
 
     /**
      * 按钮创建人
-     * @return  the value of SYSTEM_BUTTON.USER_ID
+     * @return userId
      */
     public String getUserId() {
-        return userId;
+        return this.userId;
     }
 
     /**
      * 按钮创建人
-     * @param userId the value for SYSTEM_BUTTON.USER_ID
+     * @param userId
      */
     public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+        this.userId = userId;
     }
 
     /**
      * 按钮图标
-     * @return  the value of SYSTEM_BUTTON.BUTTON_ICO
+     * @return buttonIco
      */
     public String getButtonIco() {
-        return buttonIco;
+        return this.buttonIco;
     }
 
     /**
      * 按钮图标
-     * @param buttonIco the value for SYSTEM_BUTTON.BUTTON_ICO
+     * @param buttonIco
      */
     public void setButtonIco(String buttonIco) {
-        this.buttonIco = buttonIco == null ? null : buttonIco.trim();
+        this.buttonIco = buttonIco;
     }
 
     /**
      * 菜单编号
-     * @return  the value of SYSTEM_BUTTON.MENU_ID
+     * @return menuId
      */
     public String getMenuId() {
-        return menuId;
+        return this.menuId;
     }
 
     /**
      * 菜单编号
-     * @param menuId the value for SYSTEM_BUTTON.MENU_ID
+     * @param menuId
      */
     public void setMenuId(String menuId) {
-        this.menuId = menuId == null ? null : menuId.trim();
+        this.menuId = menuId;
     }
 
     /**
      * 按钮顺序
-     * @return  the value of SYSTEM_BUTTON.BUTTON_ORDER
+     * @return buttonOrder
      */
     public BigDecimal getButtonOrder() {
-        return buttonOrder;
+        return this.buttonOrder;
     }
 
     /**
      * 按钮顺序
-     * @param buttonOrder the value for SYSTEM_BUTTON.BUTTON_ORDER
+     * @param buttonOrder
      */
     public void setButtonOrder(BigDecimal buttonOrder) {
         this.buttonOrder = buttonOrder;
     }
 
-
     /**
      * 按钮节点
-     * @return  the value of SYSTEM_BUTTON.BUTTON_FATHER
+     * @return buttonFather
      */
     public String getButtonFather() {
-        return buttonFather;
+        return this.buttonFather;
     }
 
     /**
      * 按钮节点
-     * @param buttonFather the value for SYSTEM_BUTTON.BUTTON_FATHER
+     * @param buttonFather
      */
     public void setButtonFather(String buttonFather) {
-        this.buttonFather = buttonFather == null ? null : buttonFather.trim();
+        this.buttonFather = buttonFather;
     }
 
-	@Override
-	public String toString() {
-		return "SystemButtonDTO [buttonId=" + buttonId + ", buttonName="
-				+ buttonName + ", buttonCode=" + buttonCode + ", buttonUrl="
-				+ buttonUrl + ", buttonStatus=" + buttonStatus + ", userId="
-				+ userId + ", buttonIco=" + buttonIco + ", menuId=" + menuId
-				+ ", buttonOrder=" + buttonOrder + ", buttonFather="
-				+ buttonFather + "]";
-	}
+    @java.lang.Override
+    public java.lang.String toString() {
+        final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemButtonVO{");
+        sb.append("buttonId='").append(buttonId).append('\'');
+        sb.append(", buttonName='").append(buttonName).append('\'');
+        sb.append(", buttonCode='").append(buttonCode).append('\'');
+        sb.append(", buttonUrl='").append(buttonUrl).append('\'');
+        sb.append(", buttonStatus='").append(buttonStatus).append('\'');
+        sb.append(", userId='").append(userId).append('\'');
+        sb.append(", buttonIco='").append(buttonIco).append('\'');
+        sb.append(", menuId='").append(menuId).append('\'');
+        sb.append(", buttonOrder=").append(buttonOrder);
+        sb.append(", buttonFather='").append(buttonFather).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

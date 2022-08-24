@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.common.page.PageParam;
-import com.common.page.PageUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.julongtech.page.PageParam;
+import com.julongtech.page.PageUtils;
 import com.julongtech.system.action.vo.SystemMenuVO;
 import com.julongtech.system.aspect.LoggerMethod;
 import com.julongtech.system.aspect.LoggerModule;
@@ -56,7 +56,7 @@ public class SystemMenuAction {
 	 */
 	@RequestMapping("/sendMenu")
 	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_MENU,description="跳转不同菜单")
-	public String sendMenu(@RequestParam("menuURL") String menuURL){
+	public String sendMenu(@RequestParam("menuURL") String menuURL) throws Exception{
 		logger.info("【界面跳转】:输入参数menuURL:{}",menuURL);
 		//请求转发
 		return "forward:"+menuURL;

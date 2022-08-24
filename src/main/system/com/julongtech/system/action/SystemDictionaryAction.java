@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.common.page.PageParam;
-import com.common.page.PageUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.julongtech.page.PageParam;
+import com.julongtech.page.PageUtils;
 import com.julongtech.system.action.vo.SystemDictionaryVO;
 import com.julongtech.system.aspect.LoggerMethod;
 import com.julongtech.system.aspect.LoggerModule;

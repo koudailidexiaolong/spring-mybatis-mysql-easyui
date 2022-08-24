@@ -45,20 +45,12 @@
     LEFT JOIN system_user c ON c.user_id = a.dictionary_update_user_id
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    SELECT 
-	   <include refid="Base_Column_List"></include>
-	   <include refid="add_sql"></include>
-    FROM 
-    	(<include refid="join_sql"></include>) as H
+    <include refid="join_sql"></include>
     WHERE dictionary_id = #{dictionaryId,jdbcType=INTEGER}
   </select>
   
   <select id="selectBySelective" resultMap="BaseResultMap" parameterType="com.julongtech.system.service.dto.SystemDictionaryDTO" >
-    SELECT 
-	   <include refid="Base_Column_List"></include>
-	   <include refid="add_sql"></include>
-    FROM 
-    	(<include refid="join_sql"></include>) as H
+    <include refid="join_sql"></include>
     <where>
       <if test="dictionaryId != null and dictionaryId != ''" >
         AND dictionary_id = #{dictionaryId,jdbcType=INTEGER}
@@ -187,10 +179,6 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-    <!--  <if test="dictionaryId != null and dictionaryId != '' " >
-	        #{dictionaryId,jdbcType=INTEGER},
-	      </if>
-       -->
       <if test="dictionaryType != null and dictionaryType != '' " >
         #{dictionaryType,jdbcType=VARCHAR},
       </if>

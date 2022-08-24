@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.common.util.DateUtils;
 import com.julongtech.system.action.vo.SystemUserRoleMappedVO;
 import com.julongtech.system.dao.SystemUserRoleMappedDao;
 import com.julongtech.system.dao.entity.SystemUserRoleMappedInfo;
@@ -15,6 +14,7 @@ import com.julongtech.system.service.SystemUserRoleMappedService;
 import com.julongtech.system.service.dto.SystemUserRoleMappedDTO;
 import com.julongtech.system.session.UserSession;
 import com.julongtech.system.util.DefaultUtil;
+import com.julongtech.util.DateUtils;
 /**
  * 用户角色映射关系模块
  * @author julong

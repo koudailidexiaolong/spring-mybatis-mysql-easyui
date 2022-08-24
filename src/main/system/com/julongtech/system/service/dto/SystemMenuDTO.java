@@ -68,6 +68,7 @@ public class SystemMenuDTO implements Serializable{
     /** 
      * 菜单创建时间
      */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
     private Timestamp menuCreateTime;
 
     /** 
@@ -83,6 +84,7 @@ public class SystemMenuDTO implements Serializable{
     /** 
      * 菜单修改时间
      */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
     private Timestamp menuUpdateTime;
 
     /** 
@@ -120,82 +122,83 @@ public class SystemMenuDTO implements Serializable{
      * @date 2018-6-13 下午4:34:36
      */
     private List<SystemButtonDTO> button = new ArrayList<SystemButtonDTO>();
-    
+
+
     /**
      * 菜单编号
-     * @return  the value of SYSTEM_MENU.MENU_ID
+     * @return menuId
      */
     public String getMenuId() {
-        return menuId;
+        return this.menuId;
     }
 
     /**
      * 菜单编号
-     * @param menuId the value for SYSTEM_MENU.MENU_ID
+     * @param menuId
      */
     public void setMenuId(String menuId) {
-        this.menuId = menuId == null ? null : menuId.trim();
+        this.menuId = menuId;
     }
 
     /**
      * 菜单名称
-     * @return  the value of SYSTEM_MENU.MENU_NAME
+     * @return menuName
      */
     public String getMenuName() {
-        return menuName;
+        return this.menuName;
     }
 
     /**
      * 菜单名称
-     * @param menuName the value for SYSTEM_MENU.MENU_NAME
+     * @param menuName
      */
     public void setMenuName(String menuName) {
-        this.menuName = menuName == null ? null : menuName.trim();
+        this.menuName = menuName;
     }
 
     /**
      * 菜单代码
-     * @return  the value of SYSTEM_MENU.MENU_CODE
+     * @return menuCode
      */
     public String getMenuCode() {
-        return menuCode;
+        return this.menuCode;
     }
 
     /**
      * 菜单代码
-     * @param menuCode the value for SYSTEM_MENU.MENU_CODE
+     * @param menuCode
      */
     public void setMenuCode(String menuCode) {
-        this.menuCode = menuCode == null ? null : menuCode.trim();
+        this.menuCode = menuCode;
     }
 
     /**
      * 菜单父节点
-     * @return  the value of SYSTEM_MENU.MENU_FATHER_ID
+     * @return menuFatherId
      */
     public String getMenuFatherId() {
-        return menuFatherId;
+        return this.menuFatherId;
     }
 
     /**
      * 菜单父节点
-     * @param menuFatherId the value for SYSTEM_MENU.MENU_FATHER_ID
+     * @param menuFatherId
      */
     public void setMenuFatherId(String menuFatherId) {
-        this.menuFatherId = menuFatherId == null ? null : menuFatherId.trim();
+        this.menuFatherId = menuFatherId;
     }
 
     /**
      * 菜单顺序
-     * @return  the value of SYSTEM_MENU.MENU_ORDER
+     * @return menuOrder
      */
     public BigDecimal getMenuOrder() {
-        return menuOrder;
+        return this.menuOrder;
     }
 
     /**
      * 菜单顺序
-     * @param menuOrder the value for SYSTEM_MENU.MENU_ORDER
+     * @param menuOrder
      */
     public void setMenuOrder(BigDecimal menuOrder) {
         this.menuOrder = menuOrder;
@@ -203,81 +206,79 @@ public class SystemMenuDTO implements Serializable{
 
     /**
      * 菜单状态：0正常1禁用
-     * @return  the value of SYSTEM_MENU.MENU_STATUS
+     * @return menuStatus
      */
     public String getMenuStatus() {
-        return menuStatus;
+        return this.menuStatus;
     }
 
     /**
      * 菜单状态：0正常1禁用
-     * @param menuStatus the value for SYSTEM_MENU.MENU_STATUS
+     * @param menuStatus
      */
     public void setMenuStatus(String menuStatus) {
-        this.menuStatus = menuStatus == null ? null : menuStatus.trim();
+        this.menuStatus = menuStatus;
     }
-
 
     /**
      * 菜单地址URL
-     * @return  the value of SYSTEM_MENU.MENU_URL
+     * @return menuUrl
      */
     public String getMenuUrl() {
-        return menuUrl;
+        return this.menuUrl;
     }
 
     /**
      * 菜单地址URL
-     * @param menuUrl the value for SYSTEM_MENU.MENU_URL
+     * @param menuUrl
      */
     public void setMenuUrl(String menuUrl) {
-        this.menuUrl = menuUrl == null ? null : menuUrl.trim();
+        this.menuUrl = menuUrl;
     }
 
     /**
      * 菜单图标
-     * @return  the value of SYSTEM_MENU.MENU_ICO
+     * @return menuIco
      */
     public String getMenuIco() {
-        return menuIco;
+        return this.menuIco;
     }
 
     /**
      * 菜单图标
-     * @param menuIco the value for SYSTEM_MENU.MENU_ICO
+     * @param menuIco
      */
     public void setMenuIco(String menuIco) {
-        this.menuIco = menuIco == null ? null : menuIco.trim();
+        this.menuIco = menuIco;
     }
 
     /**
      * 是否有子节点
-     * @return  the value of SYSTEM_MENU.MENU_LEVEL
+     * @return menuLevel
      */
     public String getMenuLevel() {
-        return menuLevel;
+        return this.menuLevel;
     }
 
     /**
      * 是否有子节点
-     * @param menuLevel the value for SYSTEM_MENU.MENU_LEVEL
+     * @param menuLevel
      */
     public void setMenuLevel(String menuLevel) {
-        this.menuLevel = menuLevel == null ? null : menuLevel.trim();
+        this.menuLevel = menuLevel;
     }
 
     /**
      * 菜单创建时间
-     * @return  the value of SYSTEM_MENU.MENU_CREATE_TIME
+     * @return menuCreateTime
      */
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
     public Timestamp getMenuCreateTime() {
-        return menuCreateTime;
+        return this.menuCreateTime;
     }
 
     /**
      * 菜单创建时间
-     * @param menuCreateTime the value for SYSTEM_MENU.MENU_CREATE_TIME
+     * @param menuCreateTime
      */
     public void setMenuCreateTime(Timestamp menuCreateTime) {
         this.menuCreateTime = menuCreateTime;
@@ -285,125 +286,169 @@ public class SystemMenuDTO implements Serializable{
 
     /**
      * 菜单创建人
-     * @return  the value of SYSTEM_MENU.USER_ID
+     * @return userId
      */
     public String getUserId() {
-        return userId;
+        return this.userId;
     }
 
     /**
      * 菜单创建人
-     * @param userId the value for SYSTEM_MENU.USER_ID
+     * @param userId
      */
     public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+        this.userId = userId;
     }
 
     /**
-     * 菜单修改时间
-     * @return  the value of SYSTEM_MENU.MENU_UPDATE_TIME
+     * 菜单创建人
+     * @return menuCreateUserName
      */
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
-    public Timestamp getMenuUpdateTime() {
-        return menuUpdateTime;
+    public String getMenuCreateUserName() {
+        return this.menuCreateUserName;
+    }
+
+    /**
+     * 菜单创建人
+     * @param menuCreateUserName
+     */
+    public void setMenuCreateUserName(String menuCreateUserName) {
+        this.menuCreateUserName = menuCreateUserName;
     }
 
     /**
      * 菜单修改时间
-     * @param menuUpdateTime the value for SYSTEM_MENU.MENU_UPDATE_TIME
+     * @return menuUpdateTime
+     */
+    public Timestamp getMenuUpdateTime() {
+        return this.menuUpdateTime;
+    }
+
+    /**
+     * 菜单修改时间
+     * @param menuUpdateTime
      */
     public void setMenuUpdateTime(Timestamp menuUpdateTime) {
         this.menuUpdateTime = menuUpdateTime;
     }
+
     /**
      * 备用字段1
-     * @return  the value of SYSTEM_MENU.MENU_RESERVE_A
+     * @return menuReserveA
      */
     public String getMenuReserveA() {
-        return menuReserveA;
+        return this.menuReserveA;
     }
 
     /**
      * 备用字段1
-     * @param menuReserveA the value for SYSTEM_MENU.MENU_RESERVE_A
+     * @param menuReserveA
      */
     public void setMenuReserveA(String menuReserveA) {
-        this.menuReserveA = menuReserveA == null ? null : menuReserveA.trim();
+        this.menuReserveA = menuReserveA;
     }
 
     /**
      * 备用字段2
-     * @return  the value of SYSTEM_MENU.MENU_RESERVE_B
+     * @return menuReserveB
      */
     public String getMenuReserveB() {
-        return menuReserveB;
+        return this.menuReserveB;
     }
 
     /**
      * 备用字段2
-     * @param menuReserveB the value for SYSTEM_MENU.MENU_RESERVE_B
+     * @param menuReserveB
      */
     public void setMenuReserveB(String menuReserveB) {
-        this.menuReserveB = menuReserveB == null ? null : menuReserveB.trim();
+        this.menuReserveB = menuReserveB;
     }
 
     /**
      * 备用字段3
-     * @return  the value of SYSTEM_MENU.MENU_RESERVE_C
+     * @return menuReserveC
      */
     public String getMenuReserveC() {
-        return menuReserveC;
+        return this.menuReserveC;
     }
 
     /**
      * 备用字段3
-     * @param menuReserveC the value for SYSTEM_MENU.MENU_RESERVE_C
+     * @param menuReserveC
      */
     public void setMenuReserveC(String menuReserveC) {
-        this.menuReserveC = menuReserveC == null ? null : menuReserveC.trim();
+        this.menuReserveC = menuReserveC;
     }
-	public List<SystemMenuDTO> getChildren() {
-		return children;
-	}
 
-	public void setChildren(List<SystemMenuDTO> children) {
-		this.children = children;
-	}
-	
-	public List<SystemButtonDTO> getButton() {
-		return button;
-	}
+    /**
+     * 设置默认是否选中
+     * @return menuChecked
+     */
+    public String getMenuChecked() {
+        return this.menuChecked;
+    }
 
-	public void setButton(List<SystemButtonDTO> button) {
-		this.button = button;
-	}
+    /**
+     * 设置默认是否选中
+     * @param menuChecked
+     */
+    public void setMenuChecked(String menuChecked) {
+        this.menuChecked = menuChecked;
+    }
 
+    /**
+     * 子菜单
+     * @return children
+     */
+    public List<SystemMenuDTO> getChildren() {
+        return this.children;
+    }
 
-	public String getMenuCreateUserName() {
-		return menuCreateUserName;
-	}
+    /**
+     * 子菜单
+     * @param children
+     */
+    public void setChildren(List<SystemMenuDTO> children) {
+        this.children = children;
+    }
 
-	public void setMenuCreateUserName(String menuCreateUserName) {
-		this.menuCreateUserName = menuCreateUserName;
-	}
+    /**
+     * 按钮
+     * @return button
+     */
+    public List<SystemButtonDTO> getButton() {
+        return this.button;
+    }
 
-	public String getMenuChecked() {
-		return menuChecked;
-	}
+    /**
+     * 按钮
+     * @param button
+     */
+    public void setButton(List<SystemButtonDTO> button) {
+        this.button = button;
+    }
 
-	public void setMenuChecked(String menuChecked) {
-		this.menuChecked = menuChecked;
-	}
-
-	@Override
-	public String toString() {
-		return "SystemMenuDTO [menuId=" + menuId + ", menuName=" + menuName + ", menuCode=" + menuCode
-				+ ", menuFatherId=" + menuFatherId + ", menuOrder=" + menuOrder + ", menuStatus=" + menuStatus
-				+ ", menuUrl=" + menuUrl + ", menuIco=" + menuIco + ", menuLevel=" + menuLevel + ", menuCreateTime="
-				+ menuCreateTime + ", userId=" + userId + ", menuCreateUserName=" + menuCreateUserName
-				+ ", menuUpdateTime=" + menuUpdateTime + ", menuReserveA=" + menuReserveA + ", menuReserveB="
-				+ menuReserveB + ", menuReserveC=" + menuReserveC + "]";
-	}
-
-	
+    @java.lang.Override
+    public java.lang.String toString() {
+        final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemMenuDTO{");
+        sb.append("menuId='").append(menuId).append('\'');
+        sb.append(", menuName='").append(menuName).append('\'');
+        sb.append(", menuCode='").append(menuCode).append('\'');
+        sb.append(", menuFatherId='").append(menuFatherId).append('\'');
+        sb.append(", menuOrder=").append(menuOrder);
+        sb.append(", menuStatus='").append(menuStatus).append('\'');
+        sb.append(", menuUrl='").append(menuUrl).append('\'');
+        sb.append(", menuIco='").append(menuIco).append('\'');
+        sb.append(", menuLevel='").append(menuLevel).append('\'');
+        sb.append(", menuCreateTime=").append(menuCreateTime);
+        sb.append(", userId='").append(userId).append('\'');
+        sb.append(", menuCreateUserName='").append(menuCreateUserName).append('\'');
+        sb.append(", menuUpdateTime=").append(menuUpdateTime);
+        sb.append(", menuReserveA='").append(menuReserveA).append('\'');
+        sb.append(", menuReserveB='").append(menuReserveB).append('\'');
+        sb.append(", menuReserveC='").append(menuReserveC).append('\'');
+        sb.append(", menuChecked='").append(menuChecked).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

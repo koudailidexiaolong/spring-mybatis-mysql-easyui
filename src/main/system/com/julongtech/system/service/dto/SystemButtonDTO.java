@@ -67,11 +67,13 @@ public class SystemButtonDTO implements Serializable{
     /** 
      * 按钮创建时间
      */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
     private Timestamp buttonCreateTime;
     
     /** 
      * 按钮修改时间
      */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
     private Timestamp buttonUpdateTime;
 
     /** 
@@ -99,285 +101,283 @@ public class SystemButtonDTO implements Serializable{
      */
     private String buttonCreateUserName;
 
-    
+
     /**
      * 按钮编号
-     * @return  the value of system_menu_button.BUTTON_ID
+     * @return buttonId
      */
     public String getButtonId() {
-        return buttonId;
+        return this.buttonId;
     }
 
     /**
      * 按钮编号
-     * @param buttonId the value for system_menu_button.BUTTON_ID
+     * @param buttonId
      */
     public void setButtonId(String buttonId) {
-        this.buttonId = buttonId == null ? null : buttonId.trim();
+        this.buttonId = buttonId;
     }
 
     /**
      * 按钮名称
-     * @return  the value of system_menu_button.BUTTON_NAME
+     * @return buttonName
      */
     public String getButtonName() {
-        return buttonName;
+        return this.buttonName;
     }
 
     /**
      * 按钮名称
-     * @param buttonName the value for system_menu_button.BUTTON_NAME
+     * @param buttonName
      */
     public void setButtonName(String buttonName) {
-        this.buttonName = buttonName == null ? null : buttonName.trim();
+        this.buttonName = buttonName;
     }
 
     /**
      * 按钮代码
-     * @return  the value of system_menu_button.BUTTON_CODE
+     * @return buttonCode
      */
     public String getButtonCode() {
-        return buttonCode;
+        return this.buttonCode;
     }
 
     /**
      * 按钮代码
-     * @param buttonCode the value for system_menu_button.BUTTON_CODE
+     * @param buttonCode
      */
     public void setButtonCode(String buttonCode) {
-        this.buttonCode = buttonCode == null ? null : buttonCode.trim();
+        this.buttonCode = buttonCode;
     }
 
     /**
      * 按钮地址URL
-     * @return  the value of system_menu_button.BUTTON_URL
+     * @return buttonUrl
      */
     public String getButtonUrl() {
-        return buttonUrl;
+        return this.buttonUrl;
     }
 
     /**
      * 按钮地址URL
-     * @param buttonUrl the value for system_menu_button.BUTTON_URL
+     * @param buttonUrl
      */
     public void setButtonUrl(String buttonUrl) {
-        this.buttonUrl = buttonUrl == null ? null : buttonUrl.trim();
+        this.buttonUrl = buttonUrl;
     }
 
     /**
      * 按钮状态
-     * @return  the value of system_menu_button.BUTTON_STATUS
+     * @return buttonStatus
      */
     public String getButtonStatus() {
-        return buttonStatus;
+        return this.buttonStatus;
     }
 
     /**
      * 按钮状态
-     * @param buttonStatus the value for system_menu_button.BUTTON_STATUS
+     * @param buttonStatus
      */
     public void setButtonStatus(String buttonStatus) {
-        this.buttonStatus = buttonStatus == null ? null : buttonStatus.trim();
+        this.buttonStatus = buttonStatus;
     }
 
     /**
      * 按钮创建人
-     * @return  the value of system_menu_button.USER_ID
+     * @return userId
      */
     public String getUserId() {
-        return userId;
+        return this.userId;
     }
 
     /**
      * 按钮创建人
-     * @param userId the value for system_menu_button.USER_ID
+     * @param userId
      */
     public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+        this.userId = userId;
     }
 
     /**
      * 按钮图标
-     * @return  the value of system_menu_button.BUTTON_ICO
+     * @return buttonIco
      */
     public String getButtonIco() {
-        return buttonIco;
+        return this.buttonIco;
     }
 
     /**
      * 按钮图标
-     * @param buttonIco the value for system_menu_button.BUTTON_ICO
+     * @param buttonIco
      */
     public void setButtonIco(String buttonIco) {
-        this.buttonIco = buttonIco == null ? null : buttonIco.trim();
+        this.buttonIco = buttonIco;
     }
 
     /**
      * 菜单编号
-     * @return  the value of system_menu_button.MENU_ID
+     * @return menuId
      */
     public String getMenuId() {
-        return menuId;
+        return this.menuId;
     }
 
     /**
      * 菜单编号
-     * @param menuId the value for system_menu_button.MENU_ID
+     * @param menuId
      */
     public void setMenuId(String menuId) {
-        this.menuId = menuId == null ? null : menuId.trim();
+        this.menuId = menuId;
     }
 
     /**
      * 按钮顺序
-     * @return  the value of system_menu_button.BUTTON_ORDER
+     * @return buttonOrder
      */
     public BigDecimal getButtonOrder() {
-        return buttonOrder;
+        return this.buttonOrder;
     }
 
     /**
      * 按钮顺序
-     * @param buttonOrder the value for system_menu_button.BUTTON_ORDER
+     * @param buttonOrder
      */
     public void setButtonOrder(BigDecimal buttonOrder) {
         this.buttonOrder = buttonOrder;
     }
 
-
-    /**
-     * 按钮节点
-     * @return  the value of system_menu_button.BUTTON_FATHER
-     */
-    public String getButtonFather() {
-        return buttonFather;
-    }
-
-    /**
-     * 按钮节点
-     * @param buttonFather the value for system_menu_button.BUTTON_FATHER
-     */
-    public void setButtonFather(String buttonFather) {
-        this.buttonFather = buttonFather == null ? null : buttonFather.trim();
-    }
-
     /**
      * 按钮创建时间
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_CREATE_TIME
+     * @return buttonCreateTime
      */
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
     public Timestamp getButtonCreateTime() {
-        return buttonCreateTime;
+        return this.buttonCreateTime;
     }
 
     /**
      * 按钮创建时间
-     * @param buttonCreateTime the value for SYSTEM_MENU_BUTTON.BUTTON_CREATE_TIME
+     * @param buttonCreateTime
      */
     public void setButtonCreateTime(Timestamp buttonCreateTime) {
         this.buttonCreateTime = buttonCreateTime;
     }
 
-
     /**
      * 按钮修改时间
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_UPDATE_TIME
+     * @return buttonUpdateTime
      */
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
     public Timestamp getButtonUpdateTime() {
-        return buttonUpdateTime;
+        return this.buttonUpdateTime;
     }
 
     /**
      * 按钮修改时间
-     * @param buttonUpdateTime the value for SYSTEM_MENU_BUTTON.BUTTON_UPDATE_TIME
+     * @param buttonUpdateTime
      */
     public void setButtonUpdateTime(Timestamp buttonUpdateTime) {
         this.buttonUpdateTime = buttonUpdateTime;
     }
 
+    /**
+     * 按钮节点
+     * @return buttonFather
+     */
+    public String getButtonFather() {
+        return this.buttonFather;
+    }
+
+    /**
+     * 按钮节点
+     * @param buttonFather
+     */
+    public void setButtonFather(String buttonFather) {
+        this.buttonFather = buttonFather;
+    }
 
     /**
      * 备用字段1
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_RESERVE_A
+     * @return buttonReserveA
      */
     public String getButtonReserveA() {
-        return buttonReserveA;
+        return this.buttonReserveA;
     }
 
     /**
      * 备用字段1
-     * @param buttonReserveA the value for SYSTEM_MENU_BUTTON.BUTTON_RESERVE_A
+     * @param buttonReserveA
      */
     public void setButtonReserveA(String buttonReserveA) {
-        this.buttonReserveA = buttonReserveA == null ? null : buttonReserveA.trim();
+        this.buttonReserveA = buttonReserveA;
     }
 
     /**
      * 备用字段2
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_RESERVE_B
+     * @return buttonReserveB
      */
     public String getButtonReserveB() {
-        return buttonReserveB;
+        return this.buttonReserveB;
     }
 
     /**
      * 备用字段2
-     * @param buttonReserveB the value for SYSTEM_MENU_BUTTON.BUTTON_RESERVE_B
+     * @param buttonReserveB
      */
     public void setButtonReserveB(String buttonReserveB) {
-        this.buttonReserveB = buttonReserveB == null ? null : buttonReserveB.trim();
+        this.buttonReserveB = buttonReserveB;
     }
 
     /**
      * 备用字段3
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_RESERVE_C
+     * @return buttonReserveC
      */
     public String getButtonReserveC() {
-        return buttonReserveC;
+        return this.buttonReserveC;
     }
 
     /**
      * 备用字段3
-     * @param buttonReserveC the value for SYSTEM_MENU_BUTTON.BUTTON_RESERVE_C
+     * @param buttonReserveC
      */
     public void setButtonReserveC(String buttonReserveC) {
-        this.buttonReserveC = buttonReserveC == null ? null : buttonReserveC.trim();
+        this.buttonReserveC = buttonReserveC;
     }
 
-    
     /**
      * 按钮创建人
-     * @return
-     * @author julong
-     * @date 2022年8月20日 下午1:48:19
-     * @desc
+     * @return buttonCreateUserName
      */
-	public String getButtonCreateUserName() {
-		return buttonCreateUserName;
-	}
+    public String getButtonCreateUserName() {
+        return this.buttonCreateUserName;
+    }
 
-	/**
-	 * 按钮创建人
-	 * @param buttonCreateUserName
-	 * @author julong
-	 * @date 2022年8月20日 下午1:48:24
-	 * @desc
-	 */
-	public void setButtonCreateUserName(String buttonCreateUserName) {
-		this.buttonCreateUserName = buttonCreateUserName == null ? null : buttonCreateUserName.trim();
-	}
+    /**
+     * 按钮创建人
+     * @param buttonCreateUserName
+     */
+    public void setButtonCreateUserName(String buttonCreateUserName) {
+        this.buttonCreateUserName = buttonCreateUserName;
+    }
 
-	@Override
-	public String toString() {
-		return "SystemButtonDTO [buttonId=" + buttonId + ", buttonName=" + buttonName + ", buttonCode=" + buttonCode
-				+ ", buttonUrl=" + buttonUrl + ", buttonStatus=" + buttonStatus + ", userId=" + userId + ", buttonIco="
-				+ buttonIco + ", menuId=" + menuId + ", buttonOrder=" + buttonOrder + ", buttonCreateTime="
-				+ buttonCreateTime + ", buttonUpdateTime=" + buttonUpdateTime + ", buttonFather=" + buttonFather
-				+ ", buttonReserveA=" + buttonReserveA + ", buttonReserveB=" + buttonReserveB + ", buttonReserveC="
-				+ buttonReserveC + ", buttonCreateUserName=" + buttonCreateUserName + "]";
-	}
-
-	
-    
+    @java.lang.Override
+    public java.lang.String toString() {
+        final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemButtonDTO{");
+        sb.append("buttonId='").append(buttonId).append('\'');
+        sb.append(", buttonName='").append(buttonName).append('\'');
+        sb.append(", buttonCode='").append(buttonCode).append('\'');
+        sb.append(", buttonUrl='").append(buttonUrl).append('\'');
+        sb.append(", buttonStatus='").append(buttonStatus).append('\'');
+        sb.append(", userId='").append(userId).append('\'');
+        sb.append(", buttonIco='").append(buttonIco).append('\'');
+        sb.append(", menuId='").append(menuId).append('\'');
+        sb.append(", buttonOrder=").append(buttonOrder);
+        sb.append(", buttonCreateTime=").append(buttonCreateTime);
+        sb.append(", buttonUpdateTime=").append(buttonUpdateTime);
+        sb.append(", buttonFather='").append(buttonFather).append('\'');
+        sb.append(", buttonReserveA='").append(buttonReserveA).append('\'');
+        sb.append(", buttonReserveB='").append(buttonReserveB).append('\'');
+        sb.append(", buttonReserveC='").append(buttonReserveC).append('\'');
+        sb.append(", buttonCreateUserName='").append(buttonCreateUserName).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

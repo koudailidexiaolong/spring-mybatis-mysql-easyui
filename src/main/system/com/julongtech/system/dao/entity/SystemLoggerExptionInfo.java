@@ -64,7 +64,31 @@ public class SystemLoggerExptionInfo  implements Serializable{
     /** 
      * 日志描述
      */
-    private String loggerExptionDesc;
+    private String loggerExptionDescription;
+	/** 
+	 * 访问响应时间 毫秒
+	 */
+	private String loggerResponseTime;
+    
+    /** 
+	 * 使用的操作系统
+	 */
+	private String loggerOperatingSystem;
+
+	/** 
+	 * 浏览器类型
+	 */
+	private String loggerBrowserType;
+
+	/** 
+	 * 浏览器版本
+	 */
+	private String loggerBrowserVersion;
+    
+    /** 
+     * 日志异常信息
+     */
+    private String loggerExptionContext;
 
     /** 
      * 备用字段1
@@ -81,10 +105,6 @@ public class SystemLoggerExptionInfo  implements Serializable{
      */
     private String loggerExptionReserveC;
 
-    /** 
-     * 日志异常信息
-     */
-    private String loggerExptionContext;
 
     /**
      * 日志编号:类型+年+月+日+时+分+秒+毫秒+6位序列
@@ -182,6 +202,24 @@ public class SystemLoggerExptionInfo  implements Serializable{
         this.userName = userName == null ? null : userName.trim();
     }
 
+
+	/**
+	 * 访问响应时间 毫秒
+	 * @return  the value of SYSTEM_LOGGER.LOGGER_RESPONSE_TIME
+	 */
+	public String getLoggerResponseTime() {
+		return loggerResponseTime;
+	}
+
+	/**
+	 * 访问响应时间 毫秒
+	 * @param loggerResponseTime the value for SYSTEM_LOGGER_EXPTION.LOGGER_RESPONSE_TIME
+	 */
+	public void setLoggerResponseTime(String loggerResponseTime) {
+		this.loggerResponseTime = loggerResponseTime == null ? null : loggerResponseTime.trim();
+	}
+
+	
     /**
      * 日志IP
      * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_IP
@@ -232,20 +270,65 @@ public class SystemLoggerExptionInfo  implements Serializable{
 
     /**
      * 日志描述
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_DESC
+     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_Description
      */
-    public String getLoggerExptionDesc() {
-        return loggerExptionDesc;
+    public String getLoggerExptionDescription() {
+        return loggerExptionDescription;
     }
 
     /**
      * 日志描述
-     * @param loggerExptionDesc the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_DESC
+     * @param loggerExptionDescription the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_Description
      */
-    public void setLoggerExptionDesc(String loggerExptionDesc) {
-        this.loggerExptionDesc = loggerExptionDesc == null ? null : loggerExptionDesc.trim();
+    public void setLoggerExptionDescription(String loggerExptionDescription) {
+        this.loggerExptionDescription = loggerExptionDescription == null ? null : loggerExptionDescription.trim();
     }
 
+    /**
+	 * 系统版本
+	 * @return  the value of SYSTEM_LOGGER.LOGGER_OPERATING_SYSTEM
+	 */
+	public String getLoggerOperatingSystem() {
+		return loggerOperatingSystem;
+	}
+	/**
+	 * 系统版本
+	 * @param loggerOperatingSystem the value for SYSTEM_LOGGER.LOGGER_OPERATING_SYSTEM
+	 */
+	public void setLoggerOperatingSystem(String loggerOperatingSystem) {
+		this.loggerOperatingSystem = loggerOperatingSystem == null ? null : loggerOperatingSystem.trim();
+	}
+
+	/**
+	 * 浏览器类型
+	 * @return  the value of SYSTEM_LOGGER.LOGGER_BROWSER_TYPE
+	 */
+	public String getLoggerBrowserType() {
+		return loggerBrowserType;
+	}
+	/**
+	 * 浏览器类型
+	 * @param loggerBrowserType the value for SYSTEM_LOGGER.LOGGER_BROWSER_TYPE
+	 */
+	public void setLoggerBrowserType(String loggerBrowserType) {
+		this.loggerBrowserType = loggerBrowserType == null ? null : loggerBrowserType.trim();
+	}
+
+	/**
+	 * 浏览器版本
+	 * @return  the value of SYSTEM_LOGGER.LOGGER_BROWSER_VERSION
+	 */
+	public String getLoggerBrowserVersion() {
+		return loggerBrowserVersion;
+	}
+	/**
+	 * 浏览器版本
+	 * @param loggerBrowserVersion the value for SYSTEM_LOGGER.LOGGER_BROWSER_VERSION
+	 */
+	public void setLoggerBrowserVersion(String loggerBrowserVersion) {
+		this.loggerBrowserVersion = loggerBrowserVersion == null ? null : loggerBrowserVersion.trim();
+	}
+	
     /**
      * 备用字段1
      * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_RESERVE_A
@@ -312,18 +395,19 @@ public class SystemLoggerExptionInfo  implements Serializable{
 
 	@Override
 	public String toString() {
-		return "SystemLoggerExptionInfo [loggerExptionId=" + loggerExptionId
-				+ ", loggerExptionType=" + loggerExptionType
-				+ ", loggerExptionTime=" + loggerExptionTime + ", orgId="
-				+ orgId + ", userId=" + userId + ", userName=" + userName
-				+ ", loggerExptionIp=" + loggerExptionIp
-				+ ", loggerExptionModule=" + loggerExptionModule
-				+ ", loggerExptionMethod=" + loggerExptionMethod
-				+ ", loggerExptionDesc=" + loggerExptionDesc
-				+ ", loggerExptionReserveA=" + loggerExptionReserveA
-				+ ", loggerExptionReserveB=" + loggerExptionReserveB
-				+ ", loggerExptionReserveC=" + loggerExptionReserveC
-				+ ", loggerExptionContext=" + loggerExptionContext + "]";
+		return "SystemLoggerExptionInfo [loggerExptionId=" + loggerExptionId + ", loggerExptionType="
+				+ loggerExptionType + ", loggerExptionTime=" + loggerExptionTime + ", orgId=" + orgId + ", userId="
+				+ userId + ", userName=" + userName + ", loggerExptionIp=" + loggerExptionIp + ", loggerExptionModule="
+				+ loggerExptionModule + ", loggerExptionMethod=" + loggerExptionMethod + ", loggerExptionDescription="
+				+ loggerExptionDescription + ", loggerResponseTime=" + loggerResponseTime + ", loggerOperatingSystem="
+				+ loggerOperatingSystem + ", loggerBrowserType=" + loggerBrowserType + ", loggerBrowserVersion="
+				+ loggerBrowserVersion + ", loggerExptionContext=" + loggerExptionContext + ", loggerExptionReserveA="
+				+ loggerExptionReserveA + ", loggerExptionReserveB=" + loggerExptionReserveB
+				+ ", loggerExptionReserveC=" + loggerExptionReserveC + "]";
 	}
+
+	
+
+	
     
 }

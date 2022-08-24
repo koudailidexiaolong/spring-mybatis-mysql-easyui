@@ -3,6 +3,8 @@ package com.julongtech.system.service.dto;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
  * 系统异常日志信息类
  * @author julong 
@@ -28,6 +30,7 @@ public class SystemLoggerExptionDTO  implements Serializable{
     /** 
      * 日志创建时间
      */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8") 
     private Timestamp loggerExptionTime;
 
     /** 
@@ -70,49 +73,50 @@ public class SystemLoggerExptionDTO  implements Serializable{
      */
     private String loggerExptionContext;
 
+
     /**
      * 日志编号:类型+年+月+日+时+分+秒+毫秒+6位序列
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_ID
+     * @return loggerExptionId
      */
     public String getLoggerExptionId() {
-        return loggerExptionId;
+        return this.loggerExptionId;
     }
 
     /**
      * 日志编号:类型+年+月+日+时+分+秒+毫秒+6位序列
-     * @param loggerExptionId the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_ID
+     * @param loggerExptionId
      */
     public void setLoggerExptionId(String loggerExptionId) {
-        this.loggerExptionId = loggerExptionId == null ? null : loggerExptionId.trim();
+        this.loggerExptionId = loggerExptionId;
     }
 
     /**
      * 日志类型
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_TYPE
+     * @return loggerExptionType
      */
     public String getLoggerExptionType() {
-        return loggerExptionType;
+        return this.loggerExptionType;
     }
 
     /**
      * 日志类型
-     * @param loggerExptionType the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_TYPE
+     * @param loggerExptionType
      */
     public void setLoggerExptionType(String loggerExptionType) {
-        this.loggerExptionType = loggerExptionType == null ? null : loggerExptionType.trim();
+        this.loggerExptionType = loggerExptionType;
     }
 
     /**
      * 日志创建时间
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_TIME
+     * @return loggerExptionTime
      */
     public Timestamp getLoggerExptionTime() {
-        return loggerExptionTime;
+        return this.loggerExptionTime;
     }
 
     /**
      * 日志创建时间
-     * @param loggerExptionTime the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_TIME
+     * @param loggerExptionTime
      */
     public void setLoggerExptionTime(Timestamp loggerExptionTime) {
         this.loggerExptionTime = loggerExptionTime;
@@ -120,144 +124,147 @@ public class SystemLoggerExptionDTO  implements Serializable{
 
     /**
      * 组织机构
-     * @return  the value of SYSTEM_LOGGER_EXPTION.ORG_ID
+     * @return orgId
      */
     public String getOrgId() {
-        return orgId;
+        return this.orgId;
     }
 
     /**
      * 组织机构
-     * @param orgId the value for SYSTEM_LOGGER_EXPTION.ORG_ID
+     * @param orgId
      */
     public void setOrgId(String orgId) {
-        this.orgId = orgId == null ? null : orgId.trim();
+        this.orgId = orgId;
     }
 
     /**
      * 用户编号
-     * @return  the value of SYSTEM_LOGGER_EXPTION.USER_ID
+     * @return userId
      */
     public String getUserId() {
-        return userId;
+        return this.userId;
     }
 
     /**
      * 用户编号
-     * @param userId the value for SYSTEM_LOGGER_EXPTION.USER_ID
+     * @param userId
      */
     public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+        this.userId = userId;
     }
 
     /**
      * 用户姓名
-     * @return  the value of SYSTEM_LOGGER_EXPTION.USER_NAME
+     * @return userName
      */
     public String getUserName() {
-        return userName;
+        return this.userName;
     }
 
     /**
      * 用户姓名
-     * @param userName the value for SYSTEM_LOGGER_EXPTION.USER_NAME
+     * @param userName
      */
     public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
+        this.userName = userName;
     }
 
     /**
      * 日志IP
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_IP
+     * @return loggerExptionIp
      */
     public String getLoggerExptionIp() {
-        return loggerExptionIp;
+        return this.loggerExptionIp;
     }
 
     /**
      * 日志IP
-     * @param loggerExptionIp the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_IP
+     * @param loggerExptionIp
      */
     public void setLoggerExptionIp(String loggerExptionIp) {
-        this.loggerExptionIp = loggerExptionIp == null ? null : loggerExptionIp.trim();
+        this.loggerExptionIp = loggerExptionIp;
     }
 
     /**
      * 日志调用模块
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_MODULE
+     * @return loggerExptionModule
      */
     public String getLoggerExptionModule() {
-        return loggerExptionModule;
+        return this.loggerExptionModule;
     }
 
     /**
      * 日志调用模块
-     * @param loggerExptionModule the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_MODULE
+     * @param loggerExptionModule
      */
     public void setLoggerExptionModule(String loggerExptionModule) {
-        this.loggerExptionModule = loggerExptionModule == null ? null : loggerExptionModule.trim();
+        this.loggerExptionModule = loggerExptionModule;
     }
 
     /**
      * 日志调用模块方法
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_METHOD
+     * @return loggerExptionMethod
      */
     public String getLoggerExptionMethod() {
-        return loggerExptionMethod;
+        return this.loggerExptionMethod;
     }
 
     /**
      * 日志调用模块方法
-     * @param loggerExptionMethod the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_METHOD
+     * @param loggerExptionMethod
      */
     public void setLoggerExptionMethod(String loggerExptionMethod) {
-        this.loggerExptionMethod = loggerExptionMethod == null ? null : loggerExptionMethod.trim();
+        this.loggerExptionMethod = loggerExptionMethod;
     }
 
     /**
      * 日志描述
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_DESC
+     * @return loggerExptionDesc
      */
     public String getLoggerExptionDesc() {
-        return loggerExptionDesc;
+        return this.loggerExptionDesc;
     }
 
     /**
      * 日志描述
-     * @param loggerExptionDesc the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_DESC
+     * @param loggerExptionDesc
      */
     public void setLoggerExptionDesc(String loggerExptionDesc) {
-        this.loggerExptionDesc = loggerExptionDesc == null ? null : loggerExptionDesc.trim();
+        this.loggerExptionDesc = loggerExptionDesc;
     }
 
     /**
      * 日志异常信息
-     * @return  the value of SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_CONTEXT
+     * @return loggerExptionContext
      */
     public String getLoggerExptionContext() {
-        return loggerExptionContext;
+        return this.loggerExptionContext;
     }
 
     /**
      * 日志异常信息
-     * @param loggerExptionContext the value for SYSTEM_LOGGER_EXPTION.LOGGER_EXPTION_CONTEXT
+     * @param loggerExptionContext
      */
     public void setLoggerExptionContext(String loggerExptionContext) {
-        this.loggerExptionContext = loggerExptionContext == null ? null : loggerExptionContext.trim();
+        this.loggerExptionContext = loggerExptionContext;
     }
 
-	@Override
-	public String toString() {
-		return "SystemLoggerExptionDTO [loggerExptionId=" + loggerExptionId
-				+ ", loggerExptionType=" + loggerExptionType
-				+ ", loggerExptionTime=" + loggerExptionTime + ", orgId="
-				+ orgId + ", userId=" + userId + ", userName=" + userName
-				+ ", loggerExptionIp=" + loggerExptionIp
-				+ ", loggerExptionModule=" + loggerExptionModule
-				+ ", loggerExptionMethod=" + loggerExptionMethod
-				+ ", loggerExptionDesc=" + loggerExptionDesc
-				+ ", loggerExptionContext=" + loggerExptionContext + "]";
-	}
-
-    
+    @java.lang.Override
+    public java.lang.String toString() {
+        final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemLoggerExptionDTO{");
+        sb.append("loggerExptionId='").append(loggerExptionId).append('\'');
+        sb.append(", loggerExptionType='").append(loggerExptionType).append('\'');
+        sb.append(", loggerExptionTime=").append(loggerExptionTime);
+        sb.append(", orgId='").append(orgId).append('\'');
+        sb.append(", userId='").append(userId).append('\'');
+        sb.append(", userName='").append(userName).append('\'');
+        sb.append(", loggerExptionIp='").append(loggerExptionIp).append('\'');
+        sb.append(", loggerExptionModule='").append(loggerExptionModule).append('\'');
+        sb.append(", loggerExptionMethod='").append(loggerExptionMethod).append('\'');
+        sb.append(", loggerExptionDesc='").append(loggerExptionDesc).append('\'');
+        sb.append(", loggerExptionContext='").append(loggerExptionContext).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

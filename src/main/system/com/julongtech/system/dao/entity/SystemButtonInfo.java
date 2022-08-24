@@ -8,7 +8,7 @@ import java.sql.Timestamp;
  * 按钮信息类
  * @author julong 
  * @date Mon Oct 16 15:08:21 CST 2017
- * @database table SYSTEM_MENU_BUTTON
+ * @database table SYSTEM_BUTTON
  */
 public class SystemButtonInfo implements Serializable{
     /**
@@ -94,7 +94,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮编号
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_ID
+     * @return  the value of SYSTEM_BUTTON.BUTTON_ID
      */
     public String getButtonId() {
         return buttonId;
@@ -102,7 +102,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮编号
-     * @param buttonId the value for SYSTEM_MENU_BUTTON.BUTTON_ID
+     * @param buttonId the value for SYSTEM_BUTTON.BUTTON_ID
      */
     public void setButtonId(String buttonId) {
         this.buttonId = buttonId == null ? null : buttonId.trim();
@@ -110,7 +110,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮名称
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_NAME
+     * @return  the value of SYSTEM_BUTTON.BUTTON_NAME
      */
     public String getButtonName() {
         return buttonName;
@@ -118,7 +118,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮名称
-     * @param buttonName the value for SYSTEM_MENU_BUTTON.BUTTON_NAME
+     * @param buttonName the value for SYSTEM_BUTTON.BUTTON_NAME
      */
     public void setButtonName(String buttonName) {
         this.buttonName = buttonName == null ? null : buttonName.trim();
@@ -126,7 +126,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮代码
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_CODE
+     * @return  the value of SYSTEM_BUTTON.BUTTON_CODE
      */
     public String getButtonCode() {
         return buttonCode;
@@ -134,7 +134,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮代码
-     * @param buttonCode the value for SYSTEM_MENU_BUTTON.BUTTON_CODE
+     * @param buttonCode the value for SYSTEM_BUTTON.BUTTON_CODE
      */
     public void setButtonCode(String buttonCode) {
         this.buttonCode = buttonCode == null ? null : buttonCode.trim();
@@ -142,7 +142,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮地址URL
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_URL
+     * @return  the value of SYSTEM_BUTTON.BUTTON_URL
      */
     public String getButtonUrl() {
         return buttonUrl;
@@ -150,7 +150,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮地址URL
-     * @param buttonUrl the value for SYSTEM_MENU_BUTTON.BUTTON_URL
+     * @param buttonUrl the value for SYSTEM_BUTTON.BUTTON_URL
      */
     public void setButtonUrl(String buttonUrl) {
         this.buttonUrl = buttonUrl == null ? null : buttonUrl.trim();
@@ -158,7 +158,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮状态
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_STATUS
+     * @return  the value of SYSTEM_BUTTON.BUTTON_STATUS
      */
     public String getButtonStatus() {
         return buttonStatus;
@@ -166,7 +166,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮状态
-     * @param buttonStatus the value for SYSTEM_MENU_BUTTON.BUTTON_STATUS
+     * @param buttonStatus the value for SYSTEM_BUTTON.BUTTON_STATUS
      */
     public void setButtonStatus(String buttonStatus) {
         this.buttonStatus = buttonStatus == null ? null : buttonStatus.trim();
@@ -174,7 +174,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮创建人
-     * @return  the value of SYSTEM_MENU_BUTTON.USER_ID
+     * @return  the value of SYSTEM_BUTTON.USER_ID
      */
     public String getUserId() {
         return userId;
@@ -182,7 +182,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮创建人
-     * @param userId the value for SYSTEM_MENU_BUTTON.USER_ID
+     * @param userId the value for SYSTEM_BUTTON.USER_ID
      */
     public void setUserId(String userId) {
         this.userId = userId == null ? null : userId.trim();
@@ -190,7 +190,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮图标
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_ICO
+     * @return  the value of SYSTEM_BUTTON.BUTTON_ICO
      */
     public String getButtonIco() {
         return buttonIco;
@@ -198,7 +198,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮图标
-     * @param buttonIco the value for SYSTEM_MENU_BUTTON.BUTTON_ICO
+     * @param buttonIco the value for SYSTEM_BUTTON.BUTTON_ICO
      */
     public void setButtonIco(String buttonIco) {
         this.buttonIco = buttonIco == null ? null : buttonIco.trim();
@@ -206,7 +206,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 菜单编号
-     * @return  the value of SYSTEM_MENU_BUTTON.MENU_ID
+     * @return  the value of SYSTEM_BUTTON.MENU_ID
      */
     public String getMenuId() {
         return menuId;
@@ -214,7 +214,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 菜单编号
-     * @param menuId the value for SYSTEM_MENU_BUTTON.MENU_ID
+     * @param menuId the value for SYSTEM_BUTTON.MENU_ID
      */
     public void setMenuId(String menuId) {
         this.menuId = menuId == null ? null : menuId.trim();
@@ -222,7 +222,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮顺序
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_ORDER
+     * @return  the value of SYSTEM_BUTTON.BUTTON_ORDER
      */
     public BigDecimal getButtonOrder() {
         return buttonOrder;
@@ -230,7 +230,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮顺序
-     * @param buttonOrder the value for SYSTEM_MENU_BUTTON.BUTTON_ORDER
+     * @param buttonOrder the value for SYSTEM_BUTTON.BUTTON_ORDER
      */
     public void setButtonOrder(BigDecimal buttonOrder) {
         this.buttonOrder = buttonOrder;
@@ -238,7 +238,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮创建时间
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_CREATE_TIME
+     * @return  the value of SYSTEM_BUTTON.BUTTON_CREATE_TIME
      */
     public Timestamp getButtonCreateTime() {
         return buttonCreateTime;
@@ -246,7 +246,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮创建时间
-     * @param buttonCreateTime the value for SYSTEM_MENU_BUTTON.BUTTON_CREATE_TIME
+     * @param buttonCreateTime the value for SYSTEM_BUTTON.BUTTON_CREATE_TIME
      */
     public void setButtonCreateTime(Timestamp buttonCreateTime) {
         this.buttonCreateTime = buttonCreateTime;
@@ -254,7 +254,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮修改时间
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_UPDATE_TIME
+     * @return  the value of SYSTEM_BUTTON.BUTTON_UPDATE_TIME
      */
     public Timestamp getButtonUpdateTime() {
         return buttonUpdateTime;
@@ -262,7 +262,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮修改时间
-     * @param buttonUpdateTime the value for SYSTEM_MENU_BUTTON.BUTTON_UPDATE_TIME
+     * @param buttonUpdateTime the value for SYSTEM_BUTTON.BUTTON_UPDATE_TIME
      */
     public void setButtonUpdateTime(Timestamp buttonUpdateTime) {
         this.buttonUpdateTime = buttonUpdateTime;
@@ -270,7 +270,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮节点
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_FATHER
+     * @return  the value of SYSTEM_BUTTON.BUTTON_FATHER
      */
     public String getButtonFather() {
         return buttonFather;
@@ -278,7 +278,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 按钮节点
-     * @param buttonFather the value for SYSTEM_MENU_BUTTON.BUTTON_FATHER
+     * @param buttonFather the value for SYSTEM_BUTTON.BUTTON_FATHER
      */
     public void setButtonFather(String buttonFather) {
         this.buttonFather = buttonFather == null ? null : buttonFather.trim();
@@ -286,7 +286,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 备用字段1
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_RESERVE_A
+     * @return  the value of SYSTEM_BUTTON.BUTTON_RESERVE_A
      */
     public String getButtonReserveA() {
         return buttonReserveA;
@@ -294,7 +294,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 备用字段1
-     * @param buttonReserveA the value for SYSTEM_MENU_BUTTON.BUTTON_RESERVE_A
+     * @param buttonReserveA the value for SYSTEM_BUTTON.BUTTON_RESERVE_A
      */
     public void setButtonReserveA(String buttonReserveA) {
         this.buttonReserveA = buttonReserveA == null ? null : buttonReserveA.trim();
@@ -302,7 +302,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 备用字段2
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_RESERVE_B
+     * @return  the value of SYSTEM_BUTTON.BUTTON_RESERVE_B
      */
     public String getButtonReserveB() {
         return buttonReserveB;
@@ -310,7 +310,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 备用字段2
-     * @param buttonReserveB the value for SYSTEM_MENU_BUTTON.BUTTON_RESERVE_B
+     * @param buttonReserveB the value for SYSTEM_BUTTON.BUTTON_RESERVE_B
      */
     public void setButtonReserveB(String buttonReserveB) {
         this.buttonReserveB = buttonReserveB == null ? null : buttonReserveB.trim();
@@ -318,7 +318,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 备用字段3
-     * @return  the value of SYSTEM_MENU_BUTTON.BUTTON_RESERVE_C
+     * @return  the value of SYSTEM_BUTTON.BUTTON_RESERVE_C
      */
     public String getButtonReserveC() {
         return buttonReserveC;
@@ -326,7 +326,7 @@ public class SystemButtonInfo implements Serializable{
 
     /**
      * 备用字段3
-     * @param buttonReserveC the value for SYSTEM_MENU_BUTTON.BUTTON_RESERVE_C
+     * @param buttonReserveC the value for SYSTEM_BUTTON.BUTTON_RESERVE_C
      */
     public void setButtonReserveC(String buttonReserveC) {
         this.buttonReserveC = buttonReserveC == null ? null : buttonReserveC.trim();

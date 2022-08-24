@@ -22,9 +22,6 @@
         role_id, role_name, org_id, role_desc, role_type, role_create_time, role_create_user_id, 
 	    role_update_time, role_update_user_id, role_status, role_reserve_a, role_reserve_b, role_reserve_c
   </sql>
-  <sql id="add_sql">
-  	  ,role_create_user_name,role_update_user_name
-  </sql>
   <sql id="join_sql">
   	SELECT 
 	    a.role_id, a.role_name, a.org_id, a.role_desc, a.role_type, a.role_create_time, a.role_create_user_id, 

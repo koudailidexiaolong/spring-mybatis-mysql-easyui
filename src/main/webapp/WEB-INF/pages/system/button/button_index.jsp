@@ -196,18 +196,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				}
 			});
 		}
-		/*初始化用户
-		function initUser(){
-			$.ajax({
-				   type: "POST",
-				   url: "cache/getCache.json",
-				   async: false,
-				   data: { key: "userList" },
-				   success: function(data){
-					   user_data = data.result;
-				   }
-			});
-		}*/
+	
 	</script>
   </head>
 <body class="easyui-layout" style="padding:0px;margin:0px;">  

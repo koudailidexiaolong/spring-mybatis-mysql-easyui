@@ -31,7 +31,7 @@
 	    a.button_reserve_b, a.button_reserve_c,
 	    b.user_name as button_create_user_name
     FROM 
-    	system_menu_button a
+    	system_button a
     LEFT JOIN system_user b on a.user_id = b.user_id
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
@@ -75,14 +75,14 @@
     ORDER BY button_id
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from system_menu_button
+    delete from system_button
     where button_id = #{buttonId,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.julongtech.system.dao.entity.SystemButtonInfo" >
-    insert into system_menu_button (button_id, button_name, button_code, 
+    insert into system_button (button_id, button_name, button_code, 
       button_url, button_status, user_id, 
       button_ico, menu_id, button_order, 
-      button_create_time, button_uptimestamp_time, button_father, 
+      button_create_time, button_update_time, button_father, 
       button_reserve_a, button_reserve_b, button_reserve_c
       )
     values (#{buttonId,jdbcType=VARCHAR}, #{buttonName,jdbcType=VARCHAR}, #{buttonCode,jdbcType=VARCHAR}, 
@@ -93,7 +93,7 @@
       )
   </insert>
  <insert id="insertSelective" parameterType="com.julongtech.system.dao.entity.SystemButtonInfo" >
-    insert into system_menu_button
+    insert into system_button
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="buttonId != null and buttonId != '' " >
         button_id,
@@ -190,7 +190,7 @@
     </trim>
   </insert>
  <update id="updateByPrimaryKeySelective" parameterType="com.julongtech.system.dao.entity.SystemButtonInfo" >
-    update system_menu_button
+    update system_button
     <set >
       <if test="buttonName != null and buttonName != ''" >
         button_name = #{buttonName,jdbcType=VARCHAR},
@@ -238,7 +238,7 @@
     where button_id = #{buttonId,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.julongtech.system.dao.entity.SystemButtonInfo" >
-   update system_menu_button
+   update system_button
     set button_name = #{buttonName,jdbcType=VARCHAR},
       button_code = #{buttonCode,jdbcType=VARCHAR},
       button_url = #{buttonUrl,jdbcType=VARCHAR},

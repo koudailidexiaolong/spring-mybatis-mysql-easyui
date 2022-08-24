@@ -80,7 +80,7 @@
     delete from system_role_button_mapped
     where role_id = #{roleId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.julongtech.system.dao.entity.SystemRoleButtonMappedInfo" >
+  <insert id="insert" parameterType="com.julongtech.system.dao.entity.SystemRoleButtonMappedInfo" useGeneratedKeys="true" keyProperty="mappedId">
     insert into system_role_button_mapped (role_id, menu_id, 
       button_id, org_id, mapped_desc, 
       mapped_create_time, user_id, mapped_update_time, 
@@ -115,7 +115,7 @@
 	</foreach>
   </insert>
   
-  <insert id="insertSelective" parameterType="com.julongtech.system.dao.entity.SystemRoleButtonMappedInfo" >
+  <insert id="insertSelective" parameterType="com.julongtech.system.dao.entity.SystemRoleButtonMappedInfo" useGeneratedKeys="true" keyProperty="mappedId">
     insert into system_role_button_mapped
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="roleId != null and roleId != '' " >

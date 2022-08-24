@@ -81,226 +81,249 @@ public class SystemOrgVO implements Serializable{
      * 机构备注描述
      */
     private String orgDesc;
-    
-    
-    public String getOrgDesc() {
-		return orgDesc;
-	}
 
-	public void setOrgDesc(String orgDesc) {
-		this.orgDesc = orgDesc;
-	}
+    /**
+     * 是否有子节点
+     * @return orgLeaf
+     */
+    public String getOrgLeaf() {
+        return this.orgLeaf;
+    }
+
+    /**
+     * 是否有子节点
+     * @param orgLeaf
+     */
+    public void setOrgLeaf(String orgLeaf) {
+        this.orgLeaf = orgLeaf;
+    }
+
     /**
      * 组织机构编码
-     * @return  the value of SYSTEM_ORG.ORG_ID
+     * @return orgId
      */
     public String getOrgId() {
-        return orgId;
+        return this.orgId;
     }
 
     /**
      * 组织机构编码
-     * @param orgId the value for SYSTEM_ORG.ORG_ID
+     * @param orgId
      */
     public void setOrgId(String orgId) {
-        this.orgId = orgId == null ? null : orgId.trim();
+        this.orgId = orgId;
     }
 
     /**
      * 机构网点电话
-     * @return  the value of SYSTEM_ORG.ORG_PHONE
+     * @return orgPhone
      */
     public String getOrgPhone() {
-        return orgPhone;
+        return this.orgPhone;
     }
 
     /**
      * 机构网点电话
-     * @param orgPhone the value for SYSTEM_ORG.ORG_PHONE
+     * @param orgPhone
      */
     public void setOrgPhone(String orgPhone) {
-        this.orgPhone = orgPhone == null ? null : orgPhone.trim();
+        this.orgPhone = orgPhone;
     }
 
     /**
      * 组织机构名称全称
-     * @return  the value of SYSTEM_ORG.ORG_FULL_NAME
+     * @return orgFullName
      */
     public String getOrgFullName() {
-        return orgFullName;
+        return this.orgFullName;
     }
 
     /**
      * 组织机构名称全称
-     * @param orgFullName the value for SYSTEM_ORG.ORG_FULL_NAME
+     * @param orgFullName
      */
     public void setOrgFullName(String orgFullName) {
-        this.orgFullName = orgFullName == null ? null : orgFullName.trim();
+        this.orgFullName = orgFullName;
     }
 
     /**
      * 组织机构名称简称
-     * @return  the value of SYSTEM_ORG.ORG_NAME
+     * @return orgName
      */
     public String getOrgName() {
-        return orgName;
+        return this.orgName;
     }
 
     /**
      * 组织机构名称简称
-     * @param orgName the value for SYSTEM_ORG.ORG_NAME
+     * @param orgName
      */
     public void setOrgName(String orgName) {
-        this.orgName = orgName == null ? null : orgName.trim();
+        this.orgName = orgName;
     }
 
     /**
      * 组织机构父级节点编码
-     * @return  the value of SYSTEM_ORG.ORG_PARENT_ID
+     * @return orgParentId
      */
     public String getOrgParentId() {
-        return orgParentId;
+        return this.orgParentId;
     }
 
     /**
      * 组织机构父级节点编码
-     * @param orgParentId the value for SYSTEM_ORG.ORG_PARENT_ID
+     * @param orgParentId
      */
     public void setOrgParentId(String orgParentId) {
-        this.orgParentId = orgParentId == null ? null : orgParentId.trim();
+        this.orgParentId = orgParentId;
     }
 
     /**
      * 组织机构父级节点名称
-     * @return  the value of SYSTEM_ORG.ORG_PARENT_NAME
+     * @return orgParentName
      */
     public String getOrgParentName() {
-        return orgParentName;
+        return this.orgParentName;
     }
 
     /**
      * 组织机构父级节点名称
-     * @param orgParentName the value for SYSTEM_ORG.ORG_PARENT_NAME
+     * @param orgParentName
      */
     public void setOrgParentName(String orgParentName) {
-        this.orgParentName = orgParentName == null ? null : orgParentName.trim();
+        this.orgParentName = orgParentName;
     }
 
     /**
      * 组织机构地址
-     * @return  the value of SYSTEM_ORG.ORG_ADDRESS
+     * @return orgAddress
      */
     public String getOrgAddress() {
-        return orgAddress;
+        return this.orgAddress;
     }
 
     /**
      * 组织机构地址
-     * @param orgAddress the value for SYSTEM_ORG.ORG_ADDRESS
+     * @param orgAddress
      */
     public void setOrgAddress(String orgAddress) {
-        this.orgAddress = orgAddress == null ? null : orgAddress.trim();
+        this.orgAddress = orgAddress;
     }
 
     /**
      * 组织机构等级
-     * @return  the value of SYSTEM_ORG.ORG_LEVEL
+     * @return orgLevel
      */
     public String getOrgLevel() {
-        return orgLevel;
+        return this.orgLevel;
     }
 
     /**
      * 组织机构等级
-     * @param orgLevel the value for SYSTEM_ORG.ORG_LEVEL
+     * @param orgLevel
      */
     public void setOrgLevel(String orgLevel) {
-        this.orgLevel = orgLevel == null ? null : orgLevel.trim();
+        this.orgLevel = orgLevel;
     }
 
     /**
      * 组织机构类型
-     * @return  the value of SYSTEM_ORG.ORG_TYPE
+     * @return orgType
      */
     public String getOrgType() {
-        return orgType;
+        return this.orgType;
     }
 
     /**
      * 组织机构类型
-     * @param orgType the value for SYSTEM_ORG.ORG_TYPE
+     * @param orgType
      */
     public void setOrgType(String orgType) {
-        this.orgType = orgType == null ? null : orgType.trim();
+        this.orgType = orgType;
     }
 
     /**
      * 组织机构行政区划名称
-     * @return  the value of SYSTEM_ORG.ORG_AREA
+     * @return orgArea
      */
     public String getOrgArea() {
-        return orgArea;
+        return this.orgArea;
     }
 
     /**
      * 组织机构行政区划名称
-     * @param orgArea the value for SYSTEM_ORG.ORG_AREA
+     * @param orgArea
      */
     public void setOrgArea(String orgArea) {
-        this.orgArea = orgArea == null ? null : orgArea.trim();
+        this.orgArea = orgArea;
     }
 
     /**
      * 组织机构行政区划编码
-     * @return  the value of SYSTEM_ORG.ORG_AREA_CODE
+     * @return orgAreaCode
      */
     public String getOrgAreaCode() {
-        return orgAreaCode;
+        return this.orgAreaCode;
     }
 
     /**
      * 组织机构行政区划编码
-     * @param orgAreaCode the value for SYSTEM_ORG.ORG_AREA_CODE
+     * @param orgAreaCode
      */
     public void setOrgAreaCode(String orgAreaCode) {
-        this.orgAreaCode = orgAreaCode == null ? null : orgAreaCode.trim();
+        this.orgAreaCode = orgAreaCode;
     }
 
     /**
      * 组织机构状态：0：正常1：禁用
-     * @return  the value of SYSTEM_ORG.ORG_STATUS
+     * @return orgStatus
      */
     public String getOrgStatus() {
-        return orgStatus;
+        return this.orgStatus;
     }
 
     /**
      * 组织机构状态：0：正常1：禁用
-     * @param orgStatus the value for SYSTEM_ORG.ORG_STATUS
+     * @param orgStatus
      */
     public void setOrgStatus(String orgStatus) {
-        this.orgStatus = orgStatus == null ? null : orgStatus.trim();
+        this.orgStatus = orgStatus;
     }
 
-	public String getOrgLeaf() {
-		return orgLeaf;
-	}
+    /**
+     * 机构备注描述
+     * @return orgDesc
+     */
+    public String getOrgDesc() {
+        return this.orgDesc;
+    }
 
-	public void setOrgLeaf(String orgLeaf) {
-		this.orgLeaf = orgLeaf;
-	}
+    /**
+     * 机构备注描述
+     * @param orgDesc
+     */
+    public void setOrgDesc(String orgDesc) {
+        this.orgDesc = orgDesc;
+    }
 
-	@Override
-	public String toString() {
-		return "SystemOrgVO [orgLeaf=" + orgLeaf + ", orgId=" + orgId
-				+ ", orgPhone=" + orgPhone + ", orgFullName=" + orgFullName
-				+ ", orgName=" + orgName + ", orgParentId=" + orgParentId
-				+ ", orgParentName=" + orgParentName + ", orgAddress="
-				+ orgAddress + ", orgLevel=" + orgLevel + ", orgType="
-				+ orgType + ", orgArea=" + orgArea + ", orgAreaCode="
-				+ orgAreaCode + ", orgStatus=" + orgStatus + ", orgDesc="
-				+ orgDesc + "]";
-	}
-
-
+    @java.lang.Override
+    public java.lang.String toString() {
+        final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemOrgVO{");
+        sb.append("orgLeaf='").append(orgLeaf).append('\'');
+        sb.append(", orgId='").append(orgId).append('\'');
+        sb.append(", orgPhone='").append(orgPhone).append('\'');
+        sb.append(", orgFullName='").append(orgFullName).append('\'');
+        sb.append(", orgName='").append(orgName).append('\'');
+        sb.append(", orgParentId='").append(orgParentId).append('\'');
+        sb.append(", orgParentName='").append(orgParentName).append('\'');
+        sb.append(", orgAddress='").append(orgAddress).append('\'');
+        sb.append(", orgLevel='").append(orgLevel).append('\'');
+        sb.append(", orgType='").append(orgType).append('\'');
+        sb.append(", orgArea='").append(orgArea).append('\'');
+        sb.append(", orgAreaCode='").append(orgAreaCode).append('\'');
+        sb.append(", orgStatus='").append(orgStatus).append('\'');
+        sb.append(", orgDesc='").append(orgDesc).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

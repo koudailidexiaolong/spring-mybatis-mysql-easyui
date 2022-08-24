@@ -93,287 +93,308 @@ public class SystemUserVO  implements Serializable{
 
     /**
      * 开始日期
-     * @author julong
-     * @date 2017-12-14 下午2:40:49
      */
     private String beginDate;
     
     /**
      * 结束日期
-     * @author julong
-     * @date 2017-12-14 下午2:40:57
      */
     private String endDate;
-    
+
+
     /**
      * 用户登录名
-     * @return  the value of SYSTEM_USER.USER_ID
+     * @return userId
      */
     public String getUserId() {
-        return userId;
+        return this.userId;
     }
 
     /**
      * 用户登录名
-     * @param userId the value for SYSTEM_USER.USER_ID
+     * @param userId
      */
     public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+        this.userId = userId;
     }
 
     /**
      * 组织机构编码
-     * @return  the value of SYSTEM_USER.ORG_ID
+     * @return orgId
      */
     public String getOrgId() {
-        return orgId;
+        return this.orgId;
     }
 
     /**
      * 组织机构编码
-     * @param orgId the value for SYSTEM_USER.ORG_ID
+     * @param orgId
      */
     public void setOrgId(String orgId) {
-        this.orgId = orgId == null ? null : orgId.trim();
+        this.orgId = orgId;
     }
 
     /**
      * 用户登录密码
-     * @return  the value of SYSTEM_USER.USER_PASSWORD
+     * @return userPassword
      */
     public String getUserPassword() {
-        return userPassword;
+        return this.userPassword;
     }
 
     /**
      * 用户登录密码
-     * @param userPassword the value for SYSTEM_USER.USER_PASSWORD
+     * @param userPassword
      */
     public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword == null ? null : userPassword.trim();
+        this.userPassword = userPassword;
     }
 
     /**
      * 用户姓名
-     * @return  the value of SYSTEM_USER.USER_NAME
+     * @return userName
      */
     public String getUserName() {
-        return userName;
+        return this.userName;
     }
 
     /**
      * 用户姓名
-     * @param userName the value for SYSTEM_USER.USER_NAME
+     * @param userName
      */
     public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
+        this.userName = userName;
     }
 
     /**
      * 用户年龄：1-999
-     * @return  the value of SYSTEM_USER.USER_AGE
+     * @return userAge
      */
     public String getUserAge() {
-        return userAge;
+        return this.userAge;
     }
 
     /**
      * 用户年龄：1-999
-     * @param userAge the value for SYSTEM_USER.USER_AGE
+     * @param userAge
      */
     public void setUserAge(String userAge) {
-        this.userAge = userAge == null ? null : userAge.trim();
+        this.userAge = userAge;
     }
 
     /**
      * 用户性别：0：男 1：女2：未知
-     * @return  the value of SYSTEM_USER.USER_SEX
+     * @return userSex
      */
     public String getUserSex() {
-        return userSex;
+        return this.userSex;
     }
 
     /**
      * 用户性别：0：男 1：女2：未知
-     * @param userSex the value for SYSTEM_USER.USER_SEX
+     * @param userSex
      */
     public void setUserSex(String userSex) {
-        this.userSex = userSex == null ? null : userSex.trim();
+        this.userSex = userSex;
     }
 
     /**
      * 用户身份证号码
-     * @return  the value of SYSTEM_USER.USER_IDENTITY
+     * @return userIdentity
      */
     public String getUserIdentity() {
-        return userIdentity;
+        return this.userIdentity;
     }
 
     /**
      * 用户身份证号码
-     * @param userIdentity the value for SYSTEM_USER.USER_IDENTITY
+     * @param userIdentity
      */
     public void setUserIdentity(String userIdentity) {
-        this.userIdentity = userIdentity == null ? null : userIdentity.trim();
+        this.userIdentity = userIdentity;
     }
 
     /**
      * 用户地址
-     * @return  the value of SYSTEM_USER.USER_ADDRESS
+     * @return userAddress
      */
     public String getUserAddress() {
-        return userAddress;
+        return this.userAddress;
     }
 
     /**
      * 用户地址
-     * @param userAddress the value for SYSTEM_USER.USER_ADDRESS
+     * @param userAddress
      */
     public void setUserAddress(String userAddress) {
-        this.userAddress = userAddress == null ? null : userAddress.trim();
+        this.userAddress = userAddress;
     }
 
     /**
      * 用户电话
-     * @return  the value of SYSTEM_USER.USER_PHONE
+     * @return userPhone
      */
     public String getUserPhone() {
-        return userPhone;
+        return this.userPhone;
     }
 
     /**
      * 用户电话
-     * @param userPhone the value for SYSTEM_USER.USER_PHONE
+     * @param userPhone
      */
     public void setUserPhone(String userPhone) {
-        this.userPhone = userPhone == null ? null : userPhone.trim();
+        this.userPhone = userPhone;
     }
 
     /**
      * 用户邮箱
-     * @return  the value of SYSTEM_USER.USER_MAIL
+     * @return userMail
      */
     public String getUserMail() {
-        return userMail;
+        return this.userMail;
     }
 
     /**
      * 用户邮箱
-     * @param userMail the value for SYSTEM_USER.USER_MAIL
+     * @param userMail
      */
     public void setUserMail(String userMail) {
-        this.userMail = userMail == null ? null : userMail.trim();
+        this.userMail = userMail;
     }
 
     /**
      * 用户描述
-     * @return  the value of SYSTEM_USER.USER_DESC
+     * @return userDesc
      */
     public String getUserDesc() {
-        return userDesc;
+        return this.userDesc;
     }
 
     /**
      * 用户描述
-     * @param userDesc the value for SYSTEM_USER.USER_DESC
+     * @param userDesc
      */
     public void setUserDesc(String userDesc) {
-        this.userDesc = userDesc == null ? null : userDesc.trim();
+        this.userDesc = userDesc;
     }
 
     /**
      * 用户图像url
-     * @return  the value of SYSTEM_USER.USER_IMAGE
+     * @return userImage
      */
     public String getUserImage() {
-        return userImage;
+        return this.userImage;
     }
 
     /**
      * 用户图像url
-     * @param userImage the value for SYSTEM_USER.USER_IMAGE
+     * @param userImage
      */
     public void setUserImage(String userImage) {
-        this.userImage = userImage == null ? null : userImage.trim();
+        this.userImage = userImage;
     }
-
 
     /**
      * 用户状态：0：正常1：停用
-     * @return  the value of SYSTEM_USER.USER_STATUS
+     * @return userStatus
      */
     public String getUserStatus() {
-        return userStatus;
+        return this.userStatus;
     }
 
     /**
      * 用户状态：0：正常1：停用
-     * @param userStatus the value for SYSTEM_USER.USER_STATUS
+     * @param userStatus
      */
     public void setUserStatus(String userStatus) {
-        this.userStatus = userStatus == null ? null : userStatus.trim();
+        this.userStatus = userStatus;
     }
 
     /**
      * 用户皮肤
-     * @return  the value of SYSTEM_USER.USER_SKIN
+     * @return userSkin
      */
     public String getUserSkin() {
-        return userSkin;
+        return this.userSkin;
     }
 
     /**
      * 用户皮肤
-     * @param userSkin the value for SYSTEM_USER.USER_SKIN
+     * @param userSkin
      */
     public void setUserSkin(String userSkin) {
-        this.userSkin = userSkin == null ? null : userSkin.trim();
+        this.userSkin = userSkin;
     }
 
     /**
      * 用户等级
-     * @return  the value of SYSTEM_USER.USER_LEVEL
+     * @return userLevel
      */
     public String getUserLevel() {
-        return userLevel;
+        return this.userLevel;
     }
 
     /**
      * 用户等级
-     * @param userLevel the value for SYSTEM_USER.USER_LEVEL
+     * @param userLevel
      */
     public void setUserLevel(String userLevel) {
-        this.userLevel = userLevel == null ? null : userLevel.trim();
+        this.userLevel = userLevel;
     }
 
+    /**
+     * 开始日期
+     * @return beginDate
+     */
+    public String getBeginDate() {
+        return this.beginDate;
+    }
 
-	public String getBeginDate() {
-		return beginDate;
-	}
+    /**
+     * 开始日期
+     * @param beginDate
+     */
+    public void setBeginDate(String beginDate) {
+        this.beginDate = beginDate;
+    }
 
-	public void setBeginDate(String beginDate) {
-		this.beginDate = beginDate;
-	}
+    /**
+     * 结束日期
+     * @return endDate
+     */
+    public String getEndDate() {
+        return this.endDate;
+    }
 
-	public String getEndDate() {
-		return endDate;
-	}
+    /**
+     * 结束日期
+     * @param endDate
+     */
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
 
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
-	}
-
-	@Override
-	public String toString() {
-		return "SystemUserVO [userId=" + userId + ", orgId=" + orgId
-				+ ", userPassword=" + userPassword + ", userName=" + userName
-				+ ", userAge=" + userAge + ", userSex=" + userSex
-				+ ", userIdentity=" + userIdentity + ", userAddress="
-				+ userAddress + ", userPhone=" + userPhone + ", userMail="
-				+ userMail + ", userDesc=" + userDesc + ", userImage="
-				+ userImage + ", userStatus=" + userStatus + ", userSkin="
-				+ userSkin + ", userLevel=" + userLevel + ", beginDate="
-				+ beginDate + ", endDate=" + endDate + "]";
-	}
-
+    @java.lang.Override
+    public java.lang.String toString() {
+        final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemUserVO{");
+        sb.append("userId='").append(userId).append('\'');
+        sb.append(", orgId='").append(orgId).append('\'');
+        sb.append(", userPassword='").append(userPassword).append('\'');
+        sb.append(", userName='").append(userName).append('\'');
+        sb.append(", userAge='").append(userAge).append('\'');
+        sb.append(", userSex='").append(userSex).append('\'');
+        sb.append(", userIdentity='").append(userIdentity).append('\'');
+        sb.append(", userAddress='").append(userAddress).append('\'');
+        sb.append(", userPhone='").append(userPhone).append('\'');
+        sb.append(", userMail='").append(userMail).append('\'');
+        sb.append(", userDesc='").append(userDesc).append('\'');
+        sb.append(", userImage='").append(userImage).append('\'');
+        sb.append(", userStatus='").append(userStatus).append('\'');
+        sb.append(", userSkin='").append(userSkin).append('\'');
+        sb.append(", userLevel='").append(userLevel).append('\'');
+        sb.append(", beginDate='").append(beginDate).append('\'');
+        sb.append(", endDate='").append(endDate).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

@@ -65,7 +65,7 @@
 	<!-- 配置session工厂 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 	    <property name="dataSource" ref="dataSource"/>
-	    <property name="configLocation" value="classpath:com/common/config/mybatis/mybatis-config.xml"/>
+	    <property name="configLocation" value="classpath:com/julongtech/config/mybatis/mybatis-config.xml"/>
 	    <!-- 配置自动扫描 -->
 	    <property name="mapperLocations">
 	    	<list>
@@ -79,7 +79,7 @@
 		<property name="basePackage" >
 			<value>com.julongtech.**.dao</value>
 		</property>
-	</bean>
+		</bean>
 	<!--
 		JNDI的配置方式 tomcatJNDI：java:comp/env/jdbc/xaws weblogic/was
 		JNDI：jdbc/xaws <bean id="dataSource"

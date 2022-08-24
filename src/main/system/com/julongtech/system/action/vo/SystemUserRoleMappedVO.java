@@ -41,22 +41,21 @@ public class SystemUserRoleMappedVO  implements Serializable{
 
     /**
      * 角色数组
-     * @author julong
-     * @date 2017-11-4 下午3:34:24
      */
     private String roleArray;
-    
+
+
     /**
      * 用户角色关系编号
-     * @return  the value of SYSTEM_USER_ROLE_MAPPED.MAPPED_ID
+     * @return mappedId
      */
     public Integer getMappedId() {
-        return mappedId;
+        return this.mappedId;
     }
 
     /**
      * 用户角色关系编号
-     * @param mappedId the value for SYSTEM_USER_ROLE_MAPPED.MAPPED_ID
+     * @param mappedId
      */
     public void setMappedId(Integer mappedId) {
         this.mappedId = mappedId;
@@ -64,31 +63,31 @@ public class SystemUserRoleMappedVO  implements Serializable{
 
     /**
      * 用户编号
-     * @return  the value of SYSTEM_USER_ROLE_MAPPED.USER_ID
+     * @return userId
      */
     public String getUserId() {
-        return userId;
+        return this.userId;
     }
 
     /**
      * 用户编号
-     * @param userId the value for SYSTEM_USER_ROLE_MAPPED.USER_ID
+     * @param userId
      */
     public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+        this.userId = userId;
     }
 
     /**
      * 角色编号
-     * @return  the value of SYSTEM_USER_ROLE_MAPPED.ROLE_ID
+     * @return roleId
      */
     public Integer getRoleId() {
-        return roleId;
+        return this.roleId;
     }
 
     /**
      * 角色编号
-     * @param roleId the value for SYSTEM_USER_ROLE_MAPPED.ROLE_ID
+     * @param roleId
      */
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
@@ -96,50 +95,62 @@ public class SystemUserRoleMappedVO  implements Serializable{
 
     /**
      * 组织机构编码
-     * @return  the value of SYSTEM_USER_ROLE_MAPPED.ORG_ID
+     * @return orgId
      */
     public String getOrgId() {
-        return orgId;
+        return this.orgId;
     }
 
     /**
      * 组织机构编码
-     * @param orgId the value for SYSTEM_USER_ROLE_MAPPED.ORG_ID
+     * @param orgId
      */
     public void setOrgId(String orgId) {
-        this.orgId = orgId == null ? null : orgId.trim();
+        this.orgId = orgId;
     }
 
     /**
      * 用户角色关系状态：0正常1：停用禁用
-     * @return  the value of SYSTEM_USER_ROLE_MAPPED.MAPPED_STATUS
+     * @return mappedStatus
      */
     public String getMappedStatus() {
-        return mappedStatus;
+        return this.mappedStatus;
     }
 
     /**
      * 用户角色关系状态：0正常1：停用禁用
-     * @param mappedStatus the value for SYSTEM_USER_ROLE_MAPPED.MAPPED_STATUS
+     * @param mappedStatus
      */
     public void setMappedStatus(String mappedStatus) {
-        this.mappedStatus = mappedStatus == null ? null : mappedStatus.trim();
+        this.mappedStatus = mappedStatus;
     }
 
-	public String getRoleArray() {
-		return roleArray;
-	}
+    /**
+     * 角色数组
+     * @return roleArray
+     */
+    public String getRoleArray() {
+        return this.roleArray;
+    }
 
-	public void setRoleArray(String roleArray) {
-		this.roleArray = roleArray == null ? null : roleArray.trim();
-	}
+    /**
+     * 角色数组
+     * @param roleArray
+     */
+    public void setRoleArray(String roleArray) {
+        this.roleArray = roleArray;
+    }
 
-	@Override
-	public String toString() {
-		return "SystemUserRoleMappedVO [mappedId=" + mappedId + ", userId="
-				+ userId + ", roleId=" + roleId + ", orgId=" + orgId
-				+ ", mappedStatus=" + mappedStatus + ", roleArray=" + roleArray
-				+ "]";
-	}
-
+    @java.lang.Override
+    public java.lang.String toString() {
+        final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemUserRoleMappedVO{");
+        sb.append("mappedId=").append(mappedId);
+        sb.append(", userId='").append(userId).append('\'');
+        sb.append(", roleId=").append(roleId);
+        sb.append(", orgId='").append(orgId).append('\'');
+        sb.append(", mappedStatus='").append(mappedStatus).append('\'');
+        sb.append(", roleArray='").append(roleArray).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

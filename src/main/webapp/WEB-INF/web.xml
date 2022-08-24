@@ -23,7 +23,7 @@
 	<context-param>
 		<description>spring总配置</description>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:com/common/config/spring/applicationContext.xml</param-value>
+		<param-value>classpath:com/julongtech/config/spring/applicationContext.xml</param-value>
 	</context-param>
 	<!--配置log4g日志 -->
 	<context-param>
@@ -38,7 +38,7 @@
 	<!-- XSS过滤 -->
 	<filter>
         <filter-name>XSSFilter</filter-name>
-        <filter-class>com.common.filter.XSSFilter</filter-class>
+        <filter-class>com.julongtech.filter.XSSFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>XSSFilter</filter-name>
@@ -64,7 +64,7 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	<listener>
-		<listener-class>com.common.web.listener.SystemInitListener</listener-class>
+		<listener-class>com.julongtech.web.listener.SystemInitListener</listener-class>
 	</listener>
 	<!-- Bootstrap the root application context as usual using ContextLoaderListener -->
 	<listener>

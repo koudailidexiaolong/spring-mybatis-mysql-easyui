@@ -1,4 +1,4 @@
-package com.common.page;
+package com.julongtech.page;
 
 import java.util.Hashtable;
 import java.util.Map;
