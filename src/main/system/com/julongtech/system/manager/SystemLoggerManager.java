@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
-import com.julongtech.system.action.vo.SystemLoggerExptionVO;
+import com.julongtech.system.action.vo.SystemLoggerExceptionVO;
 import com.julongtech.system.action.vo.SystemLoggerVO;
-import com.julongtech.system.service.SystemLoggerExptionService;
+import com.julongtech.system.service.SystemLoggerExceptionService;
 import com.julongtech.system.service.SystemLoggerService;
 import com.julongtech.system.session.UserSession;
 /**
@@ -28,7 +28,7 @@ public class SystemLoggerManager {
 	private SystemLoggerService systemLoggerServiceImpl;
 	
 	@Autowired
-	private SystemLoggerExptionService systemLoggerExptionServiceImpl;
+	private SystemLoggerExceptionService systemLoggerExceptionServiceImpl;
 	
 	
 	/**
@@ -61,12 +61,12 @@ public class SystemLoggerManager {
 	 * @author julong
 	 * @date 2017-10-18 下午5:28:47
 	 */
-	public  int saveSystemLoggerExption(SystemLoggerExptionVO systemLoggerExptionVO,UserSession userSession) {
+	public  int saveSystemLoggerException(SystemLoggerExceptionVO systemLoggerExceptionVO,UserSession userSession) {
 		// TODO Auto-generated method stub
-		logger.debug("【系统日志】-新增日志信息输入参数systemLoggerExptionVO：{}",systemLoggerExptionVO);
+		logger.debug("【系统日志】-新增日志信息输入参数systemLoggerExptionVO：{}",systemLoggerExceptionVO);
 		int result = -1;
 		try {
-			result = this.systemLoggerExptionServiceImpl.saveSystemLoggerExption(systemLoggerExptionVO,userSession);
+			result = this.systemLoggerExceptionServiceImpl.saveSystemLoggerException(systemLoggerExceptionVO,userSession);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("新增日志信息发生异常", e);

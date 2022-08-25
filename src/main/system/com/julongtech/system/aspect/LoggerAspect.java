@@ -8,11 +8,10 @@ import org.aspectj.lang.JoinPoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.julongtech.system.action.vo.SystemLoggerExptionVO;
+import com.julongtech.system.action.vo.SystemLoggerExceptionVO;
 import com.julongtech.system.action.vo.SystemLoggerVO;
 import com.julongtech.system.manager.SystemLoggerManager;
 import com.julongtech.system.session.UserSession;
@@ -24,7 +23,6 @@ import eu.bitwalker.useragentutils.UserAgent;
  * @author julong
  * @date 2018-5-15 上午10:49:23
  */
-@Component
 public class LoggerAspect {
 	private static final Logger logger = LoggerFactory.getLogger(LoggerAspect.class);
 
@@ -147,12 +145,13 @@ public class LoggerAspect {
 	/**
 	 * 发生错误后执行
 	 * @param joinPoint
+	 * @param exception
 	 * @author julong
 	 * @date 2022年8月24日 上午11:25:04
 	 * @desc
 	 */
-	public void afterThrowing(JoinPoint joinPoint){
-		logger.debug(":after-targetName{},-targetName:{}",this.targetName,this.methodName);
+	public void afterThrowing(JoinPoint joinPoint,Exception exception){
+		logger.debug("错误日志:after-targetName{},-targetName:{}",this.targetName,this.methodName);
 		try {
 			// 拦截的方法参数
 			Object[] args = joinPoint.getArgs();
@@ -172,33 +171,33 @@ public class LoggerAspect {
 	        }
 			
 			this.endTimeMillis = System.currentTimeMillis();
-			SystemLoggerExptionVO systemLoggerExptionVO = new SystemLoggerExptionVO();
+			SystemLoggerExceptionVO systemLoggerExceptionVO = new SystemLoggerExceptionVO();
 			//如果方法没有加LoggerProxy注解则不需要做日志记录
 			if(loggerProxy == null ){
-				systemLoggerExptionVO.setLoggerExptionIp("127.0.0.1");
+				systemLoggerExceptionVO.setLoggerExceptionIp("127.0.0.1");
 			}else{
-				systemLoggerExptionVO.setLoggerExptionIp(this.request.getLocalAddr());
+				systemLoggerExceptionVO.setLoggerExceptionIp(this.request.getLocalAddr());
 			}
-			systemLoggerExptionVO.setLoggerExptionId(DefaultUtil.DEFAULT_SEQUENCE+"");
-			if(null != loggerProxy){
-				String loggerType = loggerProxy.method()[0].toString();
-				String loggerModule = loggerProxy.module()[0].toString();
-				String loggerDescription = loggerProxy.description();
-				systemLoggerExptionVO.setLoggerExptionDescription(loggerDescription);
-				systemLoggerExptionVO.setLoggerExptionType(loggerType);
-				systemLoggerExptionVO.setLoggerExptionModule(loggerModule);
-				systemLoggerExptionVO.setLoggerExptionMethod(this.methodName);
-			}
+			systemLoggerExceptionVO.setLoggerExceptionId(DefaultUtil.DEFAULT_SEQUENCE+"");
+			//错误信息
+			systemLoggerExceptionVO.setLoggerExceptionContext(exception.getLocalizedMessage());
+			String loggerType = loggerProxy.method()[0].toString();
+			String loggerModule = loggerProxy.module()[0].toString();
+			String loggerDescription = loggerProxy.description();
+			systemLoggerExceptionVO.setLoggerExceptionDescription(loggerDescription);
+			systemLoggerExceptionVO.setLoggerExceptionType(loggerType);
+			systemLoggerExceptionVO.setLoggerExceptionModule(loggerModule);
+			systemLoggerExceptionVO.setLoggerExceptionMethod(this.methodName);
 			logger.debug("当前浏览器版本：{}",this.request.getHeader("User-Agent"));
 			UserAgent userAgent = UserAgent.parseUserAgentString(this.request.getHeader("User-Agent"));
 			if(null != userAgent){
-				systemLoggerExptionVO.setLoggerOperatingSystem(userAgent.getOperatingSystem().getName());
-				systemLoggerExptionVO.setLoggerBrowserType(userAgent.getBrowser().getName());
-				systemLoggerExptionVO.setLoggerBrowserVersion(userAgent.getBrowserVersion().getVersion());
+				systemLoggerExceptionVO.setLoggerOperatingSystem(userAgent.getOperatingSystem().getName());
+				systemLoggerExceptionVO.setLoggerBrowserType(userAgent.getBrowser().getName());
+				systemLoggerExceptionVO.setLoggerBrowserVersion(userAgent.getBrowserVersion().getVersion());
 			}
 			
-			systemLoggerExptionVO.setLoggerResponseTime((this.endTimeMillis-this.beginTimeMillis)+"");
-			int result = this.systemLoggerManagerImpl.saveSystemLoggerExption(systemLoggerExptionVO, this.userSession);
+			systemLoggerExceptionVO.setLoggerResponseTime((this.endTimeMillis-this.beginTimeMillis)+"");
+			int result = this.systemLoggerManagerImpl.saveSystemLoggerException(systemLoggerExceptionVO, this.userSession);
 			logger.debug("【切面日志模块】-插入日志信息返回结果：{}",result);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

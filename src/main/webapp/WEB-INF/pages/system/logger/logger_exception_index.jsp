@@ -38,9 +38,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		//初始化加载
 		$(document).ready(function(){
 			 //加载下拉框
-			 loadSelectData("module_type",$("#loggerModule"),"");
+			 loadSelectData("module_type",$("#loggerExceptionModule"),"");
 			//加载下拉框
-			 loadSelectData("method_type",$("#loggerType"),"");
+			 loadSelectData("method_type",$("#loggerExceptionType"),"");
 			 initMethod();
 			 initModule();
 			//禁用按钮
@@ -80,7 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			var loggerModule = $("#loggerModule").combobox("getValue");//登录名
 			var param = getSystemParam();
 			$("#tableData").datagrid({   
-			    url:"logger/selectLoggerListByPage.json?param="+param, 
+			    url:"logger/exception/selectLoggerListByPage.json?param="+param, 
 			    method:"post",
 			    striped:true,//各行换色  
 			    autoRowHeight:false,
@@ -90,10 +90,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				fit:true,
 			    columns:[[   
 			        {field:"id",checkbox:true},
-					{field:"loggerId",title:"日志编号",align:"center",width:100},
+					{field:"loggerExceptionId",title:"日志编号",align:"center",width:100},
 					{field:"userId",title:"用户编号",align:"center",width:100},
 					{field:"userName",title:"用户姓名",align:"center",width:100},
-					{field:"loggerModule",title:"业务模块",align:"center",width:100,formatter: function(value,row,index){
+					{field:"loggerExceptionModule",title:"业务模块",align:"center",width:100,formatter: function(value,row,index){
 						if(null != module_type){
 							for(var i=0;i<module_type.length;i++){
 								if( value == module_type[i].dictionaryCode){
@@ -104,7 +104,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							return value;
 						}
 					}},
-					{field:"loggerType",title:"操作类型",align:"center",width:100,formatter: function(value,row,index){
+					{field:"loggerExceptionType",title:"操作类型",align:"center",width:100,formatter: function(value,row,index){
 						if(null != method_type){
 							for(var i=0;i<method_type.length;i++){
 								if( value == method_type[i].dictionaryCode){
@@ -116,11 +116,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						}
 					}},
 					{field:"loggerResponseTime",title:"响应毫秒",align:"center",width:100},
-					{field:"loggerIp",title:"访问IP",align:"center",width:100},
+					{field:"loggerExceptionIp",title:"访问IP",align:"center",width:100},
 					{field:"loggerOperatingSystem",title:"操作系统",align:"center",width:100},
 					{field:"loggerBrowserType",title:"浏览器类型",align:"center",width:100},
 					{field:"loggerBrowserVersion",title:"浏览器版本",align:"center",width:100},
-					{field:"loggerCreateTime",title:"创建时间",align:"center",width:100}
+					{field:"loggerExceptionCreateTime",title:"创建时间",align:"center",width:100}
 			    ]],
 			    //查询条件
 			    queryParams: {

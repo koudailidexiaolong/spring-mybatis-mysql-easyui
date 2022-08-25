@@ -7,14 +7,17 @@
 	<welcome-file-list>
 		<welcome-file>login.jsp</welcome-file>
 	</welcome-file-list>
+	<!--  -->
 	<error-page>
 		<error-code>404</error-code>
-		<location>/error_pages/404.jsp</location>
+		<location>/WEB-INF/pages/errors/404.jsp</location>
 	</error-page>
+	
 	<error-page>
 		<error-code>500</error-code>
-		<location>/error_pages/500.jsp</location>
+		<location>/WEB-INF/pages/errors/500.jsp</location>
 	</error-page>
+	
 	<context-param>
 		<param-name>webAppRootKey</param-name>
 		<param-value>SSM-MYSQL.root</param-value>

@@ -39,9 +39,17 @@ public class RedisCacheAction {
 	private RedisCacheService redisCacheServiceImpl;
 	
 	
+	/**
+	 * 首页
+	 * @return
+	 * @throws Exception
+	 * @author julong
+	 * @date 2022年8月24日 下午2:17:05
+	 * @desc
+	 */
 	@RequestMapping("/index")
 	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_CACHE)
-	public String index(){
+	public String index() {
 		logger.info("【缓存信息管理】");
 		return "system/cache/cache_index";
 	}

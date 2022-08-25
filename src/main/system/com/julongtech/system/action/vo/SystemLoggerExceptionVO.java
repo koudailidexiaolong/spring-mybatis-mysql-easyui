@@ -8,7 +8,7 @@ import java.sql.Timestamp;
  * @author julong 
  * @date Mon Oct 16 15:08:21 CST 2017
  */
-public class SystemLoggerExptionVO  implements Serializable{
+public class SystemLoggerExceptionVO  implements Serializable{
     /**
 	 * @author julong
 	 * @date 2017-10-16 下午3:55:08
@@ -18,17 +18,17 @@ public class SystemLoggerExptionVO  implements Serializable{
 	/** 
      * 日志编号:类型+年+月+日+时+分+秒+毫秒+6位序列
      */
-    private String loggerExptionId;
+    private String loggerExceptionId;
 
     /** 
      * 日志类型
      */
-    private String loggerExptionType;
+    private String loggerExceptionType;
 
     /** 
      * 日志创建时间
      */
-    private Timestamp loggerExptionTime;
+    private Timestamp loggerExceptionCreateTime;
 
     /** 
      * 组织机构
@@ -48,27 +48,27 @@ public class SystemLoggerExptionVO  implements Serializable{
     /** 
      * 日志IP
      */
-    private String loggerExptionIp;
+    private String loggerExceptionIp;
 
     /** 
      * 日志调用模块
      */
-    private String loggerExptionModule;
+    private String loggerExceptionModule;
 
     /** 
      * 日志调用模块方法
      */
-    private String loggerExptionMethod;
+    private String loggerExceptionMethod;
 
     /** 
      * 日志描述
      */
-    private String loggerExptionDescription;
+    private String loggerExceptionDescription;
 
     /** 
      * 日志异常信息
      */
-    private String loggerExptionContext;
+    private String loggerExceptionContext;
 
 
     /** 
@@ -93,50 +93,50 @@ public class SystemLoggerExptionVO  implements Serializable{
 
     /**
      * 日志编号:类型+年+月+日+时+分+秒+毫秒+6位序列
-     * @return loggerExptionId
+     * @return loggerExceptionId
      */
-    public String getLoggerExptionId() {
-        return this.loggerExptionId;
+    public String getLoggerExceptionId() {
+        return this.loggerExceptionId;
     }
 
     /**
      * 日志编号:类型+年+月+日+时+分+秒+毫秒+6位序列
-     * @param loggerExptionId
+     * @param loggerExceptionId
      */
-    public void setLoggerExptionId(String loggerExptionId) {
-        this.loggerExptionId = loggerExptionId;
+    public void setLoggerExceptionId(String loggerExceptionId) {
+        this.loggerExceptionId = loggerExceptionId;
     }
 
     /**
      * 日志类型
-     * @return loggerExptionType
+     * @return loggerExceptionType
      */
-    public String getLoggerExptionType() {
-        return this.loggerExptionType;
+    public String getLoggerExceptionType() {
+        return this.loggerExceptionType;
     }
 
     /**
      * 日志类型
-     * @param loggerExptionType
+     * @param loggerExceptionType
      */
-    public void setLoggerExptionType(String loggerExptionType) {
-        this.loggerExptionType = loggerExptionType;
+    public void setLoggerExceptionType(String loggerExceptionType) {
+        this.loggerExceptionType = loggerExceptionType;
     }
 
     /**
      * 日志创建时间
-     * @return loggerExptionTime
+     * @return loggerExceptionCreateTime
      */
-    public Timestamp getLoggerExptionTime() {
-        return this.loggerExptionTime;
+    public Timestamp getLoggerExceptionCreateTime() {
+        return this.loggerExceptionCreateTime;
     }
 
     /**
      * 日志创建时间
-     * @param loggerExptionTime
+     * @param loggerExceptionCreateTime
      */
-    public void setLoggerExptionTime(Timestamp loggerExptionTime) {
-        this.loggerExptionTime = loggerExptionTime;
+    public void setLoggerExceptionCreateTime(Timestamp loggerExceptionCreateTime) {
+        this.loggerExceptionCreateTime = loggerExceptionCreateTime;
     }
 
     /**
@@ -189,82 +189,82 @@ public class SystemLoggerExptionVO  implements Serializable{
 
     /**
      * 日志IP
-     * @return loggerExptionIp
+     * @return loggerExceptionIp
      */
-    public String getLoggerExptionIp() {
-        return this.loggerExptionIp;
+    public String getLoggerExceptionIp() {
+        return this.loggerExceptionIp;
     }
 
     /**
      * 日志IP
-     * @param loggerExptionIp
+     * @param loggerExceptionIp
      */
-    public void setLoggerExptionIp(String loggerExptionIp) {
-        this.loggerExptionIp = loggerExptionIp;
+    public void setLoggerExceptionIp(String loggerExceptionIp) {
+        this.loggerExceptionIp = loggerExceptionIp;
     }
 
     /**
      * 日志调用模块
-     * @return loggerExptionModule
+     * @return loggerExceptionModule
      */
-    public String getLoggerExptionModule() {
-        return this.loggerExptionModule;
+    public String getLoggerExceptionModule() {
+        return this.loggerExceptionModule;
     }
 
     /**
      * 日志调用模块
-     * @param loggerExptionModule
+     * @param loggerExceptionModule
      */
-    public void setLoggerExptionModule(String loggerExptionModule) {
-        this.loggerExptionModule = loggerExptionModule;
+    public void setLoggerExceptionModule(String loggerExceptionModule) {
+        this.loggerExceptionModule = loggerExceptionModule;
     }
 
     /**
      * 日志调用模块方法
-     * @return loggerExptionMethod
+     * @return loggerExceptionMethod
      */
-    public String getLoggerExptionMethod() {
-        return this.loggerExptionMethod;
+    public String getLoggerExceptionMethod() {
+        return this.loggerExceptionMethod;
     }
 
     /**
      * 日志调用模块方法
-     * @param loggerExptionMethod
+     * @param loggerExceptionMethod
      */
-    public void setLoggerExptionMethod(String loggerExptionMethod) {
-        this.loggerExptionMethod = loggerExptionMethod;
+    public void setLoggerExceptionMethod(String loggerExceptionMethod) {
+        this.loggerExceptionMethod = loggerExceptionMethod;
     }
 
     /**
      * 日志描述
-     * @return loggerExptionDescription
+     * @return loggerExceptionDescription
      */
-    public String getLoggerExptionDescription() {
-        return this.loggerExptionDescription;
+    public String getLoggerExceptionDescription() {
+        return this.loggerExceptionDescription;
     }
 
     /**
      * 日志描述
-     * @param loggerExptionDescription
+     * @param loggerExceptionDescription
      */
-    public void setLoggerExptionDescription(String loggerExptionDescription) {
-        this.loggerExptionDescription = loggerExptionDescription;
+    public void setLoggerExceptionDescription(String loggerExceptionDescription) {
+        this.loggerExceptionDescription = loggerExceptionDescription;
     }
 
     /**
      * 日志异常信息
-     * @return loggerExptionContext
+     * @return loggerExceptionContext
      */
-    public String getLoggerExptionContext() {
-        return this.loggerExptionContext;
+    public String getLoggerExceptionContext() {
+        return this.loggerExceptionContext;
     }
 
     /**
      * 日志异常信息
-     * @param loggerExptionContext
+     * @param loggerExceptionContext
      */
-    public void setLoggerExptionContext(String loggerExptionContext) {
-        this.loggerExptionContext = loggerExptionContext;
+    public void setLoggerExceptionContext(String loggerExceptionContext) {
+        this.loggerExceptionContext = loggerExceptionContext;
     }
 
 	public String getLoggerOperatingSystem() {
@@ -301,11 +301,11 @@ public class SystemLoggerExptionVO  implements Serializable{
 
 	@Override
 	public String toString() {
-		return "SystemLoggerExptionVO [loggerExptionId=" + loggerExptionId + ", loggerExptionType=" + loggerExptionType
-				+ ", loggerExptionTime=" + loggerExptionTime + ", orgId=" + orgId + ", userId=" + userId + ", userName="
-				+ userName + ", loggerExptionIp=" + loggerExptionIp + ", loggerExptionModule=" + loggerExptionModule
-				+ ", loggerExptionMethod=" + loggerExptionMethod + ", loggerExptionDescription="
-				+ loggerExptionDescription + ", loggerExptionContext=" + loggerExptionContext
+		return "SystemLoggerExceptionVO [loggerExceptionId=" + loggerExceptionId + ", loggerExceptionType=" + loggerExceptionType
+				+ ", loggerExceptionCreateTime=" + loggerExceptionCreateTime + ", orgId=" + orgId + ", userId=" + userId + ", userName="
+				+ userName + ", loggerExceptionIp=" + loggerExceptionIp + ", loggerExceptionModule=" + loggerExceptionModule
+				+ ", loggerExceptionMethod=" + loggerExceptionMethod + ", loggerExceptionDescription="
+				+ loggerExceptionDescription + ", loggerExceptionContext=" + loggerExceptionContext
 				+ ", loggerOperatingSystem=" + loggerOperatingSystem + ", loggerBrowserType=" + loggerBrowserType
 				+ ", loggerBrowserVersion=" + loggerBrowserVersion + ", loggerResponseTime=" + loggerResponseTime + "]";
 	}

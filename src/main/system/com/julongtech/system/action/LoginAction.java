@@ -84,7 +84,7 @@ public class LoginAction {
 				if(StringUtils.isNotBlank(times) && null != times && !"null".equals(times)){
 					time = Long.valueOf(times);
 				}
-//				if(0 < time  && (System.currentTimeMillis()-time) < 60000){
+				if(0 < time  && (System.currentTimeMillis()-time) < 60000){
 					if(code.equalsIgnoreCase(captcha)){
 						//解密用户输入的密码
 						userPassword = RSAUtil.getInstance().privateDecrypt(Base64.decodeBase64(userPassword));
@@ -141,10 +141,10 @@ public class LoginAction {
 						maps.put("result", false);
 						maps.put("message", "验证码输入错误！");
 					}
-//				}else{
-//					maps.put("result", false);
-//					maps.put("message", "验证码已失效，请重新输入！");
-//				}
+				}else{
+					maps.put("result", false);
+					maps.put("message", "验证码已失效，请重新输入！");
+				}
 			}else{
 				maps.put("result", false);
 				maps.put("message", "用户名或密码不能为空！");

@@ -16,28 +16,27 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.julongtech.page.PageParam;
 import com.julongtech.page.PageUtils;
-import com.julongtech.system.action.vo.SystemLoggerVO;
+import com.julongtech.system.action.vo.SystemLoggerExceptionVO;
 import com.julongtech.system.aspect.LoggerMethod;
 import com.julongtech.system.aspect.LoggerModule;
 import com.julongtech.system.aspect.LoggerProxy;
 import com.julongtech.system.service.SystemLoggerExceptionService;
-import com.julongtech.system.service.SystemLoggerService;
-import com.julongtech.system.service.dto.SystemLoggerDTO;
+import com.julongtech.system.service.dto.SystemLoggerExceptionDTO;
 
 /**
- * 系统日志信息管理
+ * 系统异常日志信息管理
  * @author julong
  * @date 2017-10-28 下午3:09:39
  */
 @Controller
-@RequestMapping("logger")
-public class SystemLoggerAction {
-	private static final Logger logger = LoggerFactory.getLogger(SystemLoggerAction.class);
+@RequestMapping("logger/exception")
+public class SystemLoggerExceptionAction {
+	private static final Logger logger = LoggerFactory.getLogger(SystemLoggerExceptionAction.class);
+	
 	
 	@Autowired
-	private SystemLoggerService systemLoggerServiceImpl;
+	private SystemLoggerExceptionService systemLoggerExceptionServiceImpl;
 	
-
 	
 	/**
 	 * 加载主界面的方法
@@ -46,15 +45,15 @@ public class SystemLoggerAction {
 	 * @date 2017-10-24 下午12:53:40
 	 */
 	@RequestMapping("/index")
-	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_LOGGER,description="加载日志页面")
+	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_LOGGER,description="加载异常日志页面")
 	public String loadPage(){
 		logger.info("【系统日志信息管理】-加载日志主界面");
-		return "system/logger/logger_index";
+		return "system/logger/logger_exception_index";
 	}
 	
 	/**
 	 * 分页查新日志信息的方法
-	 * @param systemLoggerVO
+	 * @param systemLoggerExceptionVO
 	 * @param page
 	 * @return
 	 * @author julong
@@ -63,18 +62,18 @@ public class SystemLoggerAction {
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value="/selectLoggerListByPage",method={RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_LOGGER,description="分页查询登录日志")
-	public Map<String,Object> selectLoggerListByPage(SystemLoggerVO systemLoggerVO,PageParam<SystemLoggerDTO> page){
-		logger.info("【系统日志信息管理】-分页查询日志信息的方法:{}",systemLoggerVO);
+	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_LOGGER,description="分页查询异常日志")
+	public Map<String,Object> selectLoggerListByPage(SystemLoggerExceptionVO systemLoggerExceptionVO,PageParam<SystemLoggerExceptionDTO> page){
+		logger.info("【系统日志信息管理】-分页查询日志信息的方法systemLoggerExceptionVO:{}",systemLoggerExceptionVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		try {
 			//分页的方法
-			PageInfo<SystemLoggerDTO> pages = (PageInfo<SystemLoggerDTO>) PageUtils.getPageHelper(page);
+			PageInfo<SystemLoggerExceptionDTO> pages = (PageInfo<SystemLoggerExceptionDTO>) PageUtils.getPageHelper(page);
 			//查询数据的方法
 			PageHelper.startPage(pages.getPageNum(),pages.getPageSize());
-			List<SystemLoggerDTO> list = this.systemLoggerServiceImpl.getSystemLoggerListByPage(systemLoggerVO,null);
+			List<SystemLoggerExceptionDTO> list = this.systemLoggerExceptionServiceImpl.getSystemLoggerExceptionListByPage(systemLoggerExceptionVO,null);
 			//分页获取的方法
-			pages = new PageInfo<SystemLoggerDTO>(list);
+			pages = new PageInfo<SystemLoggerExceptionDTO>(list);
 			//格式化返回结果
 			maps = PageUtils.formatPage(pages);
 		} catch (Exception e) {
