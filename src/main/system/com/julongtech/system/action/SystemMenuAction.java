@@ -190,7 +190,7 @@ public class SystemMenuAction {
 	 */
 	@RequestMapping("/selectMenuParentList")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_MENU)
+	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_MENU,description="校验菜单编号是否存在信息的方法")
 	public List<SystemMenuDTO> selectMenuParentList(SystemMenuVO systemMenuVO){
 		logger.info("【菜单模块】-校验菜单编号是否存在输入参数systemMenuVO:{}",systemMenuVO);
 		List<SystemMenuDTO> menuList = new ArrayList<SystemMenuDTO>();
@@ -289,7 +289,7 @@ public class SystemMenuAction {
 	 */
 	@RequestMapping("/updateMenu")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_ROLE)
+	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_ROLE,description="修改菜单信息的方法")
 	public Map<String,Object> updateRole(SystemMenuVO systemMenuVO){
 		logger.info("【菜单模块】-修改菜单信息输入参数systemMenuVO:{}",systemMenuVO);
 		Map<String,Object> maps = new HashMap<String,Object>();

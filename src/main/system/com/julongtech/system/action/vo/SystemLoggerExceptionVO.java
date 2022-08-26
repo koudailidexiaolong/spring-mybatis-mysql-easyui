@@ -267,50 +267,91 @@ public class SystemLoggerExceptionVO  implements Serializable{
         this.loggerExceptionContext = loggerExceptionContext;
     }
 
-	public String getLoggerOperatingSystem() {
-		return loggerOperatingSystem;
-	}
 
-	public void setLoggerOperatingSystem(String loggerOperatingSystem) {
-		this.loggerOperatingSystem = loggerOperatingSystem;
-	}
+    /**
+     * 使用的操作系统
+     * @return loggerOperatingSystem
+     */
+    public String getLoggerOperatingSystem() {
+        return this.loggerOperatingSystem;
+    }
 
-	public String getLoggerBrowserType() {
-		return loggerBrowserType;
-	}
+    /**
+     * 使用的操作系统
+     * @param loggerOperatingSystem
+     */
+    public void setLoggerOperatingSystem(String loggerOperatingSystem) {
+        this.loggerOperatingSystem = loggerOperatingSystem;
+    }
 
-	public void setLoggerBrowserType(String loggerBrowserType) {
-		this.loggerBrowserType = loggerBrowserType;
-	}
+    /**
+     * 浏览器类型
+     * @return loggerBrowserType
+     */
+    public String getLoggerBrowserType() {
+        return this.loggerBrowserType;
+    }
 
-	public String getLoggerBrowserVersion() {
-		return loggerBrowserVersion;
-	}
+    /**
+     * 浏览器类型
+     * @param loggerBrowserType
+     */
+    public void setLoggerBrowserType(String loggerBrowserType) {
+        this.loggerBrowserType = loggerBrowserType;
+    }
 
-	public void setLoggerBrowserVersion(String loggerBrowserVersion) {
-		this.loggerBrowserVersion = loggerBrowserVersion;
-	}
+    /**
+     * 浏览器版本
+     * @return loggerBrowserVersion
+     */
+    public String getLoggerBrowserVersion() {
+        return this.loggerBrowserVersion;
+    }
 
-	public String getLoggerResponseTime() {
-		return loggerResponseTime;
-	}
+    /**
+     * 浏览器版本
+     * @param loggerBrowserVersion
+     */
+    public void setLoggerBrowserVersion(String loggerBrowserVersion) {
+        this.loggerBrowserVersion = loggerBrowserVersion;
+    }
 
-	public void setLoggerResponseTime(String loggerResponseTime) {
-		this.loggerResponseTime = loggerResponseTime;
-	}
+    /**
+     * 访问响应时间 毫秒
+     * @return loggerResponseTime
+     */
+    public String getLoggerResponseTime() {
+        return this.loggerResponseTime;
+    }
 
-	@Override
-	public String toString() {
-		return "SystemLoggerExceptionVO [loggerExceptionId=" + loggerExceptionId + ", loggerExceptionType=" + loggerExceptionType
-				+ ", loggerExceptionCreateTime=" + loggerExceptionCreateTime + ", orgId=" + orgId + ", userId=" + userId + ", userName="
-				+ userName + ", loggerExceptionIp=" + loggerExceptionIp + ", loggerExceptionModule=" + loggerExceptionModule
-				+ ", loggerExceptionMethod=" + loggerExceptionMethod + ", loggerExceptionDescription="
-				+ loggerExceptionDescription + ", loggerExceptionContext=" + loggerExceptionContext
-				+ ", loggerOperatingSystem=" + loggerOperatingSystem + ", loggerBrowserType=" + loggerBrowserType
-				+ ", loggerBrowserVersion=" + loggerBrowserVersion + ", loggerResponseTime=" + loggerResponseTime + "]";
-	}
+    /**
+     * 访问响应时间 毫秒
+     * @param loggerResponseTime
+     */
+    public void setLoggerResponseTime(String loggerResponseTime) {
+        this.loggerResponseTime = loggerResponseTime;
+    }
 
-	
 
-  
+    @java.lang.Override
+    public java.lang.String toString() {
+        final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemLoggerExceptionVO{");
+        sb.append("loggerExceptionId='").append(loggerExceptionId).append('\'');
+        sb.append(", loggerExceptionType='").append(loggerExceptionType).append('\'');
+        sb.append(", loggerExceptionCreateTime=").append(loggerExceptionCreateTime);
+        sb.append(", orgId='").append(orgId).append('\'');
+        sb.append(", userId='").append(userId).append('\'');
+        sb.append(", userName='").append(userName).append('\'');
+        sb.append(", loggerExceptionIp='").append(loggerExceptionIp).append('\'');
+        sb.append(", loggerExceptionModule='").append(loggerExceptionModule).append('\'');
+        sb.append(", loggerExceptionMethod='").append(loggerExceptionMethod).append('\'');
+        sb.append(", loggerExceptionDescription='").append(loggerExceptionDescription).append('\'');
+        sb.append(", loggerExceptionContext='").append(loggerExceptionContext).append('\'');
+        sb.append(", loggerOperatingSystem='").append(loggerOperatingSystem).append('\'');
+        sb.append(", loggerBrowserType='").append(loggerBrowserType).append('\'');
+        sb.append(", loggerBrowserVersion='").append(loggerBrowserVersion).append('\'');
+        sb.append(", loggerResponseTime='").append(loggerResponseTime).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

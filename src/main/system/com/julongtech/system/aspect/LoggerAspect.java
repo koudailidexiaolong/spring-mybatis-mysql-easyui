@@ -45,7 +45,7 @@ public class LoggerAspect {
 	 * @author julong
 	 * @date 2022年8月24日 上午11:24:21
 	 */
-	private long endTimeMillis = 0; 
+	 private long endTimeMillis = 0; 
 
 	/**
 	 * 类名

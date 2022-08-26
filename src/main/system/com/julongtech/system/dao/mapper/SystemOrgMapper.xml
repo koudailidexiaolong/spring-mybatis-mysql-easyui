@@ -88,7 +88,7 @@
       org_type, org_area, org_area_code, org_create_date,
       org_status, 
       org_create_time, org_create_user_id, org_update_time, 
-      org_update_user_ld, org_desc, org_reserve_a, 
+      org_update_user_id, org_desc, org_reserve_a, 
       org_reserve_b, org_reserve_c)
     values (#{orgId,jdbcType=VARCHAR},#{orgLeaf,jdbcType=VARCHAR}, #{orgPhone,jdbcType=VARCHAR}, 
       #{orgFullName,jdbcType=VARCHAR}, #{orgName,jdbcType=VARCHAR}, #{orgParentId,jdbcType=VARCHAR}, 
@@ -96,7 +96,7 @@
       #{orgType,jdbcType=VARCHAR}, #{orgArea,jdbcType=VARCHAR}, #{orgAreaCode,jdbcType=VARCHAR}, #{orgCreateDate,jdbcType=DATE}, 
       #{orgStatus,jdbcType=VARCHAR}, 
       #{orgCreateTime,jdbcType=TIMESTAMP}, #{orgCreateUserId,jdbcType=VARCHAR}, #{orgUpdateTime,jdbcType=DATE}, 
-      #{orgUpdateUserLd,jdbcType=VARCHAR}, #{orgDesc,jdbcType=VARCHAR}, #{orgReserveA,jdbcType=VARCHAR}, 
+      #{orgUpdateUserId,jdbcType=VARCHAR}, #{orgDesc,jdbcType=VARCHAR}, #{orgReserveA,jdbcType=VARCHAR}, 
       #{orgReserveB,jdbcType=VARCHAR}, #{orgReserveC,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.julongtech.system.dao.entity.SystemOrgInfo" >
@@ -153,7 +153,7 @@
       <if test="orgUpdateTime != null and orgUpdateTime != '' " >
         ORG_UPDATE_TIME,
       </if>
-      <if test="orgUpdateUserLd != null and orgUpdateUserLd != '' " >
+      <if test="orgUpdateUserId != null and orgUpdateUserId != '' " >
         ORG_UPDATE_USER_LD,
       </if>
       <if test="orgDesc != null and orgDesc != '' " >
@@ -289,8 +289,8 @@
       <if test="orgUpdateTime != null and orgUpdateTime != ''" >
         ORG_UPDATE_TIME = #{orgUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="orgUpdateUserLd != null and orgUpdateUserLd != ''" >
-        ORG_UPDATE_USER_LD = #{orgUpdateUserLd,jdbcType=VARCHAR},
+      <if test="orgUpdateUserId != null and orgUpdateUserId != ''" >
+        ORG_UPDATE_USER_ID = #{orgUpdateUserId,jdbcType=VARCHAR},
       </if>
       <if test="orgDesc != null and orgDesc != ''" >
         ORG_DESC = #{orgDesc,jdbcType=VARCHAR},
@@ -326,7 +326,7 @@
       ORG_CREATE_TIME = #{orgCreateTime,jdbcType=TIMESTAMP},
       ORG_CREATE_USER_ID = #{orgCreateUserId,jdbcType=VARCHAR},
       ORG_UPDATE_TIME = #{orgUpdateTime,jdbcType=TIMESTAMP},
-      ORG_UPDATE_USER_LD = #{orgUpdateUserLd,jdbcType=VARCHAR},
+      ORG_UPDATE_USER_ID = #{orgUpdateUserId,jdbcType=VARCHAR},
       ORG_DESC = #{orgDesc,jdbcType=VARCHAR},
       ORG_RESERVE_A = #{orgReserveA,jdbcType=VARCHAR},
       ORG_RESERVE_B = #{orgReserveB,jdbcType=VARCHAR},

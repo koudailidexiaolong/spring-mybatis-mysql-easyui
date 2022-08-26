@@ -352,6 +352,7 @@ public class RedisCacheManagerImpl  implements RedisCacheManager{
 			});
 		} catch (Exception e) {
 			logger.error("缓存模块-连接redis发生异常：",e);
+			//日志记录
 		}
 		return "PONG".equals(ping);
 	}

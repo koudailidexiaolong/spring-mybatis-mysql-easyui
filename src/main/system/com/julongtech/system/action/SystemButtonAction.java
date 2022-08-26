@@ -98,7 +98,7 @@ public class SystemButtonAction {
 	 * @date 2017-10-28 上午11:56:11
 	 */
 	@RequestMapping(value="/loadEditButton",method={RequestMethod.GET,RequestMethod.POST})
-	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_BUTTON)
+	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_BUTTON,description="加载修改按钮信息的方法")
 	public String loadEditButton(SystemButtonVO systemButtonVO,Model model){
 		logger.info("【按钮管理模块】-加载按钮修改界面的方法:{},{}",systemButtonVO,model);
 		try {
@@ -121,7 +121,7 @@ public class SystemButtonAction {
 	 * @date 2017-10-26 上午9:29:34
 	 */
 	@RequestMapping("/loadAddButton")
-	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_BUTTON)
+	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_BUTTON,description="加载新增按钮界面的方法")
 	public String loadAddButton(SystemButtonVO systemButtonVO){
 		logger.info("【按钮管理模块】-加载按钮新增界面的方法");
 		return "system/button/button_add";
@@ -137,7 +137,7 @@ public class SystemButtonAction {
 	 */
 	@RequestMapping("/updateButton")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_BUTTON)
+	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_BUTTON,description="修改按钮信息的方法")
 	public Map<String,Object> updateButton(SystemButtonVO systemButtonVO){
 		logger.info("【按钮模块】-修改信息输入参数systemButtonVO:{}",systemButtonVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
@@ -160,7 +160,7 @@ public class SystemButtonAction {
 	 */
 	@RequestMapping("/updateButtonStatus")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_BUTTON)
+	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_BUTTON,description="修改按钮信息的方法")
 	public Map<String,Object> updateButtonStatus(SystemButtonVO systemButtonVO){
 		logger.info("【按钮模块】-修改状态信息的方法:{}",systemButtonVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
@@ -187,7 +187,7 @@ public class SystemButtonAction {
 	 * @desc
 	 */
 	@RequestMapping("/getButton")
-	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_BUTTON)
+	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_BUTTON,description="根据编号按钮信息的方法")
 	public String getButton(SystemButtonVO systemButtonVO,Model model){
 		logger.info("【按钮管理】-根据编号信息的方法:{},{}",systemButtonVO,model);
 		try {
@@ -211,7 +211,7 @@ public class SystemButtonAction {
 	 */
 	@RequestMapping("/saveButton")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.INSERT,module = LoggerModule.SYSTEM_BUTTON)
+	@LoggerProxy(method = LoggerMethod.INSERT,module = LoggerModule.SYSTEM_BUTTON,description="新增按钮信息")
 	public Map<String,Object> saveButton(SystemButtonVO systemButtonVO){
 		logger.info("【按钮模块】-新增信息的方法:{}",systemButtonVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
@@ -238,7 +238,7 @@ public class SystemButtonAction {
 	 */
 	@RequestMapping("/deleteButton")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_BUTTON)
+	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_BUTTON,description="删除按钮信息的方法")
 	public Map<String,Object> deleteButton(SystemButtonVO systemButtonVO){
 		logger.info("【按钮模块】-删除按钮信息的方法:{}",systemButtonVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
@@ -263,7 +263,7 @@ public class SystemButtonAction {
 	 */
 	@RequestMapping("/validateButton")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_BUTTON)
+	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_BUTTON,description="校验按钮名称信息的方法")
 	public Map<String,Object> validateButton(SystemButtonVO systemButtonVO){
 		logger.info("【按钮模块】-校验按钮名称是否存在的方法:{}",systemButtonVO);
 		Map<String,Object> maps = new HashMap<String,Object>();

@@ -236,7 +236,7 @@ public class AuthorizeAction {
 	 */
 	@RequestMapping("/getRoleMenu")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_AUTHORIZE)
+	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_AUTHORIZE,description="根据角色查询映射关系")
 	public Map<String,Object> getRoleMenu(SystemRoleMenuMappedVO systemRoleMenuMappedVO){
 		logger.info("【系统授权管理】根据角色查询映射关系的方法{}",systemRoleMenuMappedVO);
 		Map<String,Object> maps = new Hashtable<String, Object>();
@@ -267,7 +267,7 @@ public class AuthorizeAction {
 	 */
 	@RequestMapping("/deleteRoleMenu")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_AUTHORIZE)
+	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_AUTHORIZE,description="删除角色菜单映射关系")
 	public Map<String,Object> deleteRoleMenu(SystemRoleMenuMappedVO systemRoleMenuMappedVO){
 		logger.info("【系统授权管理】-删除角色菜单映射关系的方法{}",systemRoleMenuMappedVO);
 		Map<String,Object> maps = new Hashtable<String, Object>();
@@ -295,7 +295,7 @@ public class AuthorizeAction {
 	 * @date 2017-11-3 上午9:23:45
 	 */
 	@RequestMapping("/loadAddRole")
-	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_AUTHORIZE)
+	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_AUTHORIZE,description="加载用户角色修改界面")
 	public String loadAddRole(SystemUserRoleMappedVO systemUserRoleMappedVO,Model model){
 		logger.info("【系统授权管理】进入加载用户角色修改界面{},{}",systemUserRoleMappedVO,model);
 		try {
@@ -323,7 +323,7 @@ public class AuthorizeAction {
 	 */
 	@RequestMapping("/deleteRoleUser")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_AUTHORIZE)
+	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_AUTHORIZE,description="删除用户角色映射关系")
 	public Map<String,Object> deleteRoleUser(SystemUserRoleMappedVO systemUserRoleMappedVO){
 		logger.info("【系统授权管理】根据角色查询映射关系的方法{}",systemUserRoleMappedVO);
 		Map<String,Object> maps = new Hashtable<String, Object>();
@@ -410,15 +410,15 @@ public class AuthorizeAction {
 	 * @author julong
 	 * @date 2018-6-13 下午5:31:16
 	 */
-	@SuppressWarnings("unchecked")
 	@RequestMapping("/loadAuthorizeButton")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_AUTHORIZE)
+	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_AUTHORIZE,description="加载权限按钮")
 	public Map<String,Object> loadAuthorizeButton(SystemUserRoleMappedVO systemUserRoleMappedVO){
 		logger.info("【系统授权管理】根据用户查询映射关系的方法{}",systemUserRoleMappedVO);
 		Map<String,Object> maps = new Hashtable<String, Object>();
 		try {
 			//根据用户查询映射关系表数据
+			@SuppressWarnings("unchecked")
 			List<SystemButtonDTO> buttonList = (List<SystemButtonDTO>) this.httpSession.getAttribute("button");
 		    maps.put("buttonList", buttonList);
 		} catch (Exception e) {

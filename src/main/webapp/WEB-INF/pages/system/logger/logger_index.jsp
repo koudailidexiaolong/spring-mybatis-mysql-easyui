@@ -120,6 +120,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					{field:"loggerOperatingSystem",title:"操作系统",align:"center",width:100},
 					{field:"loggerBrowserType",title:"浏览器类型",align:"center",width:100},
 					{field:"loggerBrowserVersion",title:"浏览器版本",align:"center",width:100},
+					{field:"loggerDescription",title:"操作描述",align:"center",width:100},
 					{field:"loggerCreateTime",title:"创建时间",align:"center",width:100}
 			    ]],
 			    //查询条件

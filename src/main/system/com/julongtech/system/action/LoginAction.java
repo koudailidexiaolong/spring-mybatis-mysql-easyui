@@ -70,7 +70,7 @@ public class LoginAction {
 	 */
 	@RequestMapping("/login")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.LOGIN,module = LoggerModule.SYSTEM_LOGIN)
+	@LoggerProxy(method = LoggerMethod.LOGIN,module = LoggerModule.SYSTEM_LOGIN,description="登录的方法")
 	public Map<String,Object> login(@RequestParam("userId") String userId,@RequestParam("userPassword") String userPassword,@RequestParam("captcha") String captcha){
 		logger.info("【系统登录模块】-登录系统{},{}",userId,userPassword);
 		//加载系统菜单列表 此处应该放入缓存中
@@ -223,7 +223,7 @@ public class LoginAction {
 	 * @date 2017-10-31 下午7:23:35
 	 */
 	@RequestMapping(value = "/loginOut",method={RequestMethod.GET,RequestMethod.POST})
-	@LoggerProxy(method = LoggerMethod.LOGOUT,module = LoggerModule.SYSTEM_LOGIN)
+	@LoggerProxy(method = LoggerMethod.LOGOUT,module = LoggerModule.SYSTEM_LOGIN,description="系统退出登录")
 	public String loginOut(){
 		logger.info("退出系统");
 		//获取session

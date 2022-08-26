@@ -25,7 +25,8 @@
   </resultMap>
   <sql id="Base_Column_List" >
     logger_exception_id, logger_exception_type, logger_exception_create_time, org_id, user_id, user_name, 
-    logger_exception_ip, logger_exception_module, logger_exception_method, logger_exception_description, logger_response_time,logger_operating_system,logger_browser_type,logger_browser_version,
+    logger_exception_ip, logger_exception_module, logger_exception_method, logger_exception_description,
+    logger_response_time,logger_operating_system,logger_browser_type,logger_browser_version,
     logger_exception_reserve_a, logger_exception_reserve_b, logger_exception_reserve_c
   </sql>
   <sql id="Blob_Column_List" >
@@ -94,7 +95,7 @@
         LOGGER_EXCEPTION_TYPE,
       </if>
       <if test="loggerExceptionCreateTime != null and loggerExceptionCreateTime != '' " >
-        LOGGER_EXCEPTION_TIME,
+        LOGGER_EXCEPTION_CREATE_TIME,
       </if>
       <if test="orgId != null and orgId != '' " >
         ORG_ID,
@@ -206,7 +207,7 @@
         LOGGER_EXCEPTION_TYPE = #{loggerExceptionType,jdbcType=VARCHAR},
       </if>
       <if test="loggerExceptionCreateTime != null and loggerExceptionCreateTime != ''" >
-        LOGGER_EXCEPTION_TIME = #{loggerExceptionCreateTime,jdbcType=TIMESTAMP},
+        LOGGER_EXCEPTION_CREATE_TIME = #{loggerExceptionCreateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="orgId != null and orgId != ''" >
         ORG_ID = #{orgId,jdbcType=VARCHAR},
@@ -228,9 +229,7 @@
       </if>
       <if test="loggerExceptionDescription != null and loggerExceptionDescription != ''" >
         logger_exception_description = #{loggerExceptionDescription,jdbcType=VARCHAR},
-      </if>
-      <if test="loggerResponseTime != null and loggerResponseTime != ''" >
-        logger_response_time = #{loggerResponseTime,jdbcType=VARCHAR},
+      
       </if>
       <if test="loggerResponseTime != null and loggerResponseTime != ''" >
         LOGGER_RESPONSE_TIME = #{loggerResponseTime,jdbcType=VARCHAR},
@@ -262,7 +261,7 @@
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.julongtech.system.dao.entity.SystemLoggerExceptionInfo" >
     update SYSTEM_LOGGER_EXCEPTION
     set LOGGER_EXCEPTION_TYPE = #{loggerExceptionType,jdbcType=VARCHAR},
-      LOGGER_EXCEPTION_TIME = #{loggerExceptionCreateTime,jdbcType=TIMESTAMP},
+      LOGGER_EXCEPTION_CREATE_TIME = #{loggerExceptionCreateTime,jdbcType=TIMESTAMP},
       ORG_ID = #{orgId,jdbcType=VARCHAR},
       USER_ID = #{userId,jdbcType=VARCHAR},
       USER_NAME = #{userName,jdbcType=VARCHAR},
@@ -283,7 +282,7 @@
   <update id="updateByPrimaryKey" parameterType="com.julongtech.system.dao.entity.SystemLoggerExceptionInfo" >
     update SYSTEM_LOGGER_EXCEPTION
     set LOGGER_EXCEPTION_TYPE = #{loggerExceptionType,jdbcType=VARCHAR},
-      LOGGER_EXCEPTION_TIME = #{loggerExceptionCreateTime,jdbcType=TIMESTAMP},
+      LOGGER_EXCEPTION_CREATE_TIME = #{loggerExceptionCreateTime,jdbcType=TIMESTAMP},
       ORG_ID = #{orgId,jdbcType=VARCHAR},
       USER_ID = #{userId,jdbcType=VARCHAR},
       USER_NAME = #{userName,jdbcType=VARCHAR},

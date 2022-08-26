@@ -99,7 +99,7 @@ public class SystemRoleAction {
 	 * @date 2017-10-28 上午11:56:11
 	 */
 	@RequestMapping(value="/loadEditRole",method={RequestMethod.GET,RequestMethod.POST})
-	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_ROLE)
+	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_ROLE,description="加载修改角色信息的方法")
 	public String loadEditRole(SystemRoleVO systemRoleVO,Model model){
 		logger.info("【角色管理模块】-加载角色修改界面的方法:{},{}",systemRoleVO,model);
 		try {
@@ -122,7 +122,7 @@ public class SystemRoleAction {
 	 * @date 2017-10-26 上午9:29:34
 	 */
 	@RequestMapping("/loadAddRole")
-	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_ROLE)
+	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_ROLE,description="加载新增角色界面的方法")
 	public String loadAddRole(SystemRoleVO systemRoleVO){
 		logger.info("【角色管理模块】-加载角色新增界面的方法");
 		return "system/role/role_add";
@@ -138,7 +138,7 @@ public class SystemRoleAction {
 	 */
 	@RequestMapping("/updateRole")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_ROLE)
+	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_ROLE,description="修改角色信息的方法")
 	public Map<String,Object> updateRole(SystemRoleVO systemRoleVO){
 		logger.info("【角色模块】-修改信息的方法:{}",systemRoleVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
@@ -161,7 +161,7 @@ public class SystemRoleAction {
 	 */
 	@RequestMapping("/updateRoleStatus")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_ROLE)
+	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_ROLE,description="修改角色信息的方法")
 	public Map<String,Object> updateRoleStatus(SystemRoleVO systemRoleVO){
 		logger.info("【角色模块】-修改状态信息的方法:{}",systemRoleVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
@@ -188,7 +188,7 @@ public class SystemRoleAction {
 	 * @desc
 	 */
 	@RequestMapping("/getRole")
-	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_ROLE)
+	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_ROLE,description="根据编号角色信息的方法")
 	public String getRole(SystemRoleVO systemRoleVO,Model model){
 		logger.info("【角色管理】-根据编号信息的方法:{},{}",systemRoleVO,model);
 		try {
@@ -212,7 +212,7 @@ public class SystemRoleAction {
 	 */
 	@RequestMapping("/saveRole")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.INSERT,module = LoggerModule.SYSTEM_ROLE)
+	@LoggerProxy(method = LoggerMethod.INSERT,module = LoggerModule.SYSTEM_ROLE,description="新增角色信息")
 	public Map<String,Object> saveRole(SystemRoleVO systemRoleVO){
 		logger.info("【角色模块】-新增信息的方法:{}",systemRoleVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
@@ -239,7 +239,7 @@ public class SystemRoleAction {
 	 */
 	@RequestMapping("/deleteRole")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_ROLE)
+	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_ROLE,description="删除角色信息的方法")
 	public Map<String,Object> deleteRole(SystemRoleVO systemRoleVO){
 		logger.info("【角色模块】-删除角色信息的方法:{}",systemRoleVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
@@ -266,7 +266,7 @@ public class SystemRoleAction {
 	 */
 	@RequestMapping("/validateRole")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_ROLE)
+	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_ROLE,description="校验角色名称信息的方法")
 	public Map<String,Object> validateRole(SystemRoleVO systemRoleVO){
 		logger.info("【角色模块】-校验角色名称是否存在的方法:{}",systemRoleVO);
 		Map<String,Object> maps = new HashMap<String,Object>();

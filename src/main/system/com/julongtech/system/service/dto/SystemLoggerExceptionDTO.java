@@ -67,6 +67,7 @@ public class SystemLoggerExceptionDTO  implements Serializable{
      * 日志描述
      */
     private String loggerExceptionDescription;
+	
 	/** 
 	 * 访问响应时间 毫秒
 	 */
@@ -348,43 +349,77 @@ public class SystemLoggerExceptionDTO  implements Serializable{
 		this.loggerBrowserVersion = loggerBrowserVersion;
 	}
 
-	public String getLoggerExceptionReserveA() {
-		return loggerExceptionReserveA;
-	}
 
-	public void setLoggerExceptionReserveA(String loggerExceptionReserveA) {
-		this.loggerExceptionReserveA = loggerExceptionReserveA;
-	}
+    /**
+     * 备用字段1
+     * @return loggerExceptionReserveA
+     */
+    public String getLoggerExceptionReserveA() {
+        return this.loggerExceptionReserveA;
+    }
 
-	public String getLoggerExceptionReserveB() {
-		return loggerExceptionReserveB;
-	}
+    /**
+     * 备用字段1
+     * @param loggerExceptionReserveA
+     */
+    public void setLoggerExceptionReserveA(String loggerExceptionReserveA) {
+        this.loggerExceptionReserveA = loggerExceptionReserveA;
+    }
 
-	public void setLoggerExceptionReserveB(String loggerExceptionReserveB) {
-		this.loggerExceptionReserveB = loggerExceptionReserveB;
-	}
+    /**
+     * 备用字段2
+     * @return loggerExceptionReserveB
+     */
+    public String getLoggerExceptionReserveB() {
+        return this.loggerExceptionReserveB;
+    }
 
-	public String getLoggerExceptionReserveC() {
-		return loggerExceptionReserveC;
-	}
+    /**
+     * 备用字段2
+     * @param loggerExceptionReserveB
+     */
+    public void setLoggerExceptionReserveB(String loggerExceptionReserveB) {
+        this.loggerExceptionReserveB = loggerExceptionReserveB;
+    }
 
-	public void setLoggerExceptionReserveC(String loggerExceptionReserveC) {
-		this.loggerExceptionReserveC = loggerExceptionReserveC;
-	}
+    /**
+     * 备用字段3
+     * @return loggerExceptionReserveC
+     */
+    public String getLoggerExceptionReserveC() {
+        return this.loggerExceptionReserveC;
+    }
 
-	@Override
-	public String toString() {
-		return "SystemLoggerExceptionDTO [loggerExceptionId=" + loggerExceptionId + ", loggerExceptionType="
-				+ loggerExceptionType + ", loggerExceptionCreateTime=" + loggerExceptionCreateTime + ", orgId=" + orgId
-				+ ", userId=" + userId + ", userName=" + userName + ", loggerExceptionIp=" + loggerExceptionIp
-				+ ", loggerExceptionModule=" + loggerExceptionModule + ", loggerExceptionMethod="
-				+ loggerExceptionMethod + ", loggerExceptionDescription=" + loggerExceptionDescription
-				+ ", loggerResponseTime=" + loggerResponseTime + ", loggerOperatingSystem=" + loggerOperatingSystem
-				+ ", loggerBrowserType=" + loggerBrowserType + ", loggerBrowserVersion=" + loggerBrowserVersion
-				+ ", loggerExceptionContext=" + loggerExceptionContext + ", loggerExceptionReserveA="
-				+ loggerExceptionReserveA + ", loggerExceptionReserveB=" + loggerExceptionReserveB
-				+ ", loggerExceptionReserveC=" + loggerExceptionReserveC + "]";
-	}
+    /**
+     * 备用字段3
+     * @param loggerExceptionReserveC
+     */
+    public void setLoggerExceptionReserveC(String loggerExceptionReserveC) {
+        this.loggerExceptionReserveC = loggerExceptionReserveC;
+    }
 
-   
+    @java.lang.Override
+    public java.lang.String toString() {
+        final java.lang.StringBuffer sb = new java.lang.StringBuffer("SystemLoggerExceptionDTO{");
+        sb.append("loggerExceptionId='").append(loggerExceptionId).append('\'');
+        sb.append(", loggerExceptionType='").append(loggerExceptionType).append('\'');
+        sb.append(", loggerExceptionCreateTime=").append(loggerExceptionCreateTime);
+        sb.append(", orgId='").append(orgId).append('\'');
+        sb.append(", userId='").append(userId).append('\'');
+        sb.append(", userName='").append(userName).append('\'');
+        sb.append(", loggerExceptionIp='").append(loggerExceptionIp).append('\'');
+        sb.append(", loggerExceptionModule='").append(loggerExceptionModule).append('\'');
+        sb.append(", loggerExceptionMethod='").append(loggerExceptionMethod).append('\'');
+        sb.append(", loggerExceptionDescription='").append(loggerExceptionDescription).append('\'');
+        sb.append(", loggerResponseTime='").append(loggerResponseTime).append('\'');
+        sb.append(", loggerOperatingSystem='").append(loggerOperatingSystem).append('\'');
+        sb.append(", loggerBrowserType='").append(loggerBrowserType).append('\'');
+        sb.append(", loggerBrowserVersion='").append(loggerBrowserVersion).append('\'');
+        sb.append(", loggerExceptionContext='").append(loggerExceptionContext).append('\'');
+        sb.append(", loggerExceptionReserveA='").append(loggerExceptionReserveA).append('\'');
+        sb.append(", loggerExceptionReserveB='").append(loggerExceptionReserveB).append('\'');
+        sb.append(", loggerExceptionReserveC='").append(loggerExceptionReserveC).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

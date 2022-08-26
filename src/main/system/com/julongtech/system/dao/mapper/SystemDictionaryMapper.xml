@@ -27,9 +27,6 @@
      dictionary_update_time, dictionary_update_user_id, dictionary_status, dictionary_order, dictionary_reserve_a, 
      dictionary_reserve_b, dictionary_reserve_c
   </sql>
-  <sql id="add_sql">
-  	  ,dictionary_create_user_name,dictionary_update_user_name
-  </sql>
   <sql id="join_sql">
   	SELECT 
 	     a.dictionary_id, a.dictionary_type,a.org_id, a.dictionary_code, a.dictionary_name, a.dictionary_desc, 

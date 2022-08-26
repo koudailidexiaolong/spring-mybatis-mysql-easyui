@@ -76,8 +76,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		/*查询日志信息的方法*/
 		function searchLogger(){
 			rowIndex = -1;
-			var loggerType = $("#loggerType").combobox("getValue");//登录名
-			var loggerModule = $("#loggerModule").combobox("getValue");//登录名
+			var loggerExceptionType = $("#loggerExceptionType").combobox("getValue");//登录名
+			var loggerExceptionModule = $("#loggerExceptionModule").combobox("getValue");//登录名
 			var param = getSystemParam();
 			$("#tableData").datagrid({   
 			    url:"logger/exception/selectLoggerListByPage.json?param="+param, 
@@ -120,11 +120,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					{field:"loggerOperatingSystem",title:"操作系统",align:"center",width:100},
 					{field:"loggerBrowserType",title:"浏览器类型",align:"center",width:100},
 					{field:"loggerBrowserVersion",title:"浏览器版本",align:"center",width:100},
+					{field:"loggerExceptionDescription",title:"操作描述",align:"center",width:100},
+					{field:"loggerExceptionContext",title:"错误信息描述",align:"center",width:100},
 					{field:"loggerExceptionCreateTime",title:"创建时间",align:"center",width:100}
 			    ]],
 			    //查询条件
 			    queryParams: {
-			    	"loggerType":loggerType,"loggerModule":loggerModule
+			    	"loggerExceptionType":loggerExceptionType,"loggerExceptionModule":loggerExceptionModule
 				},
 				//分页参数		    
 			    pagination:true,
@@ -178,14 +180,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="form_div"  id="form_div" style="width:100%;height:auto;padding:0px; ">
        <form id="paramForm" method="post" name="paramForm" action="">  
    			<div style="margin-top:10px;">
-   				<label for="userId">操作模块:</label>
-   				<select  class="easyui-combobox" name="loggerModule" id="loggerModule"  style="width:70%;padding:10px;height:32px" data-options="panelHeight:'auto',editable:false">  
+   				<label for="loggerExceptionModule">操作模块:</label>
+   				<select  class="easyui-combobox" name="loggerExceptionModule" id="loggerExceptionModule"  style="width:70%;padding:10px;height:32px" data-options="panelHeight:'auto',editable:false">  
 				    <option value="">请选择</option>  
 				</select>  
 			</div>
    			<div style="margin-top:10px;">
-   				<label for="userId">日志类型:</label>
-   				<select  class="easyui-combobox" name="loggerType" id="loggerType"  style="width:70%;padding:10px;height:32px" data-options="panelHeight:'auto',editable:false">  
+   				<label for="loggerExceptionType">日志类型:</label>
+   				<select  class="easyui-combobox" name="loggerExceptionType" id="loggerExceptionType"  style="width:70%;padding:10px;height:32px" data-options="panelHeight:'auto',editable:false">  
 				    <option value="">请选择</option>  
 				</select>  
 			</div>

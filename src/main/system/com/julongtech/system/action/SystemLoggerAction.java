@@ -20,7 +20,6 @@ import com.julongtech.system.action.vo.SystemLoggerVO;
 import com.julongtech.system.aspect.LoggerMethod;
 import com.julongtech.system.aspect.LoggerModule;
 import com.julongtech.system.aspect.LoggerProxy;
-import com.julongtech.system.service.SystemLoggerExceptionService;
 import com.julongtech.system.service.SystemLoggerService;
 import com.julongtech.system.service.dto.SystemLoggerDTO;
 
@@ -47,7 +46,7 @@ public class SystemLoggerAction {
 	 */
 	@RequestMapping("/index")
 	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_LOGGER,description="加载日志页面")
-	public String loadPage(){
+	public String loadPage() {
 		logger.info("【系统日志信息管理】-加载日志主界面");
 		return "system/logger/logger_index";
 	}

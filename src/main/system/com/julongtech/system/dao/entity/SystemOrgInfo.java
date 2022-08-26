@@ -307,7 +307,7 @@ public class SystemOrgInfo implements Serializable{
      * @return  the value of SYSTEM_ORG.ORG_AREA_CODE
      */
     public Timestamp getOrgCreateDate() {
-    	return orgCreateDate;
+    	return this.orgCreateDate;
     }
     
     /**

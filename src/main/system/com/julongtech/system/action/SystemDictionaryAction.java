@@ -56,7 +56,7 @@ public class SystemDictionaryAction {
 	 * @date 2017-10-24 下午12:53:40
 	 */
 	@RequestMapping("/index")
-	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_DICTIONARY)
+	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_DICTIONARY,description="加载数据字典主界面")
 	public String loadPage(){
 		logger.info("【数据字典管理】-加载数据字典主界面");
 		return "system/dictionary/dictionary_index";
@@ -73,7 +73,7 @@ public class SystemDictionaryAction {
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value="/getDictionaryListByPage",method={RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_DICTIONARY)
+	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_DICTIONARY,description="分页查询数据字典基本信息集合的方法")
 	public Map<String,Object> getDictionaryListByPage(SystemDictionaryVO systemDictionaryVO,PageParam<SystemDictionaryDTO> page){
 		Map<String,Object> maps = new HashMap<String,Object>();
 		logger.info("【数据字典管理】-分页查询数据字典信息的方法{}",systemDictionaryVO);
@@ -105,7 +105,7 @@ public class SystemDictionaryAction {
 	 * @date 2017-10-28 上午11:56:11
 	 */
 	@RequestMapping(value="/loadEditDictionary",method={RequestMethod.GET,RequestMethod.POST})
-	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_DICTIONARY)
+	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_DICTIONARY,description="加载修改数据字典信息的方法")
 	public String loadEditDictionary(SystemDictionaryVO systemDictionaryVO,Model model){
 		logger.info("【数据字典管理】-加载数据字典修改界面的方法:{},{}",systemDictionaryVO,model);
 		try {
@@ -127,7 +127,7 @@ public class SystemDictionaryAction {
 	 * @date 2017-10-26 上午9:29:34
 	 */
 	@RequestMapping("/loadAddDictionary")
-	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_DICTIONARY)
+	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_DICTIONARY,description="加载新增数据字典界面的方法")
 	public String loadAddDictionary(SystemDictionaryVO systemDictionaryVO){
 		logger.info("【数据字典管理】-加载数据字典新增界面的方法");
 		return "system/dictionary/dictionary_add";
@@ -142,7 +142,7 @@ public class SystemDictionaryAction {
 	 * @date 2017-10-28 上午11:57:44
 	 */
 	@RequestMapping("/updateDictionary")
-	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_DICTIONARY)
+	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_DICTIONARY,description="修改数据字典信息的方法")
 	public Map<String,Object> updateDictionary(SystemDictionaryVO systemDictionaryVO){
 		logger.info("【数据字典模块】-修改数据字典信息的方法:{}",systemDictionaryVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
@@ -168,7 +168,7 @@ public class SystemDictionaryAction {
 	 * @date 2018-4-18 下午3:41:58
 	 */
 	@RequestMapping("/updateDictionaryStatus")
-	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_DICTIONARY)
+	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_DICTIONARY,description="修改数据字典状态的方法")
 	public Map<String,Object> updateDictionaryStatus(SystemDictionaryVO systemDictionaryVO){
 		logger.info("【数据字典模块】-修改数据字典状态的方法:{}",systemDictionaryVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
@@ -196,7 +196,7 @@ public class SystemDictionaryAction {
 	 * @date 2018-4-18 下午3:43:40
 	 */
 	@RequestMapping("/getDictionary")
-	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_DICTIONARY)
+	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_DICTIONARY,description="查询数据字典信息的方法")
 	public String getDictionary(SystemDictionaryVO systemDictionaryVO,Model model){
 		logger.info("【数据字典模块】-查询数据字典信息的方法:{},{}",systemDictionaryVO,model);
 		try {
@@ -220,7 +220,7 @@ public class SystemDictionaryAction {
 	 */
 	@RequestMapping("/saveDictionary")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.INSERT,module = LoggerModule.SYSTEM_DICTIONARY)
+	@LoggerProxy(method = LoggerMethod.INSERT,module = LoggerModule.SYSTEM_DICTIONARY,description="保存数据字典信息的方法")
 	public Map<String,Object> saveDictionary(SystemDictionaryVO systemDictionaryVO){
 		logger.info("【数据字典管理】-新增数据字典信息方法:{}",systemDictionaryVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
@@ -248,7 +248,7 @@ public class SystemDictionaryAction {
 	 */
 	@RequestMapping("/deleteDictionary")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_DICTIONARY)
+	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_DICTIONARY,description="删除数据字典信息的方法")
 	public Map<String,Object> deleteDictionary(SystemDictionaryVO systemDictionaryVO){
 		logger.info("【数据字典管理】-删除数据字典信息的方法:{}",systemDictionaryVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
@@ -277,7 +277,7 @@ public class SystemDictionaryAction {
 	 */
 	@RequestMapping("/getCode")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_DICTIONARY)
+	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_DICTIONARY,description="根据编号查询数据字典信息的方法")
 	public List<SystemDictionaryDTO> getCode(SystemDictionaryVO systemDictionaryVO){
 		List<SystemDictionaryDTO> result = new ArrayList<SystemDictionaryDTO>();
 		logger.info("【数据字典模块】-查询数据字典信息的方法:{}",systemDictionaryVO);
@@ -300,7 +300,7 @@ public class SystemDictionaryAction {
 	 */
 	@RequestMapping("/validateDictionary")
 	@ResponseBody
-	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_DICTIONARY)
+	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_DICTIONARY,description="校验是否已经存在")
 	public Map<String,Object> validateDictionary(SystemDictionaryVO systemDictionaryVO){
 		Map<String,Object> maps = new HashMap<String,Object>();
 		logger.info("【数据字典模块】-查询数据字典信息的方法:{}",systemDictionaryVO);
