@@ -17,7 +17,7 @@ redis版本：2.8.0
 
 ### 1. 登录模块
 
-![](D:\Workspaces\OWER\spring-mybatis-mysql-easyui\images\login.png)
+![](./images/login.png)
 
 密码实现rsa加密传输、验证码一分钟失效、三次输入错误锁定账户操作
 
@@ -25,21 +25,21 @@ redis版本：2.8.0
 
 ### 2.首页
 
-![](D:\Workspaces\OWER\spring-mybatis-mysql-easyui\images\index.png)
+![](./images/index.png)
 
 
 
 3.用户模块
 
-![](D:\Workspaces\OWER\spring-mybatis-mysql-easyui\images\user-index.png)
+![](./images/user-index.png)
 
 新增用户
 
-![](D:\Workspaces\OWER\spring-mybatis-mysql-easyui\images\user-add.png)
+![](./images/user-add.png)
 
 修改用户
 
-![](D:\Workspaces\OWER\spring-mybatis-mysql-easyui\images\user-edit.png)
+![](./images/user-edit.png)
 
 
 
