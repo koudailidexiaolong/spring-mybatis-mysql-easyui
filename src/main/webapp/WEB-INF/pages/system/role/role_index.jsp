@@ -109,7 +109,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$("#edit-role").linkbutton("disable");
 					$("#get-role").linkbutton("disable");
 					roleObject = null;
-					error("角色模块","查询角色信息失败！");
+					//error("角色模块","查询角色信息失败！");
 				},
 				onLoadSuccess:function(data){
 					if(data.total == 0){
@@ -143,6 +143,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					var url = "role/deleteRole.json?param="+param;
 					$.post(url, { "roleId": roleObject.roleId },
 							   function(data){
+							console.log(data);
 						   		if(data.result >= 0){
 						   			info("角色模块","删除角色【"+roleObject.roleName+"】成功！");
 						   			self.searchRole();
@@ -156,18 +157,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				}
 			});
 		}
-		/*初始化用户
-		function initUser(){
-			$.ajax({
-				   type: "POST",
-				   url: "cache/getCache.json",
-				   async: false,
-				   data: { key: "userList" },
-				   success: function(data){
-					   user_data = data.result;
-				   }
-			});
-		}*/
+		
 	</script>
   </head>
 <body class="easyui-layout" style="padding:0px;margin:0px;">  

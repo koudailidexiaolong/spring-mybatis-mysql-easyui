@@ -49,7 +49,7 @@ public class RedisCacheAction {
 	 */
 	@RequestMapping("/index")
 	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_CACHE,description="缓存首页")
-	public String index() {
+	public String index()  throws Exception{
 		logger.info("【缓存信息管理】");
 		return "system/cache/cache_index";
 	}
@@ -64,7 +64,7 @@ public class RedisCacheAction {
 	@RequestMapping(value="/getCacheList",method={RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_CACHE,description="根据key查询缓存集合信息的方法")
-	public Map<String,Object> getCacheList(@RequestParam("key") String key){
+	public Map<String,Object> getCacheList(@RequestParam("key") String key) throws Exception{
 		Map<String,Object> maps = new HashMap<String,Object>();
 		logger.info("【缓存信息管理】查询缓存信息的方法{}",key);
 		try {
@@ -79,6 +79,7 @@ public class RedisCacheAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【缓存信息管理】-根据key查询缓存集合信息发生异常",e);
+			throw new Exception(e);
 		}
 		return maps;
 	}
@@ -93,7 +94,7 @@ public class RedisCacheAction {
 	@RequestMapping(value="/deleteCache",method={RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_CACHE,description="删除缓存信息")
-	public Map<String,Object> deleteCache(@RequestParam("key") String key){
+	public Map<String,Object> deleteCache(@RequestParam("key") String key) throws Exception{
 		Map<String,Object> maps = new HashMap<String,Object>();
 		boolean result = false;
 		logger.info("【缓存信息管理】-删除缓存信息{}",key);
@@ -106,6 +107,7 @@ public class RedisCacheAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【缓存信息管理】-删除缓存信息",e);
+			throw new Exception(e);
 		}
 		logger.info("【缓存信息管理】-删除缓存信息{}",key);
 		return maps;
@@ -120,7 +122,7 @@ public class RedisCacheAction {
 	@RequestMapping(value="/reloadCache",method={RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_CACHE,description="刷新缓存信息")
-	public Map<String,Object> reloadCache(){
+	public Map<String,Object> reloadCache() throws Exception{
 		logger.info("【缓存信息管理】-刷新缓存信息");
 		Map<String,Object> maps = new HashMap<String,Object>();
 		boolean result = false;
@@ -133,6 +135,7 @@ public class RedisCacheAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【缓存信息管理】-刷新缓存信息",e);
+			throw new Exception(e);
 		}
 		logger.info("【缓存信息管理】-刷新缓存信息{}",result);
 		return maps;
@@ -148,7 +151,7 @@ public class RedisCacheAction {
 	@RequestMapping(value="/getCache",method={RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_CACHE,description="根据编号获取缓存信息")
-	public Map<String,Object> getCache(@RequestParam String key){
+	public Map<String,Object> getCache(@RequestParam String key) throws Exception{
 		logger.info("【缓存信息管理】-获取缓存信息输入参数key:{}",key);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		try {
@@ -161,6 +164,7 @@ public class RedisCacheAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【缓存信息管理】-查询缓存信息发生异常",e);
+			throw new Exception(e);
 		}
 		return maps;
 	}

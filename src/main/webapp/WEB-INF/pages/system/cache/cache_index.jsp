@@ -69,7 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					//禁用按钮
 					$("#delete-cache").linkbutton("disable");
 					cacheObject = null;
-					error("缓存模块","查询缓存信息失败！");
+					//error("缓存模块","查询缓存信息失败！");
 				},
 				onLoadSuccess:function(data){
 					if(data.total == 0){

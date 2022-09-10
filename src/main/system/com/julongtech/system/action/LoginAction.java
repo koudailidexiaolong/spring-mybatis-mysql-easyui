@@ -71,7 +71,7 @@ public class LoginAction {
 	@RequestMapping("/login")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.LOGIN,module = LoggerModule.SYSTEM_LOGIN,description="登录的方法")
-	public Map<String,Object> login(@RequestParam("userId") String userId,@RequestParam("userPassword") String userPassword,@RequestParam("captcha") String captcha){
+	public Map<String,Object> login(@RequestParam("userId") String userId,@RequestParam("userPassword") String userPassword,@RequestParam("captcha") String captcha)  throws Exception{
 		logger.info("【系统登录模块】-登录系统{},{}",userId,userPassword);
 		//加载系统菜单列表 此处应该放入缓存中
 		Map<String,Object> maps = new Hashtable<String, Object>();
@@ -154,6 +154,7 @@ public class LoginAction {
 		} catch (Exception e) {
 			// TODO: handle exception
 			logger.error("【登录模块】-登录系统发生异常：",e);
+			throw new Exception(e);
 		}
 		return maps;
 	}
@@ -168,7 +169,7 @@ public class LoginAction {
 	@RequestMapping("/captcha")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.LOGIN,module = LoggerModule.SYSTEM_LOGIN,description="获取生成验证码")
-	public void captcha(HttpServletRequest request,HttpServletResponse response){
+	public void captcha(HttpServletRequest request,HttpServletResponse response)  throws Exception{
 		response.setContentType("JPEG");
 		BufferedImage image = CaptchaUtils.getInstance().createImage(100, 38);
 		try {
@@ -178,6 +179,7 @@ public class LoginAction {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			logger.error("【登录模块】-生成验证码发生异常：",e);
+			throw new Exception(e);
 		}
 	}
 
@@ -191,7 +193,7 @@ public class LoginAction {
 	 */
 	@RequestMapping("/index")
 	@LoggerProxy(method = LoggerMethod.LOGIN,module = LoggerModule.SYSTEM_LOGIN,description="登录跳转主页面")
-	public String index(Model model){
+	public String index(Model model)  throws Exception{
 		logger.info("【跳转主界面】{}",model);
 		//查询权限
 		try {
@@ -212,6 +214,7 @@ public class LoginAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【登录模块】-查询系统权限发生异常：",e);
+			throw new Exception(e);
 		}
 		return "index";
 	}
@@ -224,8 +227,8 @@ public class LoginAction {
 	 */
 	@RequestMapping(value = "/loginOut",method={RequestMethod.GET,RequestMethod.POST})
 	@LoggerProxy(method = LoggerMethod.LOGOUT,module = LoggerModule.SYSTEM_LOGIN,description="系统退出登录")
-	public String loginOut(){
-		logger.info("退出系统");
+	public String loginOut()  throws Exception{
+		logger.info("退出系统,进行数据销毁");
 		//获取session
 		UserSession userSession = (UserSession) this.httpSession.getAttribute("userSession");
 		if(null != userSession){
@@ -244,7 +247,7 @@ public class LoginAction {
 	@RequestMapping(value = "/getKey",method={RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 //	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_LOGIN)
-	public Map<String,Object> getKey(){
+	public Map<String,Object> getKey()  throws Exception{
 		logger.info("获取公钥");
 		Map<String,Object> maps = new HashMap<String, Object>();
 		maps.put("result", RSAUtil.publicKey);

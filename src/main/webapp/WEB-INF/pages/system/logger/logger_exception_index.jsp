@@ -133,10 +133,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    pagePosition:"bottom",
 			    pageNumber:1,
 			    pageList:[10,20,30,40],
-			    onLoadError:function(none){
-					//禁用按钮
+			    onLoadError:function(XMLHttpRequest){
+		    		//禁用按钮
 					userObject = null;
-					error("日志模块","查询日志信息失败！");
+					//error("日志模块","查询日志信息失败！");
 				},
 				onLoadSuccess:function(data){
 					if(data.total == 0){

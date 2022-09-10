@@ -52,7 +52,7 @@ public class SystemRoleAction {
 	 */
 	@RequestMapping("/index")
 	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_ROLE,description="加载角色主页面")
-	public String loadPage(){
+	public String loadPage() throws Exception{
 		logger.info("【角色模块】-加载主界面");
 		return "system/role/role_index";
 	}
@@ -69,7 +69,7 @@ public class SystemRoleAction {
 	@RequestMapping(value="/getRoleListByPage",method={RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_ROLE,description="分页查询角色列表")
-	public Map<String,Object> getRoleListByPage(SystemRoleVO systemRoleVO,PageParam<?> page){
+	public Map<String,Object> getRoleListByPage(SystemRoleVO systemRoleVO,PageParam<?> page) throws Exception{
 		Map<String,Object> maps = new HashMap<String,Object>();
 		logger.debug("【角色模块】-分页查询角色信息的方法:{},{}",systemRoleVO,page);
 		try {
@@ -86,6 +86,7 @@ public class SystemRoleAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【角色管理】-查询角色信息集合发生异常",e);
+			throw new Exception(e);
 		}
 		return maps;
 	}
@@ -100,7 +101,7 @@ public class SystemRoleAction {
 	 */
 	@RequestMapping(value="/loadEditRole",method={RequestMethod.GET,RequestMethod.POST})
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_ROLE,description="加载修改角色信息的方法")
-	public String loadEditRole(SystemRoleVO systemRoleVO,Model model){
+	public String loadEditRole(SystemRoleVO systemRoleVO,Model model) throws Exception{
 		logger.info("【角色管理模块】-加载角色修改界面的方法:{},{}",systemRoleVO,model);
 		try {
 			SystemRoleDTO systemRoleDTO = new SystemRoleDTO();
@@ -110,6 +111,7 @@ public class SystemRoleAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【角色管理】-查询角色信息发生异常",e);
+			throw new Exception(e);
 		}
 		return "system/role/role_edit";
 	}
@@ -123,7 +125,7 @@ public class SystemRoleAction {
 	 */
 	@RequestMapping("/loadAddRole")
 	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_ROLE,description="加载新增角色界面的方法")
-	public String loadAddRole(SystemRoleVO systemRoleVO){
+	public String loadAddRole(SystemRoleVO systemRoleVO) throws Exception{
 		logger.info("【角色管理模块】-加载角色新增界面的方法");
 		return "system/role/role_add";
 	}
@@ -139,7 +141,7 @@ public class SystemRoleAction {
 	@RequestMapping("/updateRole")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_ROLE,description="修改角色信息的方法")
-	public Map<String,Object> updateRole(SystemRoleVO systemRoleVO){
+	public Map<String,Object> updateRole(SystemRoleVO systemRoleVO) throws Exception{
 		logger.info("【角色模块】-修改信息的方法:{}",systemRoleVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = 0;
@@ -150,7 +152,7 @@ public class SystemRoleAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【角色管理】-修改角色信息发生异常",e);
-			maps.put("result", -1);
+			throw new Exception(e);
 		}
 		return maps;
 	}
@@ -162,7 +164,7 @@ public class SystemRoleAction {
 	@RequestMapping("/updateRoleStatus")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_ROLE,description="修改角色信息的方法")
-	public Map<String,Object> updateRoleStatus(SystemRoleVO systemRoleVO){
+	public Map<String,Object> updateRoleStatus(SystemRoleVO systemRoleVO) throws Exception{
 		logger.info("【角色模块】-修改状态信息的方法:{}",systemRoleVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = 0;
@@ -173,7 +175,7 @@ public class SystemRoleAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【角色管理】-修改角色信息发生异常",e);
-			maps.put("result", -1);
+			throw new Exception(e);
 		}
 		return maps;
 	}
@@ -189,7 +191,7 @@ public class SystemRoleAction {
 	 */
 	@RequestMapping("/getRole")
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_ROLE,description="根据编号角色信息的方法")
-	public String getRole(SystemRoleVO systemRoleVO,Model model){
+	public String getRole(SystemRoleVO systemRoleVO,Model model) throws Exception{
 		logger.info("【角色管理】-根据编号信息的方法:{},{}",systemRoleVO,model);
 		try {
 			UserSession userSession = (UserSession) httpSession.getAttribute("userSession");
@@ -198,6 +200,7 @@ public class SystemRoleAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【角色管理】-查询角色信息发生异常",e);
+			throw new Exception(e);
 		}
 		return "system/role/role_info";
 	}
@@ -213,7 +216,7 @@ public class SystemRoleAction {
 	@RequestMapping("/saveRole")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.INSERT,module = LoggerModule.SYSTEM_ROLE,description="新增角色信息")
-	public Map<String,Object> saveRole(SystemRoleVO systemRoleVO){
+	public Map<String,Object> saveRole(SystemRoleVO systemRoleVO) throws Exception{
 		logger.info("【角色模块】-新增信息的方法:{}",systemRoleVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = 0;
@@ -224,7 +227,7 @@ public class SystemRoleAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【角色管理】-新增角色信息发生异常",e);
-			maps.put("result", -1);
+			throw new Exception(e);
 		}
 		logger.info("【角色模块】-新增角色信息返回结果:{}",result);
 		return maps;
@@ -240,7 +243,7 @@ public class SystemRoleAction {
 	@RequestMapping("/deleteRole")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_ROLE,description="删除角色信息的方法")
-	public Map<String,Object> deleteRole(SystemRoleVO systemRoleVO){
+	public Map<String,Object> deleteRole(SystemRoleVO systemRoleVO) throws Exception{
 		logger.info("【角色模块】-删除角色信息的方法:{}",systemRoleVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = -1;
@@ -252,7 +255,7 @@ public class SystemRoleAction {
 			maps.put("result", result);
 		} catch (Exception e) {
 			logger.error("【角色管理】-删除角色信息的方法发生异常",e);
-			maps.put("result", -1);
+			throw new Exception(e);
 		}
 		logger.info("【角色模块】-删除角色信息返回结果:{}",result);
 		return maps;
@@ -267,7 +270,7 @@ public class SystemRoleAction {
 	@RequestMapping("/validateRole")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_ROLE,description="校验角色名称信息的方法")
-	public Map<String,Object> validateRole(SystemRoleVO systemRoleVO){
+	public Map<String,Object> validateRole(SystemRoleVO systemRoleVO) throws Exception{
 		logger.info("【角色模块】-校验角色名称是否存在的方法:{}",systemRoleVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = 0;
@@ -278,7 +281,7 @@ public class SystemRoleAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【角色管理】-校验角色名称信息的方法发生异常",e);
-			maps.put("result", -1);
+			throw new Exception(e);
 		}
 		logger.info("【角色模块】-校验角色名称是否存在返回结果result:{}",result);
 		return maps;

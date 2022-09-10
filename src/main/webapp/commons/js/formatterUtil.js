@@ -15,6 +15,31 @@ function getSystemParam(){
 	var param = $.md5(iUnsigned64.toString(2)+date);
 	return param;
 }
+//拦截 ajax请求响应后是否session过期和异常错误 设置全局 AJAX 默认选项。
+$.ajaxSetup({
+  complete:function (XMLHttpRequest, textStatus) {
+	   // 调用本次AJAX请求时传递的options参数
+	   //console.log("complete-textStatus:"+textStatus);
+	   if(XMLHttpRequest.getResponseHeader("Response-session") == -1){
+    		$.messager.confirm("登录提示","登录失效，请重新登录",function(result){
+    		    if (result){
+    		    	window.top.location.reload();
+    		    }
+    		});
+    		
+      }else if(XMLHttpRequest.getResponseHeader("Response-error") == -1){
+    		error("系统提示","异步请求数据失败, 请联系管理员！");
+      }
+  },
+  error:function (XMLHttpRequest, textStatus, errorThrown) {
+	    // 通常 textStatus 和 errorThrown 之中
+	    // 只有一个会包含信息
+	    // 调用本次AJAX请求时传递的options参数
+	  console.log("error-textStatus:"+textStatus);
+	  
+  }
+});
+
 /*
  * type:查找的参数
  * select:seelct框的对象

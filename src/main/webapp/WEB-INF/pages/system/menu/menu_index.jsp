@@ -118,7 +118,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$("#edit-menu").linkbutton("disable");
 					$("#get-menu").linkbutton("disable");
 					menuObject = null;
-					error("菜单模块","查询菜单信息失败！");
+					//error("菜单模块","查询菜单信息失败！");
 				},
 				onLoadSuccess:function(data){
 					if(data.total == 0){

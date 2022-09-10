@@ -101,16 +101,6 @@ public class CaptchaUtils {
 		return image;
 	}
 	
-	
-	
-	
-	
-	
-	
-
-
-
-
 
 
 	public String getCaptcha() {

@@ -71,7 +71,7 @@ public class SystemMenuAction {
 	 */
 	@RequestMapping("/index")
 	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_MENU,description="加载菜单模块主页面")
-	public String loadPage(){
+	public String loadPage() throws Exception{
 		logger.info("【菜单管理】-加载主界面");
 		return "system/menu/menu_index";
 	}
@@ -88,7 +88,7 @@ public class SystemMenuAction {
 	@RequestMapping(value="/selectMenuListByPage",method={RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_MENU,description="分页查询菜单列表信息")
-	public Map<String,Object> selectMenuListByPage(SystemMenuVO systemMenuVO,PageParam<?> page){
+	public Map<String,Object> selectMenuListByPage(SystemMenuVO systemMenuVO,PageParam<?> page) throws Exception{
 		Map<String,Object> maps = new HashMap<String,Object>();
 		logger.debug("【菜单管理】-分页查询菜单信息的方法输入参数systemMenuVO:{},page：{}",systemMenuVO,page);
 		try {
@@ -118,7 +118,7 @@ public class SystemMenuAction {
 	 */
 	@RequestMapping("/loadAddMenu")
 	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_MENU,description="加载菜单新增页面")
-	public String loadAddMenu(SystemMenuVO systemMenuVO){
+	public String loadAddMenu(SystemMenuVO systemMenuVO) throws Exception{
 		logger.info("【菜单管理模块】-加载菜单新增界面的方法");
 		return "system/menu/menu_add";
 	}
@@ -134,7 +134,7 @@ public class SystemMenuAction {
 	@RequestMapping("/saveMenu")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.INSERT,module = LoggerModule.SYSTEM_MENU,description="新增菜单信息")
-	public Map<String,Object> saveRole(SystemMenuVO systemMenuVO){
+	public Map<String,Object> saveRole(SystemMenuVO systemMenuVO) throws Exception{
 		logger.info("【菜单模块】-新增菜单信息输入参数systemMenuVO:{}",systemMenuVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = 0;
@@ -163,7 +163,7 @@ public class SystemMenuAction {
 	@RequestMapping("/validateMenu")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_MENU,description="校验菜单编号是否存在")
-	public Map<String,Object> validateMenu(SystemMenuVO systemMenuVO){
+	public Map<String,Object> validateMenu(SystemMenuVO systemMenuVO) throws Exception{
 		logger.info("【菜单模块】-校验菜单编号是否存在输入参数systemMenuVO:{}",systemMenuVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = 0;
@@ -191,7 +191,7 @@ public class SystemMenuAction {
 	@RequestMapping("/selectMenuParentList")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_MENU,description="校验菜单编号是否存在信息的方法")
-	public List<SystemMenuDTO> selectMenuParentList(SystemMenuVO systemMenuVO){
+	public List<SystemMenuDTO> selectMenuParentList(SystemMenuVO systemMenuVO) throws Exception{
 		logger.info("【菜单模块】-校验菜单编号是否存在输入参数systemMenuVO:{}",systemMenuVO);
 		List<SystemMenuDTO> menuList = new ArrayList<SystemMenuDTO>();
 		try {
@@ -214,7 +214,7 @@ public class SystemMenuAction {
 	@RequestMapping("/deleteMenu")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_MENU,description="删除菜单信息")
-	public Map<String,Object> deleteMenu(SystemMenuVO systemMenuVO){
+	public Map<String,Object> deleteMenu(SystemMenuVO systemMenuVO) throws Exception{
 		logger.info("【菜单模块】-删除菜单信息输入参数systemMenuVO:{}",systemMenuVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = -1;
@@ -242,7 +242,7 @@ public class SystemMenuAction {
 	 */
 	@RequestMapping("/getMenu")
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_MENU,description="根据编号查询菜单信息")
-	public String getMenu(SystemMenuVO systemMenuVO,Model model){
+	public String getMenu(SystemMenuVO systemMenuVO,Model model) throws Exception{
 		logger.info("【菜单管理】-根据编号信息的方法输入参数systemMenuVO:{},model：{}",systemMenuVO,model);
 		try {
 			UserSession userSession = (UserSession) httpSession.getAttribute("userSession");
@@ -266,7 +266,7 @@ public class SystemMenuAction {
 	 */
 	@RequestMapping(value="/loadEditMenu",method={RequestMethod.GET,RequestMethod.POST})
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_MENU,description="加载修改菜单信息的页面")
-	public String loadEditMenu(SystemMenuVO systemMenuVO,Model model){
+	public String loadEditMenu(SystemMenuVO systemMenuVO,Model model) throws Exception{
 		logger.info("【菜单管理模块】-加载菜单修改界面的方法输入参数systemMenuVO:{},{}",systemMenuVO,model);
 		try {
 			SystemMenuDTO systemMenuDTO = new SystemMenuDTO();
@@ -290,7 +290,7 @@ public class SystemMenuAction {
 	@RequestMapping("/updateMenu")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_ROLE,description="修改菜单信息的方法")
-	public Map<String,Object> updateRole(SystemMenuVO systemMenuVO){
+	public Map<String,Object> updateRole(SystemMenuVO systemMenuVO) throws Exception{
 		logger.info("【菜单模块】-修改菜单信息输入参数systemMenuVO:{}",systemMenuVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = 0;

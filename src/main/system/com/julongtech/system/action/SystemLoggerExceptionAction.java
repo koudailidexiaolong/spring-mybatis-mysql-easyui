@@ -33,7 +33,6 @@ import com.julongtech.system.service.dto.SystemLoggerExceptionDTO;
 public class SystemLoggerExceptionAction {
 	private static final Logger logger = LoggerFactory.getLogger(SystemLoggerExceptionAction.class);
 	
-	
 	@Autowired
 	private SystemLoggerExceptionService systemLoggerExceptionServiceImpl;
 	
@@ -46,7 +45,7 @@ public class SystemLoggerExceptionAction {
 	 */
 	@RequestMapping("/index")
 	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_LOGGER,description="加载异常日志页面")
-	public String loadPage(){
+	public String loadPage() throws Exception{
 		logger.info("【系统日志信息管理】-加载日志主界面");
 		return "system/logger/logger_exception_index";
 	}
@@ -63,7 +62,7 @@ public class SystemLoggerExceptionAction {
 	@RequestMapping(value="/selectLoggerListByPage",method={RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_LOGGER,description="分页查询异常日志")
-	public Map<String,Object> selectLoggerListByPage(SystemLoggerExceptionVO systemLoggerExceptionVO,PageParam<SystemLoggerExceptionDTO> page){
+	public Map<String,Object> selectLoggerListByPage(SystemLoggerExceptionVO systemLoggerExceptionVO,PageParam<SystemLoggerExceptionDTO> page) throws Exception{
 		logger.info("【系统日志信息管理】-分页查询日志信息的方法systemLoggerExceptionVO:{}",systemLoggerExceptionVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		try {
@@ -79,6 +78,7 @@ public class SystemLoggerExceptionAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【系统日志信息管理】-分页查询日志信息集合发生异常",e);
+			throw new Exception(e);
 		}
 		return maps;
 	}

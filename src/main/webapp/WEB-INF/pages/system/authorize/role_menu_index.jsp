@@ -106,7 +106,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$("#delete-role-menu").linkbutton("disable");
 					$("#add-role-menu").linkbutton("disable");
 					roleObject = null;
-					error("角色模块","查询角色信息失败！");
+					//error("角色模块","查询角色信息失败！");
 				},
 				onLoadSuccess:function(data){
 					if(data.total == 0){

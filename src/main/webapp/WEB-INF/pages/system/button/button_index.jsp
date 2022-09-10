@@ -149,7 +149,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$("#edit-button").linkbutton("disable");
 					$("#get-button").linkbutton("disable");
 					buttonObject = null;
-					error("按钮模块","查询按钮信息失败！");
+					//error("按钮模块","查询按钮信息失败！");
 				},
 				onLoadSuccess:function(data){
 					if(data.total == 0){

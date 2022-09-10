@@ -1,5 +1,7 @@
 package com.julongtech.system.dao;
 
+import java.sql.SQLException;
+
 /**
  * 按钮数据库交互类
  * @author julong
@@ -11,9 +13,9 @@ public interface SystemSequenceDao {
 	 * 查询单个对象的方法
 	 * @param code 参数对象
 	 * @return SystemUserDTO
-	 * @throws Exception
+	 * @throws SQLException
 	 * @author julong
 	 * @date 2016-7-1 下午01:25:14
 	 */
-	public abstract Object selectByPrimaryKey(String code) throws Exception;
+	public abstract Object selectByPrimaryKey(String code) throws SQLException;
 }

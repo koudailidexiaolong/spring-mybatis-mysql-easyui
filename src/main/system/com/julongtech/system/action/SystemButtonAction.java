@@ -51,7 +51,7 @@ public class SystemButtonAction {
 	 */
 	@RequestMapping("/index")
 	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_BUTTON,description="加载按钮主页面")
-	public String loadPage(){
+	public String loadPage() throws Exception{
 		logger.info("【按钮模块】-加载主界面");
 		return "system/button/button_index";
 	}
@@ -68,7 +68,7 @@ public class SystemButtonAction {
 	@RequestMapping(value="/selectButtonListByPage",method={RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_BUTTON,description="分页查询按钮列表")
-	public Map<String,Object> selectButtonListByPage(SystemButtonVO systemButtonVO,PageParam<?> page){
+	public Map<String,Object> selectButtonListByPage(SystemButtonVO systemButtonVO,PageParam<?> page) throws Exception{
 		Map<String,Object> maps = new HashMap<String,Object>();
 		logger.debug("【按钮模块】-分页查询按钮信息的方法输入参数systemButtonVO:{},page：{}",systemButtonVO,page);
 		try {
@@ -85,6 +85,7 @@ public class SystemButtonAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【按钮管理】-查询按钮信息集合发生异常",e);
+			throw new Exception(e);
 		}
 		return maps;
 	}
@@ -99,7 +100,7 @@ public class SystemButtonAction {
 	 */
 	@RequestMapping(value="/loadEditButton",method={RequestMethod.GET,RequestMethod.POST})
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_BUTTON,description="加载修改按钮信息的方法")
-	public String loadEditButton(SystemButtonVO systemButtonVO,Model model){
+	public String loadEditButton(SystemButtonVO systemButtonVO,Model model) throws Exception{
 		logger.info("【按钮管理模块】-加载按钮修改界面的方法:{},{}",systemButtonVO,model);
 		try {
 			SystemButtonDTO systemButtonDTO = new SystemButtonDTO();
@@ -109,6 +110,7 @@ public class SystemButtonAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【按钮管理】-查询按钮信息发生异常",e);
+			throw new Exception(e);
 		}
 		return "system/button/button_edit";
 	}
@@ -122,7 +124,7 @@ public class SystemButtonAction {
 	 */
 	@RequestMapping("/loadAddButton")
 	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_BUTTON,description="加载新增按钮界面的方法")
-	public String loadAddButton(SystemButtonVO systemButtonVO){
+	public String loadAddButton(SystemButtonVO systemButtonVO) throws Exception{
 		logger.info("【按钮管理模块】-加载按钮新增界面的方法");
 		return "system/button/button_add";
 	}
@@ -138,7 +140,7 @@ public class SystemButtonAction {
 	@RequestMapping("/updateButton")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_BUTTON,description="修改按钮信息的方法")
-	public Map<String,Object> updateButton(SystemButtonVO systemButtonVO){
+	public Map<String,Object> updateButton(SystemButtonVO systemButtonVO) throws Exception{
 		logger.info("【按钮模块】-修改信息输入参数systemButtonVO:{}",systemButtonVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = 0;
@@ -149,7 +151,7 @@ public class SystemButtonAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【按钮管理】-修改按钮信息发生异常",e);
-			maps.put("result", -1);
+			throw new Exception(e);
 		}
 		return maps;
 	}
@@ -161,7 +163,7 @@ public class SystemButtonAction {
 	@RequestMapping("/updateButtonStatus")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_BUTTON,description="修改按钮信息的方法")
-	public Map<String,Object> updateButtonStatus(SystemButtonVO systemButtonVO){
+	public Map<String,Object> updateButtonStatus(SystemButtonVO systemButtonVO) throws Exception{
 		logger.info("【按钮模块】-修改状态信息的方法:{}",systemButtonVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = 0;
@@ -172,7 +174,7 @@ public class SystemButtonAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【按钮管理】-修改按钮信息发生异常",e);
-			maps.put("result", -1);
+			throw new Exception(e);
 		}
 		return maps;
 	}
@@ -188,7 +190,7 @@ public class SystemButtonAction {
 	 */
 	@RequestMapping("/getButton")
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_BUTTON,description="根据编号按钮信息的方法")
-	public String getButton(SystemButtonVO systemButtonVO,Model model){
+	public String getButton(SystemButtonVO systemButtonVO,Model model) throws Exception{
 		logger.info("【按钮管理】-根据编号信息的方法:{},{}",systemButtonVO,model);
 		try {
 			UserSession userSession = (UserSession) httpSession.getAttribute("userSession");
@@ -197,6 +199,7 @@ public class SystemButtonAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【按钮管理】-查询按钮信息发生异常",e);
+			throw new Exception(e);
 		}
 		return "system/button/button_info";
 	}
@@ -212,7 +215,7 @@ public class SystemButtonAction {
 	@RequestMapping("/saveButton")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.INSERT,module = LoggerModule.SYSTEM_BUTTON,description="新增按钮信息")
-	public Map<String,Object> saveButton(SystemButtonVO systemButtonVO){
+	public Map<String,Object> saveButton(SystemButtonVO systemButtonVO) throws Exception{
 		logger.info("【按钮模块】-新增信息的方法:{}",systemButtonVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = 0;
@@ -223,7 +226,7 @@ public class SystemButtonAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【按钮管理】-新增按钮信息发生异常",e);
-			maps.put("result", -1);
+			throw new Exception(e);
 		}
 		logger.info("【按钮模块】-新增按钮信息返回结果:{}",result);
 		return maps;
@@ -239,7 +242,7 @@ public class SystemButtonAction {
 	@RequestMapping("/deleteButton")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_BUTTON,description="删除按钮信息的方法")
-	public Map<String,Object> deleteButton(SystemButtonVO systemButtonVO){
+	public Map<String,Object> deleteButton(SystemButtonVO systemButtonVO) throws Exception{
 		logger.info("【按钮模块】-删除按钮信息的方法:{}",systemButtonVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = -1;
@@ -249,7 +252,7 @@ public class SystemButtonAction {
 			maps.put("result", result);
 		} catch (Exception e) {
 			logger.error("【按钮管理】-删除按钮信息的方法发生异常",e);
-			maps.put("result", -1);
+			throw new Exception(e);
 		}
 		logger.info("【按钮模块】-删除按钮信息返回结果:{}",result);
 		return maps;
@@ -264,7 +267,7 @@ public class SystemButtonAction {
 	@RequestMapping("/validateButton")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_BUTTON,description="校验按钮名称信息的方法")
-	public Map<String,Object> validateButton(SystemButtonVO systemButtonVO){
+	public Map<String,Object> validateButton(SystemButtonVO systemButtonVO) throws Exception{
 		logger.info("【按钮模块】-校验按钮名称是否存在的方法:{}",systemButtonVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = 0;
@@ -275,7 +278,7 @@ public class SystemButtonAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【按钮管理】-校验按钮名称信息的方法发生异常",e);
-			maps.put("result", -1);
+			throw new Exception(e);
 		}
 		logger.info("【按钮模块】-校验按钮名称是否存在返回结果result:{}",result);
 		return maps;

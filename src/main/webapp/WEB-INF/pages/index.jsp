@@ -124,7 +124,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		      var height = document.documentElement.clientHeight-164;
 		      $(".tabHeightAuto iframe").attr("style","padding:0px;margin:0px;width:100%;height:"+height+"px;");
 		  });
-
+		  
+		  
+		
 	});
 	//启动定时任务
 	self.setInterval("timer();",1000);

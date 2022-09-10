@@ -114,7 +114,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$("#edit-dictionary").linkbutton("disable");
 					$("#get-dictionary").linkbutton("disable");
 					dictionaryObject = null;
-					error("数据字典模块","查询数据字典信息失败！");
+					//error("数据字典模块","查询数据字典信息失败！");
 				},
 				onLoadSuccess:function(data){
 					if(data.total == 0){

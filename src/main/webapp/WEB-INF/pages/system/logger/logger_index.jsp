@@ -45,8 +45,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			 initModule();
 			//禁用按钮
 			searchLogger();
-		});
 
+		});
+	 
 		/*初始化加载方法类型*/
 		function initMethod(){
 			$.ajax({
@@ -132,10 +133,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    pagePosition:"bottom",
 			    pageNumber:1,
 			    pageList:[10,20,30,40],
-			    onLoadError:function(none){
-					//禁用按钮
-					userObject = null;
-					error("日志模块","查询日志信息失败！");
+			    onLoadError:function(XMLHttpRequest){
+			    	//console.log(XMLHttpRequest);
+			    	//console.log(XMLHttpRequest.getResponseHeader("Response-error"));
+			    	//console.log(XMLHttpRequest.getResponseHeader("Response-session"));
+			    	//if(XMLHttpRequest.getResponseHeader("Response-session") == -1){
+			    	//	$.messager.confirm("日志模块","登录失效，请重新登录",function(result){
+			    	//	    if (result){
+			    	//	    	window.top.location="<%=basePath %>";
+			    	//	    }
+			    	//	});
+			    		
+			    	//}else if(XMLHttpRequest.getResponseHeader("Response-error") == -1){
+			    	//	error("日志模块","查询日志信息失败, 请联系管理员！");
+			    	//}else{
+			    		//禁用按钮
+						userObject = null;
+					//	error("日志模块","查询日志信息失败！");
+			    	//}
+					
 				},
 				onLoadSuccess:function(data){
 					if(data.total == 0){

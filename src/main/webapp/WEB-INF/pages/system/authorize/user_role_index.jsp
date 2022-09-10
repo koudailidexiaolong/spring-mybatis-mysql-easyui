@@ -137,7 +137,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$("#delete-role-user").linkbutton("disable");
 					$("#edit-role-user").linkbutton("disable");
 					userObject = null;
-					error("用户模块","查询用户信息失败！");
+					//error("用户模块","查询用户信息失败！");
 				},
 				onLoadSuccess:function(data){
 					if(data.total == 0){

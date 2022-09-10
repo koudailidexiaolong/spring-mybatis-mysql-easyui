@@ -198,8 +198,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </form> 
 </div> 
 <script type="text/javascript">
+
+
 /*查询用户信息的方法*/
 function searchUser(){
+	
 	rowIndex = -1;
 	//禁用按钮
 	$("#delete-user").linkbutton("disable");

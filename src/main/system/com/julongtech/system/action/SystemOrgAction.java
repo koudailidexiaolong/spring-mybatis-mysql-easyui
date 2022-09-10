@@ -49,7 +49,7 @@ public class SystemOrgAction {
 	 */
 	@RequestMapping("/index")
 	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_ORG,description="加载机构主界面")
-	public String loadPage(){
+	public String loadPage() throws Exception{
 		logger.info("【系统组织机构模块】-加载主界面");
 		return "system/org/org_index";
 	}
@@ -66,7 +66,7 @@ public class SystemOrgAction {
 	@RequestMapping(value="/getOrgList",method={RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_ORG,description="查询组织机构树形结构")
-	public Map<String,Object> getOrgList(SystemOrgVO systemOrgVO){
+	public Map<String,Object> getOrgList(SystemOrgVO systemOrgVO) throws Exception{
 		Map<String,Object> maps = new HashMap<String,Object>();
 		logger.info("【机构模块】-查询机构信息的方法:{}",systemOrgVO);
 		try {
@@ -105,7 +105,7 @@ public class SystemOrgAction {
 	 */
 	@RequestMapping(value="/loadEditOrg",method={RequestMethod.GET,RequestMethod.POST})
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_ORG,description="加载修改机构信息的方法")
-	public String loadEditOrg(SystemOrgVO systemOrgVO,Model model){
+	public String loadEditOrg(SystemOrgVO systemOrgVO,Model model) throws Exception{
 		logger.debug("【机构管理模块】-加载机构修改界面的方法:{}",systemOrgVO.toString());
 		SystemOrgDTO systemOrgDTO = new SystemOrgDTO();
 		try {
@@ -128,7 +128,7 @@ public class SystemOrgAction {
 	 */
 	@RequestMapping("/loadAddOrg")
 	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_ORG,description="加载新增机构信息的方法")
-	public String loadAddOrg(SystemOrgVO systemOrgVO){
+	public String loadAddOrg(SystemOrgVO systemOrgVO) throws Exception{
 		logger.debug("【机构管理模块】-加载机构新增界面的方法");
 		return "system/org/org_add";
 	}
@@ -143,7 +143,7 @@ public class SystemOrgAction {
 	 */
 	@RequestMapping("/updateOrg")
 	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_ORG,description="修改机构信息的方法")
-	public Map<String,Object> updateOrg(SystemOrgVO systemOrgVO){
+	public Map<String,Object> updateOrg(SystemOrgVO systemOrgVO) throws Exception{
 		logger.info("【机构模块】-修改信息的方法:{}",systemOrgVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = 0;
@@ -169,7 +169,7 @@ public class SystemOrgAction {
 	 */
 	@RequestMapping("/updateOrgStatus")
 	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_ORG,description="加载修改机构状态信息的方法")
-	public Map<String,Object> updateOrgStatus(SystemOrgVO systemOrgVO){
+	public Map<String,Object> updateOrgStatus(SystemOrgVO systemOrgVO) throws Exception{
 		logger.info("【机构模块】-修改机构状态信息的方法:{}",systemOrgVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = 0;
@@ -196,7 +196,7 @@ public class SystemOrgAction {
 	 */
 	@RequestMapping("/getOrg")
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_ORG,description="查询机构详情信息的方法")
-	public String getOrg(SystemOrgVO systemOrgVO,Model model){
+	public String getOrg(SystemOrgVO systemOrgVO,Model model) throws Exception{
 		logger.info("【机构模块】-查询机构详情信息的方法:{}",systemOrgVO);
 		try {
 			UserSession userSession = (UserSession) httpSession.getAttribute("userSession");
@@ -219,7 +219,7 @@ public class SystemOrgAction {
 	@RequestMapping("/validateOrg")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_ORG,description="校验是否存在此机构")
-	public Map<String,Object> validateOrg(SystemOrgVO systemOrgVO){
+	public Map<String,Object> validateOrg(SystemOrgVO systemOrgVO) throws Exception{
 		logger.info("【机构模块】-校验是否存在此机构方法:{}",systemOrgVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = 0;
@@ -246,7 +246,7 @@ public class SystemOrgAction {
 	@RequestMapping("/saveOrg")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.INSERT,module = LoggerModule.SYSTEM_ORG,description="新增机构信息的方法")
-	public Map<String,Object> saveOrg(SystemOrgVO systemOrgVO){
+	public Map<String,Object> saveOrg(SystemOrgVO systemOrgVO) throws Exception{
 		logger.info("【机构模块】-新增信息的方法:{}",systemOrgVO);
 		Map<String,Object> maps = new HashMap<String,Object>();
 		int result = 0;
@@ -273,7 +273,7 @@ public class SystemOrgAction {
 	@RequestMapping("/deleteOrg")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_ORG,description="删除机构信息的方法")
-	public Map<String,Object> deleteOrg(SystemOrgVO systemOrgVO){
+	public Map<String,Object> deleteOrg(SystemOrgVO systemOrgVO) throws Exception{
 		Map<String,Object> maps = new HashMap<String,Object>();
 		logger.info("【机构模块】-删除机构信息的方法:{}",systemOrgVO);
 		int result = 0;
@@ -300,7 +300,7 @@ public class SystemOrgAction {
 	@RequestMapping("/getSystemOrgParentList")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_ORG,description="查询上级机构信息")
-	public List<SystemOrgDTO> getSystemOrgParentList(SystemOrgVO systemOrgVO){
+	public List<SystemOrgDTO> getSystemOrgParentList(SystemOrgVO systemOrgVO) throws Exception{
 		logger.info("【机构模块】-查询上级机构信息方法:{}",systemOrgVO);
 		List<SystemOrgDTO> systemOrgDTOList = new ArrayList<SystemOrgDTO>();
 		try {

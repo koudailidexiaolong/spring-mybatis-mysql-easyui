@@ -113,7 +113,7 @@ public class AuthorizeAction {
 	 */
 	@RequestMapping("/user")
 	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_AUTHORIZE,description="进入加载用户角色配置主界面")
-	public String loadUserRolePage(){
+	public String loadUserRolePage() throws Exception{
 		logger.info("【系统授权管理】进入加载用户角色配置主界面的方法");
 		return "system/authorize/user_role_index";
 	}
@@ -126,7 +126,7 @@ public class AuthorizeAction {
 	 */
 	@RequestMapping("/menu")
 	@LoggerProxy(method = LoggerMethod.LOAD_PAGE,module = LoggerModule.SYSTEM_AUTHORIZE,description="进入加载角色菜单配置主界面")
-	public String loadRoleMenuPage(){
+	public String loadRoleMenuPage() throws Exception{
 		logger.info("【系统授权管理】进入加载角色菜单配置主界面的方法");
 		return "system/authorize/role_menu_index";
 	}
@@ -142,7 +142,7 @@ public class AuthorizeAction {
 	 */
 	@RequestMapping("/loadAddMenu")
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_AUTHORIZE,description="加载角色菜单修改界面")
-	public String loadAddMenu(SystemRoleMenuMappedVO systemRoleMenuMappedVO,Model model){
+	public String loadAddMenu(SystemRoleMenuMappedVO systemRoleMenuMappedVO,Model model) throws Exception{
 		logger.info("【系统授权管理】进入加载角色菜单修改界面输入参数systemRoleMenuMappedVO：{}",systemRoleMenuMappedVO);
 		List<SystemMenuDTO> menuList = new ArrayList<SystemMenuDTO>();
 		List<SystemButtonDTO> buttonList = new ArrayList<SystemButtonDTO>();
@@ -165,6 +165,7 @@ public class AuthorizeAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【系统授权管理】加载系统角色配置菜单发生异常", e);
+			throw new Exception(e);
 		}
 		return "system/authorize/role_menu_edit";
 	}
@@ -179,7 +180,7 @@ public class AuthorizeAction {
 	@RequestMapping("/editRoleMenu")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_AUTHORIZE,description="保存角色菜单对应关系")
-	public Map<String,Object> editRoleMenu(SystemRoleMenuMappedVO systemRoleMenuMappedVO){
+	public Map<String,Object> editRoleMenu(SystemRoleMenuMappedVO systemRoleMenuMappedVO) throws Exception{
 		logger.info("【系统授权管理】保存映射关系的方法{}",systemRoleMenuMappedVO);
 		Map<String,Object> maps = new Hashtable<String, Object>();
 		int result = 0;
@@ -221,6 +222,7 @@ public class AuthorizeAction {
 			// TODO Auto-generated catch block
 			maps.put("result", -1);
 			logger.error("【系统权限配置模块】修改角色对应菜单权限发生异常", e);
+			throw new Exception(e);
 		}
 		logger.info("【系统授权管理】保存映射关系返回结果：{}",result);
 		maps.put("result", result);
@@ -237,7 +239,7 @@ public class AuthorizeAction {
 	@RequestMapping("/getRoleMenu")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_AUTHORIZE,description="根据角色查询映射关系")
-	public Map<String,Object> getRoleMenu(SystemRoleMenuMappedVO systemRoleMenuMappedVO){
+	public Map<String,Object> getRoleMenu(SystemRoleMenuMappedVO systemRoleMenuMappedVO) throws Exception{
 		logger.info("【系统授权管理】根据角色查询映射关系的方法{}",systemRoleMenuMappedVO);
 		Map<String,Object> maps = new Hashtable<String, Object>();
 		try {
@@ -254,6 +256,7 @@ public class AuthorizeAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【系统权限配置模块】根据角色查询映射关系的方法发生异常", e);
+			throw new Exception(e);
 		}
 		return maps;
 	}
@@ -268,7 +271,7 @@ public class AuthorizeAction {
 	@RequestMapping("/deleteRoleMenu")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_AUTHORIZE,description="删除角色菜单映射关系")
-	public Map<String,Object> deleteRoleMenu(SystemRoleMenuMappedVO systemRoleMenuMappedVO){
+	public Map<String,Object> deleteRoleMenu(SystemRoleMenuMappedVO systemRoleMenuMappedVO) throws Exception{
 		logger.info("【系统授权管理】-删除角色菜单映射关系的方法{}",systemRoleMenuMappedVO);
 		Map<String,Object> maps = new Hashtable<String, Object>();
 		int result = -1;
@@ -280,6 +283,7 @@ public class AuthorizeAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【系统权限配置模块】-删除角色菜单映射关系发生异常", e);
+			throw new Exception(e);
 		}
 		logger.info("【系统授权管理】-删除角色菜单映射关系返回结果：{}",result);
 		maps.put("result", result);
@@ -296,7 +300,7 @@ public class AuthorizeAction {
 	 */
 	@RequestMapping("/loadAddRole")
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_AUTHORIZE,description="加载用户角色修改界面")
-	public String loadAddRole(SystemUserRoleMappedVO systemUserRoleMappedVO,Model model){
+	public String loadAddRole(SystemUserRoleMappedVO systemUserRoleMappedVO,Model model) throws Exception{
 		logger.info("【系统授权管理】进入加载用户角色修改界面{},{}",systemUserRoleMappedVO,model);
 		try {
 			//根据角色查询映射关系表数据
@@ -310,6 +314,7 @@ public class AuthorizeAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【系统权限配置模块】进入加载用户角色修改方法发生异常", e);
+			throw new Exception(e);
 		}
 		return "system/authorize/user_role_edit";
 	}
@@ -324,7 +329,7 @@ public class AuthorizeAction {
 	@RequestMapping("/deleteRoleUser")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.DELETE,module = LoggerModule.SYSTEM_AUTHORIZE,description="删除用户角色映射关系")
-	public Map<String,Object> deleteRoleUser(SystemUserRoleMappedVO systemUserRoleMappedVO){
+	public Map<String,Object> deleteRoleUser(SystemUserRoleMappedVO systemUserRoleMappedVO) throws Exception{
 		logger.info("【系统授权管理】根据角色查询映射关系的方法{}",systemUserRoleMappedVO);
 		Map<String,Object> maps = new Hashtable<String, Object>();
 		int result = -1;
@@ -336,6 +341,7 @@ public class AuthorizeAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【系统权限配置模块】根据角色查询映射关系的方法发生异常", e);
+			throw new Exception(e);
 		}
 		maps.put("result", result);
 		return maps;
@@ -350,7 +356,7 @@ public class AuthorizeAction {
 	@RequestMapping("/editRoleUser")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.UPDATE,module = LoggerModule.SYSTEM_AUTHORIZE,description="修改用户对应角色权限")
-	public Map<String,Object> editRoleUser(SystemUserRoleMappedVO systemUserRoleMappedVO){
+	public Map<String,Object> editRoleUser(SystemUserRoleMappedVO systemUserRoleMappedVO) throws Exception{
 		logger.info("【系统授权管理】修改用户角色映射关系的方法{}",systemUserRoleMappedVO);
 		Map<String,Object> maps = new Hashtable<String, Object>();
 		int result = 0;
@@ -372,6 +378,7 @@ public class AuthorizeAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【系统权限配置模块】修改用户角色权限发生异常", e);
+			throw new Exception(e);
 		}
 		maps.put("result", result);
 		return maps;
@@ -387,7 +394,7 @@ public class AuthorizeAction {
 	@RequestMapping("/getRoleUser")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_AUTHORIZE,description="根据用户查询映射关系")
-	public Map<String,Object> getRoleUser(SystemUserRoleMappedVO systemUserRoleMappedVO){
+	public Map<String,Object> getRoleUser(SystemUserRoleMappedVO systemUserRoleMappedVO) throws Exception{
 		logger.info("【系统授权管理】根据用户查询映射关系的方法输入参数systemUserRoleMappedVO：{}",systemUserRoleMappedVO);
 		Map<String,Object> maps = new Hashtable<String, Object>();
 		try {
@@ -398,6 +405,7 @@ public class AuthorizeAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【系统权限配置模块】根据用户查询映射关系的方法发生异常", e);
+			throw new Exception(e);
 		}
 		return maps;
 	}
@@ -413,7 +421,7 @@ public class AuthorizeAction {
 	@RequestMapping("/loadAuthorizeButton")
 	@ResponseBody
 	@LoggerProxy(method = LoggerMethod.SELECT,module = LoggerModule.SYSTEM_AUTHORIZE,description="加载权限按钮")
-	public Map<String,Object> loadAuthorizeButton(SystemUserRoleMappedVO systemUserRoleMappedVO){
+	public Map<String,Object> loadAuthorizeButton(SystemUserRoleMappedVO systemUserRoleMappedVO) throws Exception{
 		logger.info("【系统授权管理】根据用户查询映射关系的方法{}",systemUserRoleMappedVO);
 		Map<String,Object> maps = new Hashtable<String, Object>();
 		try {
@@ -424,6 +432,7 @@ public class AuthorizeAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("【系统权限配置模块】根据用户查询映射关系的方法发生异常", e);
+			throw new Exception(e);
 		}
 		return maps;
 	}

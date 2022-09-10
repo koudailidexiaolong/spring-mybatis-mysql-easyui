@@ -38,7 +38,7 @@
 	  <param-name>log4jExposeWebAppRoot</param-name>  
 	  <param-value>false</param-value>  
 	</context-param>-->
-	<!-- XSS过滤 -->
+	<!-- XSS过滤
 	<filter>
         <filter-name>XSSFilter</filter-name>
         <filter-class>com.julongtech.filter.XSSFilter</filter-class>
@@ -46,7 +46,8 @@
     <filter-mapping>
         <filter-name>XSSFilter</filter-name>
         <url-pattern>/*</url-pattern>
-    </filter-mapping>
+    </filter-mapping> 
+    -->
 	<!-- 字符编码过滤器 -->
 	<filter>
 		<description>CharacterEncodingFilter</description>
@@ -97,7 +98,7 @@
 
 	<!-- 设置session失效时间 -->
 	<session-config>
-		<session-timeout>30</session-timeout>
+		<session-timeout>2</session-timeout>
 	</session-config>
 	<!-- JNDI
 	<resource-ref>
