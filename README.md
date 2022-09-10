@@ -12,3 +12,35 @@ mysql版本：5.6
 easyui版本：1.7.5
 
 redis版本：2.8.0
+
+
+
+### 1. 登录模块
+
+![](C:\Users\julong\Desktop\login.png)
+
+密码实现rsa加密传输、验证码一分钟失效、三次输入错误锁定账户操作
+
+
+
+### 2.首页
+
+![](C:\Users\julong\Desktop\index.png)
+
+
+
+3.用户模块
+
+![](C:\Users\julong\Desktop\user-index.png)
+
+新增用户
+
+![](C:\Users\julong\Desktop\user-add.png)
+
+修改用户
+
+![](C:\Users\julong\Desktop\user-edit.png)
+
+
+
+基本的系统管理功能均已实现
