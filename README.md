@@ -17,7 +17,7 @@ redis版本：2.8.0
 
 ### 1. 登录模块
 
-![](D:\Workspaces\OWER\spring-mybatis-mysql-easyui\images\login.png)
+![](./images/login.png)
 
 密码实现rsa加密传输、验证码一分钟失效、三次输入错误锁定账户操作
 
