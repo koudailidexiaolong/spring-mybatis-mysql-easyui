@@ -25,7 +25,7 @@ redis版本：2.8.0
 
 ### 2.首页
 
-![](./images/index.png)
+![](/images/index.png)
 
 
 
